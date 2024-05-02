@@ -77,7 +77,7 @@
         </div>
 
         <!-- PC -->
-        <div class="bg-white w-[68.6%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[0]">
+        <div class="bg-white w-[63.85%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[0]">
             <div class="grid grid-cols-4 gap-4">
                 <div>
                 <div class="font-bold mb-2">PC Intel</div>
@@ -163,7 +163,7 @@
         </div>
 
         <!-- Laptop -->
-        <div class="bg-white w-[68.6%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[1]">
+        <div class="bg-white w-[63.85%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[1]">
             <div class="grid grid-cols-4 gap-4">
                 <div>
                 <div class="font-bold mb-2">Hãng sản xuất</div>
@@ -316,7 +316,7 @@
         </div>
 
         <!-- Màn hình -->
-        <div class="bg-white w-[68.6%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[2]">
+        <div class="bg-white w-[63.85%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[2]">
             <div class="grid grid-cols-4 gap-4">
                 <div>
                 <div class="font-bold mb-2">Hãng sản xuất</div>
@@ -465,7 +465,7 @@
         </div>
 
         <!-- CPU - VGA -->
-        <div class="bg-white w-[68.6%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[3]">
+        <div class="bg-white w-[63.85%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[3]">
             <div class="grid grid-cols-4 gap-4">
                 <div>
                 <div class="font-bold mb-2">VGA - Card màn hình</div>
@@ -594,7 +594,7 @@
         </div>
 
         <!-- Case - nguồn -->
-        <div class="bg-white w-[68.6%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[4]">
+        <div class="bg-white w-[63.85%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[4]">
             <div class="grid grid-cols-4 gap-4">
                 <div>
                 <div class="font-bold mb-2">Hãng sản xuất case</div>
@@ -674,7 +674,7 @@
         </div>
 
         <!-- Linh kiện -->
-        <div class="bg-white w-[68.6%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[5]">
+        <div class="bg-white w-[63.85%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[5]">
             <div class="grid grid-cols-4 gap-4">
                 <div>
                 <div class="font-bold mb-2">Dung lượng RAM</div>
@@ -824,7 +824,7 @@
         </div>
 
         <!-- Tai nghe -->
-        <div class="bg-white w-[68.6%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[6]">
+        <div class="bg-white w-[63.85%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[6]">
             <div class="grid grid-cols-4 gap-4">
                 <div>
                 <div class="font-bold mb-2">Hãng sản xuất</div>
@@ -904,7 +904,7 @@
         </div>
 
         <!-- Bàn phím -->
-        <div class="bg-white w-[68.6%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[7]">
+        <div class="bg-white w-[63.85%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[7]">
             <div class="grid grid-cols-4 gap-4">
                 <div>
                 <div class="font-bold mb-2">Hãng sản xuất</div>
@@ -987,7 +987,7 @@
         </div>
 
         <!-- Chuột -->
-        <div class="bg-white w-[68.6%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[8]">
+        <div class="bg-white w-[63.85%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[8]">
             <div class="grid grid-cols-4 gap-4">
                 <div>
                 <div class="font-bold mb-2">Hãng sản xuất</div>
@@ -1064,7 +1064,7 @@
         </div>
 
         <!-- Loa -->
-        <div class="bg-white w-[68.6%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[9]">
+        <div class="bg-white w-[63.85%] cursor-pointer rounded-lg shadow-lg p-6 absolute z-50" x-cloak x-show="openType[9]">
             <div class="grid grid-cols-4 gap-4">
                 <div>
                 <div class="font-bold mb-2">Hãng sản xuất</div>
