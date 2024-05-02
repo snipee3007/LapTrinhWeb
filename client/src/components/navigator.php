@@ -1,6 +1,6 @@
 <div x-data="{ openType: Array(10).fill(false), mainKey: false }" >
     <div x-on:mouseenter="mainKey = true" x-on:mouseleave="mainKey = false; openType = Array(10).fill(false)"> 
-        <div class="bg-gray-900 text-white text-sm rounded-lg p-2 hidden md:block mb-2">
+        <div class="bg-gray-900 text-white text-sm rounded-lg p-2 hidden md:block mb-2 w-full">
         <div class="grid grid-cols-10 gap-1">
             <div class="flex flex-col items-center text-center hover:underline decoration-2 cursor-pointer" x-on:mouseenter="openType = Array(10).fill(false); openType[0] = true" x-on:mouseleave="if(!mainKey) openType[0] = false">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" class="w-8 h-8 mb-2">
@@ -77,93 +77,93 @@
         </div>
 
         <!-- PC -->
-        <div class="z-999 bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-show="openType[0]">
-        <div class="grid grid-cols-4 gap-4">
-            <div>
-            <div class="font-bold mb-2">PC Intel</div>
-            <ul>
-                <li>
-                <a href="#" class="hover:text-blue-500">i3 (từ 7 triệu)</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">i5 (từ 10 triệu)</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">i7 (từ 27 triệu)</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">i9 (từ 40 triệu)</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">Xem tất cả</a>
-                </li>
-            </ul>
-            </div>
+        <div class="bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-cloak x-show="openType[0]">
+            <div class="grid grid-cols-4 gap-4">
+                <div>
+                <div class="font-bold mb-2">PC Intel</div>
+                <ul>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">i3 (từ 7 triệu)</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">i5 (từ 10 triệu)</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">i7 (từ 27 triệu)</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">i9 (từ 40 triệu)</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">Xem tất cả</a>
+                    </li>
+                </ul>
+                </div>
 
-            <div>
-            <div class="font-bold mb-2">PC AMD</div>
-            <ul>
-                <li>
-                <a href="#" class="hover:text-blue-500">R3 (từ 5 triệu)</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">R5 (từ 7 triệu)</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">R7 (từ 37 triệu)</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">R9 (từ 40 triệu)</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">Xem tất cả</a>
-                </li>
-            </ul>
-            </div>
+                <div>
+                <div class="font-bold mb-2">PC AMD</div>
+                <ul>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">R3 (từ 5 triệu)</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">R5 (từ 7 triệu)</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">R7 (từ 37 triệu)</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">R9 (từ 40 triệu)</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">Xem tất cả</a>
+                    </li>
+                </ul>
+                </div>
 
-            <div>
-            <div class="font-bold mb-2">PC VGA</div>
-            <ul>
-                <li>
-                <a href="#" class="hover:text-blue-500">PC RTX 1650</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">PC RTX 2060</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">PC RTX 3050</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">PC RTX 3060</a>
-                </li>
-            </ul>
-            </div>
+                <div>
+                <div class="font-bold mb-2">PC VGA</div>
+                <ul>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">PC RTX 1650</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">PC RTX 2060</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">PC RTX 3050</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">PC RTX 3060</a>
+                    </li>
+                </ul>
+                </div>
 
-            <div>
-            <div class="font-bold mb-2">PC VGA</div>
-            <ul>
-                <li>
-                <a href="#" class="hover:text-blue-500">PC RTX 4060</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">PC RTX 4070</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">PC RTX 4080</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">PC RTX 4090</a>
-                </li>
-                <li>
-                <a href="#" class="hover:text-blue-500">Xem tất cả</a>
-                </li>
-            </ul>
+                <div>
+                <div class="font-bold mb-2">PC VGA</div>
+                <ul>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">PC RTX 4060</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">PC RTX 4070</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">PC RTX 4080</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">PC RTX 4090</a>
+                    </li>
+                    <li>
+                    <a href="#" class="hover:text-blue-500">Xem tất cả</a>
+                    </li>
+                </ul>
+                </div>
             </div>
-        </div>
         </div>
 
         <!-- Laptop -->
-        <div class="z-999 bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-show="openType[1]">
+        <div class="bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-cloak x-show="openType[1]">
         <div class="grid grid-cols-4 gap-4">
             <div>
             <div class="font-bold mb-2">Hãng sản xuất</div>
@@ -316,7 +316,7 @@
         </div>
 
         <!-- Màn hình -->
-        <div class="z-999 bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-show="openType[2]">
+        <div class="bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-cloak x-show="openType[2]">
         <div class="grid grid-cols-4 gap-4">
             <div>
             <div class="font-bold mb-2">Hãng sản xuất</div>
@@ -465,7 +465,7 @@
         </div>
 
         <!-- CPU - VGA -->
-        <div class="z-999 bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-show="openType[3]">
+        <div class="bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-cloak x-show="openType[3]">
         <div class="grid grid-cols-4 gap-4">
             <div>
             <div class="font-bold mb-2">VGA - Card màn hình</div>
@@ -594,7 +594,7 @@
         </div>
 
         <!-- Case - nguồn -->
-        <div class="z-999 bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-show="openType[4]">
+        <div class="bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-cloak x-show="openType[4]">
         <div class="grid grid-cols-4 gap-4">
             <div>
             <div class="font-bold mb-2">Hãng sản xuất case</div>
@@ -674,7 +674,7 @@
         </div>
 
         <!-- Linh kiện -->
-        <div class="z-999 bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-show="openType[5]">
+        <div class="bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-cloak x-show="openType[5]">
         <div class="grid grid-cols-4 gap-4">
             <div>
             <div class="font-bold mb-2">Dung lượng RAM</div>
@@ -824,7 +824,7 @@
         </div>
 
         <!-- Tai nghe -->
-        <div class="z-999 bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-show="openType[6]">
+        <div class="bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-cloak x-show="openType[6]">
         <div class="grid grid-cols-4 gap-4">
             <div>
             <div class="font-bold mb-2">Hãng sản xuất</div>
@@ -904,7 +904,7 @@
         </div>
 
         <!-- Bàn phím -->
-        <div class="z-999 bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-show="openType[7]">
+        <div class="bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-cloak x-show="openType[7]">
         <div class="grid grid-cols-4 gap-4">
             <div>
             <div class="font-bold mb-2">Hãng sản xuất</div>
@@ -987,7 +987,7 @@
         </div>
 
         <!-- Chuột -->
-        <div class="z-999 bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-show="openType[8]">
+        <div class="bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-cloak x-show="openType[8]">
         <div class="grid grid-cols-4 gap-4">
             <div>
             <div class="font-bold mb-2">Hãng sản xuất</div>
@@ -1064,7 +1064,7 @@
         </div>
 
         <!-- Loa -->
-        <div class="z-999 bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-show="openType[9]">
+        <div class="bg-white w-full cursor-pointer rounded-lg shadow-lg p-6" x-cloak x-show="openType[9]">
         <div class="grid grid-cols-4 gap-4">
             <div>
             <div class="font-bold mb-2">Hãng sản xuất</div>
