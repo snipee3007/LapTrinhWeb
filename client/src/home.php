@@ -27,15 +27,15 @@
   <?php include_once 'components/header.php'; ?>
 
   <div class="max-w-screen-2xl mx-auto" style='font-family: Space Mono'>
-    <div class="grid grid-cols-12 gap-4">
+    <div class="flex flex-row justify-between">
 
-      <div class="col-span-1">
-        <img src="https://file.hstatic.net/200000722513/file/banner_sticky_-_b1400ceae_bv3186w_52b7a4750b8d4cd99ee990c07792d852.png" alt="Left banner">
+      <div class="sticky top-1/3 p-2 z-50 flex flex-start h-full ">
+        <img class="h-full" src="https://file.hstatic.net/200000722513/file/banner_sticky_-_b1400ceae_bv3186w_52b7a4750b8d4cd99ee990c07792d852.png" alt="Left banner">
       </div>
 
-      <div class="col-span-10">
+      <div class="">
         <?php include_once 'components/navigator.php'; ?>
-        <div class="z-1 my-2 ">
+        <div class="z-1 my-2">
           <?php include_once 'components/bannerCarousel.php'; ?>
         </div>
 
@@ -286,8 +286,8 @@
         </div>
       </div>
 
-      <div class="col-span-1">
-        <img src="https://file.hstatic.net/200000722513/file/banner_sticky_-_b1400ceae_bv3186w_52b7a4750b8d4cd99ee990c07792d852.png" alt="Right banner">
+      <div class="sticky top-1/3 p-2 z-50 flex flex-end h-full ">
+        <img class="h-full" src="https://file.hstatic.net/200000722513/file/banner_sticky_-_b1400ceae_bv3186w_52b7a4750b8d4cd99ee990c07792d852.png" alt="Right banner">
       </div>
 
     </div>
