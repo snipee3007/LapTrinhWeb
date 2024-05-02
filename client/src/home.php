@@ -26,16 +26,16 @@
 <body>
   <?php include_once 'components/header.php'; ?>
 
-  <div class="max-w-screen-xl flex flex-wrap justify-between items-center mx-auto" style='font-family: Space Mono'>
+  <div class="max-w-screen-2xl mx-auto" style='font-family: Space Mono'>
     <div class="grid grid-cols-12 gap-4">
 
-      <div class="col-span-1 border">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate leo justo, eu dictum augue dignissim vel. Nunc at dolor ut tortor sagittis ultrices. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer tincidunt mattis lectus eu pulvinar. In et ante porta, aliquet dui nec, pulvinar eros. Maecenas vel felis a mauris pulvinar tristique. Fusce dignissim pretium varius. Aliquam nec libero vel nibh eleifend lacinia sed et nulla. In nec justo cursus nunc tempus sagittis nec sed felis. Sed elit sem, luctus vitae congue ut, convallis varius massa. Curabitur ac tincidunt enim.
+      <div class="col-span-1">
+        <img src="https://file.hstatic.net/200000722513/file/banner_sticky_-_b1400ceae_bv3186w_52b7a4750b8d4cd99ee990c07792d852.png" alt="Left banner">
       </div>
 
       <div class="col-span-10">
         <?php include_once 'components/navigator.php'; ?>
-        <div class="z-1 mb-2">
+        <div class="z-1 my-2 ">
           <?php include_once 'components/bannerCarousel.php'; ?>
         </div>
 
@@ -72,7 +72,7 @@
 
         <div class="rounded-lg p-4 mb-10">
           <div class="flex justify-between mb-8">
-            <div class="font-bold text-xl">
+            <div class="font-bold text-xl mb-8 md:mb-0">
               | LAPTOP
             </div>
 
@@ -94,9 +94,11 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-4 gap-4 mb-5">
+          <div class="grid grid-cols-5 gap-4 mb-5">
             <?php
               $listProduct= [
+                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
+                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
                 ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
                 ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
                 ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
@@ -109,7 +111,7 @@
 
               for($i = 0; $i < count($listProduct); $i++) {
                 echo '<div class="border p-3 rounded-md hover:shadow-lg transition-shadow duration-200 ease-in-out cursor-pointer">
-                        <img class="w-full h-48 object-cover" src="' . $listProduct[$i]['image'] . '" alt="' . $listProduct[$i]['name'] . '">
+                        <img class="w-full h-40 object-cover" src="' . $listProduct[$i]['image'] . '" alt="' . $listProduct[$i]['name'] . '">
                         <div class="text-sm font-bold mb-5">' . $listProduct[$i]['name'] . '</div>
                         <div class="text-sm text-blue-700 font-bold mb-2">' . $listProduct[$i]['price'] . '</div>
 
@@ -169,7 +171,7 @@
 
           <div class="flex justify-between items-center">
             <div class="text-sm font-semibold">
-              Hiển thị 8 | 8 sản phẩm
+              Hiển thị 10 | 10 sản phẩm
             </div>
             <a href="#" class="p-2 text-white rounded-lg text-sm bg-gray-900 border border-white hover:text-black hover:bg-white hover:border-gray-900 transition-colors duration-300 ease-in-out">Xem tất cả sản phẩm >></a>
           </div>
@@ -177,8 +179,8 @@
         </div>
 
         <div class="rounded-lg p-4 mb-10">
-          <div class="flex justify-between mb-8">
-            <div class="font-bold text-xl">
+          <div class="md:flex md:justify-between mb-8">
+            <div class="font-bold text-xl mb-8 md:mb-0">
               | MÀN HÌNH
             </div>
 
@@ -194,15 +196,17 @@
                   ['name' => 'Xem tất cả', 'link' => '#'],
                 ];
                 for ($i = 0; $i < count($buttonList); $i++) {
-                  echo '<a href="' . $buttonList[$i]['link'] . '" class="mr-3 p-2 rounded-lg text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
+                  echo '<a href="' . $buttonList[$i]['link'] . '" class="mr-3 p-2 rounded-lg text-xs md:text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
                 }
               ?>
             </div>
           </div>
 
-          <div class="grid grid-cols-4 gap-4 mb-5">
+          <div class="grid grid-cols-5 gap-4 mb-5">
             <?php
               $listProduct= [
+                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
+                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
                 ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
                 ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
                 ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
@@ -282,8 +286,8 @@
         </div>
       </div>
 
-      <div class="col-span-1 border">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate leo justo, eu dictum augue dignissim vel. Nunc at dolor ut tortor sagittis ultrices. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer tincidunt mattis lectus eu pulvinar. In et ante porta, aliquet dui nec, pulvinar eros. Maecenas vel felis a mauris pulvinar tristique. Fusce dignissim pretium varius. Aliquam nec libero vel nibh eleifend lacinia sed et nulla. In nec justo cursus nunc tempus sagittis nec sed felis. Sed elit sem, luctus vitae congue ut, convallis varius massa. Curabitur ac tincidunt enim.
+      <div class="col-span-1">
+        <img src="https://file.hstatic.net/200000722513/file/banner_sticky_-_b1400ceae_bv3186w_52b7a4750b8d4cd99ee990c07792d852.png" alt="Right banner">
       </div>
 
     </div>
