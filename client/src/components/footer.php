@@ -26,11 +26,11 @@
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
           <a href="#" class="flex items-center mb-4">
-            <span class="text-white self-center text-2xl font-semibold whitespace-nowrap">CoCha Gear</span>
+            <span class="text-white self-center text-2xl font-semibold whitespace-nowrap">CoChaGear</span>
           </a>
           
           <div class="text-white text-sm mb-4 font-bold">
-            CoCha Gear - Chuyên cung cấp Laptop Gaming & PC cao cấp chính hãng.
+            CoChaGear - Chuyên cung cấp Laptop Gaming & PC cao cấp chính hãng.
           </div>
 
           <div class="text-white text-sm mb-4 flex gap-x-1">
@@ -48,7 +48,7 @@
                 <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
               </svg>
             </span>
-            Bình Dương: Khu ĐHQG TP.HCM, Dĩ An.
+            HCM: 808B Hậu Giang, Phường 11, Quận 6.
           </div>
 
           <div class="text-white text-sm mb-4 flex gap-x-1">

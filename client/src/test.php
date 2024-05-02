@@ -20,7 +20,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-  <title>CoCha Gear</title>
+  <title>CoChaGear</title>
 </head>
 
 <body>

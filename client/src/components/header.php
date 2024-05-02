@@ -48,7 +48,7 @@
         <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10" @click.away="open = false">
         <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">CoCha Gear</span>
+            <span class="sr-only">CoChaGear</span>
             <img class="h-8 w-auto" src="https://cdn.haitrieu.com/wp-content/uploads/2021/09/Logo-DH-Bach-Khoa-HCMUT.png" alt="Logo">
             </a>
             <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="open=false">

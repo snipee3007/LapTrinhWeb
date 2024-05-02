@@ -20,7 +20,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-  <title>CoCha Gear</title>
+  <title>CoChaGear</title>
 </head>
 
 <body>
@@ -29,11 +29,11 @@
   <div class="max-w-screen-2xl mx-auto" style='font-family: Space Mono'>
     <div class="flex flex-row justify-between">
 
-      <div class="sticky top-1/3 p-2 z-50 flex flex-start h-full ">
-        <img class="h-full" src="https://file.hstatic.net/200000722513/file/banner_sticky_-_b1400ceae_bv3186w_52b7a4750b8d4cd99ee990c07792d852.png" alt="Left banner">
+      <div class="sticky top-1/4 p-2 z-50 flex flex-start h-full ">
+        <img class="h-full" src="https://file.hstatic.net/200000837185/file/man-hinh-gigabyte-g24f-2_e355da64399f4c6da5f339a8f4432a07.jpg" alt="Left banner">
       </div>
 
-      <div class="">
+      <div>
         <?php include_once 'components/navigator.php'; ?>
         <div class="z-1 my-2">
           <?php include_once 'components/bannerCarousel.php'; ?>
@@ -279,15 +279,15 @@
 
           <div class="flex justify-between items-center">
             <div class="text-sm font-semibold">
-              Hiển thị 8 | 8 sản phẩm
+              Hiển thị 10 | 10 sản phẩm
             </div>
             <a href="#" class="p-2 text-white rounded-lg text-sm bg-gray-900 border border-white hover:text-black hover:bg-white hover:border-gray-900 transition-colors duration-300 ease-in-out">Xem tất cả sản phẩm >></a>
           </div>
         </div>
       </div>
 
-      <div class="sticky top-1/3 p-2 z-50 flex flex-end h-full ">
-        <img class="h-full" src="https://file.hstatic.net/200000722513/file/banner_sticky_-_b1400ceae_bv3186w_52b7a4750b8d4cd99ee990c07792d852.png" alt="Right banner">
+      <div class="sticky top-1/4 p-2 z-50 flex flex-end h-full ">
+        <img class="h-full" src="https://file.hstatic.net/200000837185/file/pc-gaming-xi3-gigabyte_5b49960ee2ee470c874a94c65d836278.jpg" alt="Right banner">
       </div>
 
     </div>
