@@ -1,3 +1,9 @@
-header, footer {
-    font-family: 'Comfortaa';
+header,
+footer {
+  font-family: "Comfortaa";
+}
+
+.navbarItem {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
