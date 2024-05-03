@@ -24,7 +24,7 @@
   <title>CochaGear</title>
 </head>
 
-<body>
+<body style="background-color: #ececec">
   <?php include_once 'components/header.php'; ?>
 
   <div class="max-w-screen-2xl mx-auto" style='font-family: Space Mono'>
@@ -64,15 +64,15 @@
               ];
               for ($i = 0; $i < count($list); $i++) {
                 echo '<div class="flex flex-col items-center justify-center text-center cursor-pointer hidden md:block mx-auto">
-                      <div class="flex items-center justify-center w-36 h-36 rounded-lg border mb-2 p-2">
+                      <div class="flex items-center justify-center w-36 h-36 shadow-md bg-white rounded-lg border mb-2 p-2">
                           <img class="w-28 h-28 object-cover transition-all duration-1000 ease-in-out hover:w-full hover:h-full" src="' . $list[$i]['image'] . '" alt="' . $list[$i]['name'] . '">
                       </div>' . $list[$i]['name'] . '</div>';
               }
           ?>
         </div>
 
-        <div class="rounded-lg p-4 mb-10">
-          <div class="flex justify-between mb-8">
+        <div class="rounded-lg p-4 mb-10 shadow-md bg-white">
+          <div class="flex justify-between mb-8 mt-5">
             <div class="font-bold text-xl mb-8 md:mb-0">
               | LAPTOP
             </div>
@@ -112,7 +112,7 @@
 
               for($i = 0; $i < count($listProduct); $i++) {
                 echo '<div class="border p-3 rounded-md hover:shadow-lg transition-shadow duration-200 ease-in-out cursor-pointer">
-                        <img class="w-full h-40 object-cover" src="' . $listProduct[$i]['image'] . '" alt="' . $listProduct[$i]['name'] . '">
+                        <img class="w-full h-40 object-cover mb-5" src="' . $listProduct[$i]['image'] . '" alt="' . $listProduct[$i]['name'] . '">
                         <div class="text-sm font-bold mb-5">' . $listProduct[$i]['name'] . '</div>
                         <div class="text-sm text-blue-700 font-bold mb-2">' . $listProduct[$i]['price'] . '</div>
 
@@ -170,7 +170,7 @@
             ?>
           </div>
 
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center mb-3">
             <div class="text-sm font-semibold">
               Hiển thị 10 | 10 sản phẩm
             </div>
@@ -179,8 +179,8 @@
 
         </div>
 
-        <div class="rounded-lg p-4 mb-10">
-          <div class="md:flex md:justify-between mb-8">
+        <div class="rounded-lg p-4 mb-10 shadow-md bg-white">
+          <div class="md:flex md:justify-between mb-8 mt-5">
             <div class="font-bold text-xl mb-8 md:mb-0">
               | MÀN HÌNH
             </div>
@@ -220,7 +220,7 @@
 
               for($i = 0; $i < count($listProduct); $i++) {
                 echo '<div class="border p-3 rounded-md hover:shadow-lg transition-shadow duration-200 ease-in-out cursor-pointer">
-                        <img class="w-full h-48 object-cover" src="' . $listProduct[$i]['image'] . '" alt="' . $listProduct[$i]['name'] . '">
+                        <img class="w-full h-48 object-cover mb-5" src="' . $listProduct[$i]['image'] . '" alt="' . $listProduct[$i]['name'] . '">
                         <div class="text-sm font-bold mb-5">' . $listProduct[$i]['name'] . '</div>
                         <div class="text-sm text-blue-700 font-bold mb-2">' . $listProduct[$i]['price'] . '</div>
 
@@ -278,7 +278,7 @@
             ?>
           </div>
 
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center mb-3">
             <div class="text-sm font-semibold">
               Hiển thị 10 | 10 sản phẩm
             </div>
