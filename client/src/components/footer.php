@@ -26,11 +26,11 @@
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
           <a href="#" class="flex items-center mb-4">
-            <span class="text-white self-center text-2xl font-semibold whitespace-nowrap">CoChaGear</span>
+            <span class="text-white self-center text-4xl font-medium whitespace-nowrap" style="font-family: 'Jersey 10'">CochaGear</span>
           </a>
           
           <div class="text-white text-sm mb-4 font-bold">
-            CoChaGear - Chuyên cung cấp Laptop Gaming & PC cao cấp chính hãng.
+            CochaGear - Chuyên cung cấp Laptop Gaming & PC cao cấp chính hãng.
           </div>
 
           <div class="text-white text-sm mb-4 flex gap-x-1">
