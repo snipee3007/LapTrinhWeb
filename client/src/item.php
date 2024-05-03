@@ -9,10 +9,6 @@
   <link rel="stylesheet" href="./css/custom.css">
   <link rel="icon" type="image/x-icon" href="images/logoBK.png">
 
-  <style>
-    [x-cloak] { display: none; }
-  </style>
-
   <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script> -->
   <script defer src="https://unpkg.com/alpinejs@3.13.10/dist/cdn.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
@@ -22,9 +18,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
   <title>CochaGear</title>
+
+  <style>
+    [x-cloak] { display: none; }
+  </style>
+  
 </head>
 
-<body>
+<body style="background-color: #ececec">
   <?php include_once 'components/header.php'; ?>
 
   <div class="max-w-screen-2xl mx-auto" style='font-family: Space Mono'>
@@ -47,8 +48,8 @@
           'price' => '22.990.000đ', 'brand' => 'Acer', 'type' => 'Laptop', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz',
           'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius dapibus leo, ac efficitur arcu sagittis sit amet. Maecenas interdum mi sed metus viverra semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut eros a risus blandit aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin aliquam mauris eu orci mattis, ac porttitor velit vehicula. Donec condimentum nibh vel felis fermentum, sed scelerisque risus vehicula. Maecenas ut vulputate quam. Pellentesque vel interdum nisl. Vivamus tempus sem pulvinar lorem fermentum, eget vehicula nisi porta. Pellentesque interdum scelerisque hendrerit. Suspendisse diam enim, pharetra a sollicitudin nec, porta a magna. Quisque vel finibus nunc. Nullam sit amet facilisis libero. In justo elit, tempor vel lorem eget, hendrerit sollicitudin orci.'];
           
-          echo '<div class="rounded-lg shadow-lg p-4 mb-10">
-                  <div class="grid grid-cols-7 gap-4">';
+          echo '<div class="rounded-lg shadow-lg p-4 mb-10 bg-white">
+                  <div class="grid grid-cols-7 gap-4 mt-5">';
           
           echo '<div class="col-span-3">
                   <img src="' . $product['image'] . '" alt="' . $product['name'] . '">
@@ -136,8 +137,8 @@
           
         ?>
 
-        <div class="rounded-lg p-4 mb-10">
-          <div class="font-bold text-xl mb-8">
+        <div class="rounded-lg p-4 mb-10 bg-white">
+          <div class="font-bold text-xl mb-8 mt-5">
             | SẢN PHẨM LIÊN QUAN
           </div>
 
@@ -216,7 +217,7 @@
             ?>
           </div>
 
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center mb-3">
             <div class="text-sm font-semibold">
               Hiển thị 10 | 10 sản phẩm
             </div>
