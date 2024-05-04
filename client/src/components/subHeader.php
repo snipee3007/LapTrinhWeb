@@ -21,7 +21,7 @@
 
         <div class="hidden lg:flex lg:gap-x-12">
         <a href="about.php" class="text-sm font-semibold leading-6 text-white">Giới thiệu</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-white">Tin tức</a>
+        <a href="news.php" class="text-sm font-semibold leading-6 text-white">Tin tức</a>
         <a href="about.php#store" class="text-sm font-semibold leading-6 text-white">Hệ thống cửa hàng</a>
         <a href="tel:000-000-0000" class="text-sm font-semibold leading-6 text-white">Liên hệ</a>
         </div>
@@ -47,7 +47,7 @@
             <div class="-my-6 divide-y divide-gray-500/10">
                 <div class="space-y-2 py-6">
                     <a href="about.php" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Giới thiệu</a>
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Tin tức</a>
+                    <a href="news.php" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Tin tức</a>
                     <a href="about.php#store" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Hệ thống cửa hàng</a>
                     <a href="tel:000-000-0000" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Liên hệ</a>
                 </div>

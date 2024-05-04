@@ -14,7 +14,8 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
   
@@ -30,14 +31,12 @@
 <body style="background-color: #ececec">
   <?php include_once 'components/header.php'; ?>
 
-  <div class="max-w-screen-2xl mx-auto" style='font-family: Space Mono'>
+  <div class="max-w-screen-2xl mx-auto" style='font-family: Victor Mono'>
     <div class="flex flex-row justify-between">
 
-      <div class="sticky top-1/4 p-2 z-48 flex flex-start h-full">
-        <img class="h-full" src="https://file.hstatic.net/200000837185/file/man-hinh-gigabyte-g24f-2_e355da64399f4c6da5f339a8f4432a07.jpg" alt="Left banner">
-      </div>
+      <?php include_once 'components/leftBanner.php'; ?>
 
-      <div>
+      <div class="max-w-5xl 2xl:max-w-6xl">
         <?php include_once 'components/navigator.php'; ?>
         <div class="z-1 my-2">
           <?php include_once 'components/bannerCarousel.php'; ?>
@@ -92,7 +91,7 @@
                   ['name' => 'Xem tất cả', 'link' => '#'],
                 ];
                 for ($i = 0; $i < count($buttonList); $i++) {
-                  echo '<a href="' . $buttonList[$i]['link'] . '" class="mr-3 p-2 rounded-lg text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
+                  echo '<a href="' . $buttonList[$i]['link'] . '" class="ml-3 p-2 rounded-lg text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
                 }
               ?>
             </div>
@@ -200,7 +199,7 @@
                   ['name' => 'Xem tất cả', 'link' => '#'],
                 ];
                 for ($i = 0; $i < count($buttonList); $i++) {
-                  echo '<a href="' . $buttonList[$i]['link'] . '" class="mr-3 p-2 rounded-lg text-xs md:text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
+                  echo '<a href="' . $buttonList[$i]['link'] . '" class="ml-3 p-2 rounded-lg text-xs md:text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
                 }
               ?>
             </div>
@@ -290,9 +289,7 @@
         </div>
       </div>
 
-      <div class="sticky top-1/4 p-2 z-48 flex flex-end h-full">
-        <img class="h-full" src="https://file.hstatic.net/200000837185/file/pc-gaming-xi3-gigabyte_5b49960ee2ee470c874a94c65d836278.jpg" alt="Right banner">
-      </div>
+      <?php include_once 'components/rightBanner.php'; ?>
 
     </div>
   </div>

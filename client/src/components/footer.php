@@ -83,7 +83,7 @@
                 <a href="#" class="hover:underline">Hướng dẫn thanh toán</a>
               </li>
               <li class="mb-4">
-                <a href="#" class="hover:underline">Tin tức</a>
+                <a href="news.php" class="hover:underline">Tin tức</a>
               </li>
             </ul>
           </div>

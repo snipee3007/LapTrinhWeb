@@ -18,15 +18,14 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
   <title>CochaGear | Giới thiệu</title>
 </head>
 
 <body>
     <?php include_once 'components/subHeader.php'; ?>
-    <div class="max-w-screen-2xl mx-auto" style='font-family: Space Mono'>
+    <div class="max-w-screen-2xl mx-auto" style='font-family: Victor Mono'>
         <div class="relative bg-gray-100 shadow-lg rounded-lg w-[1050px] mx-auto p-10 mt-[75px] mb-[125px]">
             <div class="grid grid-cols-2 gap-x-2">
                 <div>

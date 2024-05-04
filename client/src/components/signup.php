@@ -1,6 +1,6 @@
 <div class="relative z-50">
     <div class="flex items-center justify-center">
-        <form class="bg-white rounded-lg border p-5" style="font-family: Space Mono; width: 500px">
+        <form class="bg-white rounded-lg border p-5" style="font-family: Victor Mono; width: 500px">
 
             <div class="flex justify-between">
                 <div class="font-bold mb-5">

@@ -12,11 +12,14 @@
   <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script> -->
   <script defer src="https://unpkg.com/alpinejs@3.13.10/dist/cdn.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
+  <script defer src="./controller/likeDislikeController.js"></script>
   <title>CochaGear</title>
 
   <style>
@@ -28,15 +31,13 @@
 <body style="background-color: #ececec">
   <?php include_once 'components/header.php'; ?>
 
-  <div class="max-w-screen-2xl mx-auto" style='font-family: Space Mono'>
+  <div class="max-w-screen-2xl mx-auto" style='font-family: Victor Mono'>
     <div class="flex flex-row justify-between">
 
-      <div class="sticky top-1/4 p-2 z-48 flex flex-start h-full">
-        <img class="h-full" src="https://file.hstatic.net/200000837185/file/man-hinh-gigabyte-g24f-2_e355da64399f4c6da5f339a8f4432a07.jpg" alt="Left banner">
-      </div>
+      <?php include_once 'components/leftBanner.php'; ?>
 
-      <div>
-        <div class="text-sm text-gray-900 mb-5">
+      <div class="max-w-5xl 2xl:max-w-6xl">
+        <div class="text-sm text-gray-900 mb-5 mt-5">
             <a href="home.php" class="hover:text-blue-700">Trang chủ</a> > 
             <a href="#" class="hover:text-blue-700">Laptop</a> > 
             <a href="#" class="hover:text-blue-700">ACER</a> > 
@@ -121,7 +122,7 @@
                       </svg>
                     </span>' . $product['vga'] . '
                   </div>
-
+ 
                   <div class="text-sm flex mb-2"> 
                     <span class="mr-1">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentcolor" class="w-4 h-4 mb-2">
@@ -137,7 +138,7 @@
           
         ?>
 
-        <div class="rounded-lg p-4 mb-10 bg-white">
+        <div class="rounded-lg shadow-lg p-4 mb-10 bg-white">
           <div class="font-bold text-xl mb-8 mt-5">
             | SẢN PHẨM LIÊN QUAN
           </div>
@@ -224,11 +225,91 @@
             <a href="#" class="p-2 text-white rounded-lg text-sm bg-gray-900 border border-white hover:text-black hover:bg-white hover:border-gray-900 transition-colors duration-300 ease-in-out">Xem tất cả sản phẩm >></a>
           </div>
         </div>
+
+        <div class="rounded-lg shadow-lg p-4 mb-10 bg-white">
+          <?php
+            $comments = [
+              ['name' => 'FazeCT', 'avatar' => 'https://avatars.githubusercontent.com/FazeCT', 'date' => '01-05-2024', 'star' => 5, 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed ullamcorper velit. Praesent quis scelerisque quam, eu imperdiet lorem. Donec vestibulum ante vel felis interdum, eget auctor tellus maximus. Nulla vel turpis vitae libero tincidunt volutpat.'],
+              ['name' => 'Snipee', 'avatar' => 'https://avatars.githubusercontent.com/snipee3007', 'date' => '02-05-2024', 'star' => 0, 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed ullamcorper velit. Praesent quis scelerisque quam, eu imperdiet lorem. Donec vestibulum ante vel felis interdum, eget auctor tellus maximus. Nulla vel turpis vitae libero tincidunt volutpat.'],
+              ['name' => 'Onirique', 'avatar' => 'https://avatars.githubusercontent.com/junvalentine', 'date' => '03-05-2024', 'star' => 4, 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed ullamcorper velit. Praesent quis scelerisque quam, eu imperdiet lorem. Donec vestibulum ante vel felis interdum, eget auctor tellus maximus. Nulla vel turpis vitae libero tincidunt volutpat.']
+            ];
+            echo '<div class="font-bold text-xl mb-5 mt-5">
+              | ĐÁNH GIÁ - NHẬN XÉT
+              </div>';
+
+            echo '<div class="font-bold mb-5 text-sm">'. count($comments) .' lượt đánh giá</div>';
+
+            echo '<div class="grid grid-cols-18 gap-2 mb-8">
+                      <div class="col-span-1">
+                          <div class="rounded-full w-12 h-12 overflow-hidden border-2 border-gray">
+                              <img src="' . $comments[0]['avatar'] . '" alt="' . $comments[0]['name'] . '" class="object-cover w-full h-full">
+                          </div>
+                      </div>
+
+                      <div class="col-span-17">
+                        <div class="text-sm font-bold mb-2">'. $comments[0]['name'] .'</div>
+                        <form class="mr-5">
+                          <div id="contenteditable-root" contenteditable="true" dir="auto" class="p-0 w-full text-sm" style="resize: none; border: none; border-bottom: 1px solid;" aria-label="Viết đánh giá..."></div>
+                        </form>
+                      </div>
+                  </div>';
+
+            for($i = 0; $i < count($comments); $i++) {
+                echo '<div class="grid grid-cols-18 gap-2 mb-8">
+                      <div class="col-span-1">
+                          <div class="rounded-full w-12 h-12 overflow-hidden border-2 border-gray">
+                              <img src="' . $comments[$i]['avatar'] . '" alt="' . $comments[$i]['name'] . '" class="object-cover w-full h-full">
+                          </div>
+                      </div>
+
+                      <div class="col-span-17">
+                        <div class="text-sm font-bold mb-1">'. $comments[$i]['name'] .' | Đã đăng ngày '. $comments[$i]['date'] .'</div>
+                        <div class="mb-3 flex">
+                          <div class="text-sm mr-2">Đã đánh giá</div>';
+                
+                for($j = 0; $j < $comments[$i]['star']; $j++) {
+                  echo '<svg class="w-4 h-4 text-yellow-500 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                        </svg>';
+                }
+
+                for($j = 0; $j < 5 - $comments[$i]['star']; $j++) {
+                  echo '<svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-width="2" d="M11.083 5.104c.35-.8 1.485-.8 1.834 0l1.752 4.022a1 1 0 0 0 .84.597l4.463.342c.9.069 1.255 1.2.556 1.771l-3.33 2.723a1 1 0 0 0-.337 1.016l1.03 4.119c.214.858-.71 1.552-1.474 1.106l-3.913-2.281a1 1 0 0 0-1.008 0L7.583 20.8c-.764.446-1.688-.248-1.474-1.106l1.03-4.119A1 1 0 0 0 6.8 14.56l-3.33-2.723c-.698-.571-.342-1.702.557-1.771l4.462-.342a1 1 0 0 0 .84-.597l1.753-4.022Z"/>
+                        </svg>';
+                }
+                           
+                echo '   </div>
+                        <div class="text-sm mb-2 mr-5">' .$comments[$i]['content']. '</div>
+                        <div class="flex">
+                          <div id="like-container'.$i.'">
+                            <svg id="like'.$i.'" class="w-6 h-6 mr-5 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11c.889-.086 1.416-.543 2.156-1.057a22.323 22.323 0 0 0 3.958-5.084 1.6 1.6 0 0 1 .582-.628 1.549 1.549 0 0 1 1.466-.087c.205.095.388.233.537.406a1.64 1.64 0 0 1 .384 1.279l-1.388 4.114M7 11H4v6.5A1.5 1.5 0 0 0 5.5 19v0A1.5 1.5 0 0 0 7 17.5V11Zm6.5-1h4.915c.286 0 .372.014.626.15.254.135.472.332.637.572a1.874 1.874 0 0 1 .215 1.673l-2.098 6.4C17.538 19.52 17.368 20 16.12 20c-2.303 0-4.79-.943-6.67-1.475"/>
+                            </svg>
+
+                            <svg id="unlike'.$i.'" class="hidden w-6 h-6 mr-5 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                              <path fill-rule="evenodd" d="M15.03 9.684h3.965c.322 0 .64.08.925.232.286.153.532.374.717.645a2.109 2.109 0 0 1 .242 1.883l-2.36 7.201c-.288.814-.48 1.355-1.884 1.355-2.072 0-4.276-.677-6.157-1.256-.472-.145-.924-.284-1.348-.404h-.115V9.478a25.485 25.485 0 0 0 4.238-5.514 1.8 1.8 0 0 1 .901-.83 1.74 1.74 0 0 1 1.21-.048c.396.13.736.397.96.757.225.36.32.788.269 1.211l-1.562 4.63ZM4.177 10H7v8a2 2 0 1 1-4 0v-6.823C3 10.527 3.527 10 4.176 10Z" clip-rule="evenodd"/>
+                            </svg>
+                          </div>
+
+                          <div id="dislike-container'.$i.'">
+                            <svg id="dislike'.$i.'" class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13c-.889.086-1.416.543-2.156 1.057a22.322 22.322 0 0 0-3.958 5.084 1.6 1.6 0 0 1-.582.628 1.549 1.549 0 0 1-1.466.087 1.587 1.587 0 0 1-.537-.406 1.666 1.666 0 0 1-.384-1.279l1.389-4.114M17 13h3V6.5A1.5 1.5 0 0 0 18.5 5v0A1.5 1.5 0 0 0 17 6.5V13Zm-6.5 1H5.585c-.286 0-.372-.014-.626-.15a1.797 1.797 0 0 1-.637-.572 1.873 1.873 0 0 1-.215-1.673l2.098-6.4C6.462 4.48 6.632 4 7.88 4c2.302 0 4.79.943 6.67 1.475"/>
+                            </svg>
+                            <svg id="undislike'.$i.'" class="w-6 h-6 text-gray-800 hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                              <path fill-rule="evenodd" d="M8.97 14.316H5.004c-.322 0-.64-.08-.925-.232a2.022 2.022 0 0 1-.717-.645 2.108 2.108 0 0 1-.242-1.883l2.36-7.201C5.769 3.54 5.96 3 7.365 3c2.072 0 4.276.678 6.156 1.256.473.145.925.284 1.35.404h.114v9.862a25.485 25.485 0 0 0-4.238 5.514c-.197.376-.516.67-.901.83a1.74 1.74 0 0 1-1.21.048 1.79 1.79 0 0 1-.96-.757 1.867 1.867 0 0 1-.269-1.211l1.562-4.63ZM19.822 14H17V6a2 2 0 1 1 4 0v6.823c0 .65-.527 1.177-1.177 1.177Z" clip-rule="evenodd"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>';
+            }
+           
+          ?>
+        </div>
       </div>
 
-      <div class="sticky top-1/4 p-2 z-48 flex flex-end h-full">
-        <img class="h-full" src="https://file.hstatic.net/200000837185/file/pc-gaming-xi3-gigabyte_5b49960ee2ee470c874a94c65d836278.jpg" alt="Right banner">
-      </div>
+      <?php include_once 'components/rightBanner.php'; ?>
 
     </div>
   </div>
