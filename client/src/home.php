@@ -286,6 +286,7 @@
                   }
                   $data['Price'] = (int)($data['Price'] / 1000);
                 }
+                $Price = $Price . " VND";
                 echo '<div class="border p-3 rounded-md hover:shadow-lg transition-shadow duration-200 ease-in-out cursor-pointer">
                         <img class="w-full h-40 object-cover mb-5" src="' . $linkImage['Image'] . '" alt="' . $data['Name'] . '">
                         <div class="text-sm font-bold mb-5 h-20">' . $data['Name'] . '</div>
