@@ -99,7 +99,7 @@
 
           <div class="grid grid-cols-5 gap-4 mb-5">
             <?php
-              include_once('./../../connect_db.php');
+              include_once('./../../server/connect_db.php');
               $query = 'SELECT * FROM products WHERE Category = "Laptop" ORDER BY Price DESC' ;
               $rawData = mysqli_query($con, $query);
               $countLaptop = 0;
@@ -127,7 +127,7 @@
                       $ram = explode(":", $tagsString[$i])[1];
                       break;
                     default:
-                      continue;
+                      break;
                     }
                 };
                 $Price = "";
@@ -243,7 +243,7 @@
 
           <div class="grid grid-cols-5 gap-4 mb-5">
             <?php
-              include_once('./../../connect_db.php');
+              include_once('./../../server/connect_db.php');
               $query = 'SELECT * FROM products WHERE Category = "Screen" ORDER BY Price DESC';
               $rawData = mysqli_query($con, $query);
               $countScreen = 0;
@@ -268,7 +268,7 @@
                       $lcd = explode(":", $tagsString[$i])[1];
                       break;
                     default:
-                      continue;
+                      break;
                     }
                 };
                 $Price = "";
@@ -329,8 +329,6 @@
                         </div>
                       </div>';
               }
-              
-                
               
             ?>
           </div>

@@ -20,10 +20,10 @@
         </div>
 
         <div class="hidden lg:flex lg:gap-x-12">
-        <a href="about.php" class="text-sm font-semibold leading-6 text-white">Giới thiệu</a>
-        <a href="news.php" class="text-sm font-semibold leading-6 text-white">Tin tức</a>
-        <a href="about.php#store" class="text-sm font-semibold leading-6 text-white">Hệ thống cửa hàng</a>
-        <a href="tel:000-000-0000" class="text-sm font-semibold leading-6 text-white">Liên hệ</a>
+        <a href="about.php" class="font-bold leading-6 text-white">Giới thiệu</a>
+        <a href="news.php" class="font-bold leading-6 text-white">Tin tức</a>
+        <a href="about.php#store" class="font-bold leading-6 text-white">Hệ thống cửa hàng</a>
+        <a href="tel:000-000-0000" class="font-bold leading-6 text-white">Liên hệ</a>
         </div>
     </nav>
 

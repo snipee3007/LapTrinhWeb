@@ -1,3 +1,30 @@
+<?php 
+
+$product = ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg',
+'price' => '22.990.000đ', 'brand' => 'Acer', 'type' => 'Laptop', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz',
+'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius dapibus leo, ac efficitur arcu sagittis sit amet. Maecenas interdum mi sed metus viverra semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut eros a risus blandit aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin aliquam mauris eu orci mattis, ac porttitor velit vehicula. Donec condimentum nibh vel felis fermentum, sed scelerisque risus vehicula. Maecenas ut vulputate quam. Pellentesque vel interdum nisl. Vivamus tempus sem pulvinar lorem fermentum, eget vehicula nisi porta. Pellentesque interdum scelerisque hendrerit. Suspendisse diam enim, pharetra a sollicitudin nec, porta a magna. Quisque vel finibus nunc. Nullam sit amet facilisis libero. In justo elit, tempor vel lorem eget, hendrerit sollicitudin orci.'];
+
+$relatedProduct = [
+  ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
+  ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
+  ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
+  ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
+  ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
+  ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
+  ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
+  ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
+  ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
+  ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
+];
+
+$comments = [
+  ['name' => 'FazeCT', 'avatar' => 'https://avatars.githubusercontent.com/FazeCT', 'date' => '01-05-2024', 'star' => 5, 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed ullamcorper velit. Praesent quis scelerisque quam, eu imperdiet lorem. Donec vestibulum ante vel felis interdum, eget auctor tellus maximus. Nulla vel turpis vitae libero tincidunt volutpat.'],
+  ['name' => 'Snipee', 'avatar' => 'https://avatars.githubusercontent.com/snipee3007', 'date' => '02-05-2024', 'star' => 0, 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed ullamcorper velit. Praesent quis scelerisque quam, eu imperdiet lorem. Donec vestibulum ante vel felis interdum, eget auctor tellus maximus. Nulla vel turpis vitae libero tincidunt volutpat.'],
+  ['name' => 'Onirique', 'avatar' => 'https://avatars.githubusercontent.com/junvalentine', 'date' => '03-05-2024', 'star' => 4, 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed ullamcorper velit. Praesent quis scelerisque quam, eu imperdiet lorem. Donec vestibulum ante vel felis interdum, eget auctor tellus maximus. Nulla vel turpis vitae libero tincidunt volutpat.']
+];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,10 +74,6 @@
         </div>
 
         <?php 
-          $product = ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg',
-          'price' => '22.990.000đ', 'brand' => 'Acer', 'type' => 'Laptop', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz',
-          'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius dapibus leo, ac efficitur arcu sagittis sit amet. Maecenas interdum mi sed metus viverra semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut eros a risus blandit aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin aliquam mauris eu orci mattis, ac porttitor velit vehicula. Donec condimentum nibh vel felis fermentum, sed scelerisque risus vehicula. Maecenas ut vulputate quam. Pellentesque vel interdum nisl. Vivamus tempus sem pulvinar lorem fermentum, eget vehicula nisi porta. Pellentesque interdum scelerisque hendrerit. Suspendisse diam enim, pharetra a sollicitudin nec, porta a magna. Quisque vel finibus nunc. Nullam sit amet facilisis libero. In justo elit, tempor vel lorem eget, hendrerit sollicitudin orci.'];
-          
           echo '<div class="rounded-lg shadow-lg p-4 mb-10 bg-white">
                   <div class="grid grid-cols-7 gap-4 mt-5">';
           
@@ -70,7 +93,7 @@
                     <button x-on:click="quantity > 1 ? quantity-- : quantity" class="minus-btn" type="button" name="button">
                       -
                     </button>
-                    <input class="w-12 text-center" x-bind:value="quantity" type="text" name="name" style="border: none" readonly>
+                    <input class="text-sm w-12 text-center" x-bind:value="quantity" type="text" name="name" style="border: none" readonly>
                     <button x-on:click="quantity++" class="plus-btn" type="button" name="button">
                       +
                     </button>
@@ -147,24 +170,11 @@
 
           <div class="grid grid-cols-5 gap-4 mb-5">
             <?php
-              $listProduct= [
-                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
-                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
-                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
-                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
-                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
-                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
-                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
-                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
-                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
-                ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
-              ];
-
-              for($i = 0; $i < count($listProduct); $i++) {
+              for($i = 0; $i < count($relatedProduct); $i++) {
                 echo '<div class="border p-3 rounded-md hover:shadow-lg transition-shadow duration-200 ease-in-out cursor-pointer">
-                        <img class="w-full h-40 object-cover" src="' . $listProduct[$i]['image'] . '" alt="' . $listProduct[$i]['name'] . '">
-                        <div class="text-sm font-bold mb-5">' . $listProduct[$i]['name'] . '</div>
-                        <div class="text-sm text-blue-700 font-bold mb-2">' . $listProduct[$i]['price'] . '</div>
+                        <img class="w-full h-40 object-cover" src="' . $relatedProduct[$i]['image'] . '" alt="' . $relatedProduct[$i]['name'] . '">
+                        <div class="text-sm font-bold mb-5">' . $relatedProduct[$i]['name'] . '</div>
+                        <div class="text-sm text-blue-700 font-bold mb-2">' . $relatedProduct[$i]['price'] . '</div>
 
                         <div class="flex flex-col"> 
                           <div class="text-xs flex"> 
@@ -190,13 +200,13 @@
                                 c-6.733,0-10.224-3.989-10.224-10.972V68.151h6.857v33.661c0,3.116,1.371,4.238,3.553,4.238c2.183,0,3.554-1.122,3.554-4.238V68.151
                                 z"/>
                               </svg>
-                            </span>' . $listProduct[$i]['chip'] . '
+                            </span>' . $relatedProduct[$i]['chip'] . '
                           </div>
 
                           <div class="text-xs flex"> 
                             <span class="mr-1">
                               <svg class="w-4 h-4 mb-2" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><path class="cls-1" d="M21.55,11.05a1,1,0,0,0,.95.95v6.68H1.5V12a1,1,0,0,0,0-1.91V5.32h21v4.77A1,1,0,0,0,21.55,11.05Z"/><rect class="cls-1" x="6.27" y="9.14" width="3.82" height="3.82"/><rect class="cls-1" x="10.09" y="9.14" width="3.82" height="3.82"/><rect class="cls-1" x="13.91" y="9.14" width="3.82" height="3.82"/><line class="cls-1" x1="4.36" y1="15.82" x2="4.36" y2="18.68"/><line class="cls-1" x1="8.18" y1="15.82" x2="8.18" y2="18.68"/><line class="cls-1" x1="12" y1="15.82" x2="12" y2="18.68"/><line class="cls-1" x1="15.82" y1="15.82" x2="15.82" y2="18.68"/><line class="cls-1" x1="19.64" y1="15.82" x2="19.64" y2="18.68"/></svg>
-                            </span>' . $listProduct[$i]['ram'] . '
+                            </span>' . $relatedProduct[$i]['ram'] . '
                           </div>
 
                           <div class="text-xs flex"> 
@@ -204,7 +214,7 @@
                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentcolor" class="w-4 h-4 mb-2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
                               </svg>
-                            </span>' . $listProduct[$i]['vga'] . '
+                            </span>' . $relatedProduct[$i]['vga'] . '
                           </div>
 
                           <div class="text-xs flex"> 
@@ -212,7 +222,7 @@
                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentcolor" class="w-4 h-4 mb-2">
                                 <path stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"/>
                               </svg>
-                            </span>' . $listProduct[$i]['screen'] . '
+                            </span>' . $relatedProduct[$i]['screen'] . '
                           </div>
                         </div>
                       </div>';
@@ -222,19 +232,14 @@
 
           <div class="flex justify-between items-center mb-3">
             <div class="text-sm font-semibold">
-              Hiển thị 10 | 10 sản phẩm
+            <?php echo 'Hiển thị '. count($relatedProduct) .' sản phẩm'; ?>
             </div>
-            <a href="#" class="p-2 text-white rounded-lg text-sm bg-gray-900 border border-white hover:text-black hover:bg-white hover:border-gray-900 transition-colors duration-300 ease-in-out">Xem tất cả sản phẩm >></a>
+            <a href="#" class="p-2 text-white rounded-lg text-sm bg-gray-900 border border-white hover:text-black hover:bg-white hover:border-gray-900 transition-colors duration-300 ease-in-out">Xem thêm sản phẩm >></a>
           </div>
         </div>
 
         <div class="rounded-lg shadow-lg p-4 mb-10 bg-white">
           <?php
-            $comments = [
-              ['name' => 'FazeCT', 'avatar' => 'https://avatars.githubusercontent.com/FazeCT', 'date' => '01-05-2024', 'star' => 5, 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed ullamcorper velit. Praesent quis scelerisque quam, eu imperdiet lorem. Donec vestibulum ante vel felis interdum, eget auctor tellus maximus. Nulla vel turpis vitae libero tincidunt volutpat.'],
-              ['name' => 'Snipee', 'avatar' => 'https://avatars.githubusercontent.com/snipee3007', 'date' => '02-05-2024', 'star' => 0, 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed ullamcorper velit. Praesent quis scelerisque quam, eu imperdiet lorem. Donec vestibulum ante vel felis interdum, eget auctor tellus maximus. Nulla vel turpis vitae libero tincidunt volutpat.'],
-              ['name' => 'Onirique', 'avatar' => 'https://avatars.githubusercontent.com/junvalentine', 'date' => '03-05-2024', 'star' => 4, 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed ullamcorper velit. Praesent quis scelerisque quam, eu imperdiet lorem. Donec vestibulum ante vel felis interdum, eget auctor tellus maximus. Nulla vel turpis vitae libero tincidunt volutpat.']
-            ];
             echo '<div class="font-bold text-xl mb-5 mt-5">
               | ĐÁNH GIÁ - NHẬN XÉT
               </div>';
@@ -251,7 +256,7 @@
                       <div class="col-span-17">
                         <div class="text-sm font-bold mb-2">'. $comments[0]['name'] .'</div>
                         <form class="mr-5">
-                          <div id="contenteditable-root" contenteditable="true" dir="auto" class="p-0 w-full text-sm" style="resize: none; border: none; border-bottom: 1px solid;" aria-label="Viết đánh giá..."></div>
+                          <textarea rows="1" class="p-0 w-full text-sm" name="comment" style="border: none; border-bottom: 1px solid;" placeholder="Viết đánh giá..."></textarea>
                         </form>
                       </div>
                   </div>';

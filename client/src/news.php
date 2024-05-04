@@ -1,3 +1,27 @@
+<?php
+  $list = [
+    ['name' => 'PC', 'image' => 'https://file.hstatic.net/200000837185/file/pc_6a03da302fb245b8b688d9182829c877_compact.png'],
+    ['name' => 'Laptop', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg'],
+    ['name' => 'Màn hình', 'image' => '	https://file.hstatic.net/200000837185/file/man_hinh_38c9e1c109824ded9015de333bc2c198_compact.png'],
+    ['name' => 'Linh kiện', 'image' => 'https://file.hstatic.net/200000837185/file/ram_92b2c0d8edd64777b3e8133bcf4f30bd_compact.png'],
+    ['name' => 'Chuột', 'image' => 'https://product.hstatic.net/200000837185/product/chuot-gaming-khong-day-razer-viper-v2-pro_130b1fe900fb434299c57228b6c12ea6_grande.jpg'],
+    ['name' => 'Bàn phím', 'image' => '//file.hstatic.net/200000837185/file/gaming_gear_b4b15044a0dd49febc5e6f818667fd39_compact.png'],
+  ];
+
+  $postList = [
+    ['title' => 'Cherry Switch Là Gì? Ưu Điểm Và Nhược Điểm Nổi Bật', 'image' => 'images/banner2.png', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla.', 'date' => '01-05-2024', 'author' => 'Ittoday', 'link' => '#'],
+    ['title' => 'Cherry Switch Là Gì? Ưu Điểm Và Nhược Điểm Nổi Bật', 'image' => 'images/banner2.png', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla.', 'date' => '01-05-2024', 'author' => 'Ittoday', 'link' => '#'],
+    ['title' => 'Cherry Switch Là Gì? Ưu Điểm Và Nhược Điểm Nổi Bật', 'image' => 'images/banner2.png', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla.', 'date' => '01-05-2024', 'author' => 'Ittoday', 'link' => '#'],
+    ['title' => 'Cherry Switch Là Gì? Ưu Điểm Và Nhược Điểm Nổi Bật', 'image' => 'images/banner2.png', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla.', 'date' => '01-05-2024', 'author' => 'Ittoday', 'link' => '#'],
+    ['title' => 'Cherry Switch Là Gì? Ưu Điểm Và Nhược Điểm Nổi Bật', 'image' => 'images/banner2.png', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla.', 'date' => '01-05-2024', 'author' => 'Ittoday', 'link' => '#'],
+    ['title' => 'Cherry Switch Là Gì? Ưu Điểm Và Nhược Điểm Nổi Bật', 'image' => 'images/banner2.png', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla.', 'date' => '01-05-2024', 'author' => 'Ittoday', 'link' => '#'],
+    ['title' => 'Cherry Switch Là Gì? Ưu Điểm Và Nhược Điểm Nổi Bật', 'image' => 'images/banner2.png', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla.', 'date' => '01-05-2024', 'author' => 'Ittoday', 'link' => '#'],
+    ['title' => 'Cherry Switch Là Gì? Ưu Điểm Và Nhược Điểm Nổi Bật', 'image' => 'images/banner2.png', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla.', 'date' => '01-05-2024', 'author' => 'Ittoday', 'link' => '#'],
+    ['title' => 'Cherry Switch Là Gì? Ưu Điểm Và Nhược Điểm Nổi Bật', 'image' => 'images/banner2.png', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla.', 'date' => '01-05-2024', 'author' => 'Ittoday', 'link' => '#']
+  ];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,14 +75,6 @@
                         <div class="font-bold mb-5">| Sản phẩm nổi bật</div>
                         <div class="grid grid-cols-2 gap-4">
                           <?php 
-                              $list = [
-                                  ['name' => 'PC', 'image' => 'https://file.hstatic.net/200000837185/file/pc_6a03da302fb245b8b688d9182829c877_compact.png'],
-                                  ['name' => 'Laptop', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg'],
-                                  ['name' => 'Màn hình', 'image' => '	https://file.hstatic.net/200000837185/file/man_hinh_38c9e1c109824ded9015de333bc2c198_compact.png'],
-                                  ['name' => 'Linh kiện', 'image' => 'https://file.hstatic.net/200000837185/file/ram_92b2c0d8edd64777b3e8133bcf4f30bd_compact.png'],
-                                  ['name' => 'Chuột', 'image' => 'https://product.hstatic.net/200000837185/product/chuot-gaming-khong-day-razer-viper-v2-pro_130b1fe900fb434299c57228b6c12ea6_grande.jpg'],
-                                  ['name' => 'Bàn phím', 'image' => '//file.hstatic.net/200000837185/file/gaming_gear_b4b15044a0dd49febc5e6f818667fd39_compact.png'],
-                              ];
                               for ($i = 0; $i < count($list); $i++) {
                                 echo '<div class="flex flex-col text-sm items-center justify-center text-center cursor-pointer">
                                       <div class="flex items-center justify-center w-24 h-24 shadow-md bg-white rounded-lg border mb-2 p-2">
@@ -74,16 +90,7 @@
                     <div class="rounded-lg shadow-md bg-white p-4">
                       <div class="font-bold text-xl mb-5">| Tất cả bài viết</div>
                       <div class="grid grid-cols-3 gap-4">
-                        <?php 
-                          $postList = ['title' => 'Cherry Switch Là Gì? Ưu Điểm Và Nhược Điểm Nổi Bật', 'image' => 'images/banner2.png', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam cursus dapibus sapien in fringilla. Cras ac egestas nibh. Quisque vulputate vestibulum fringilla.', 'date' => '01-05-2024', 'author' => 'Ittoday', 'link' => '#'];
-                          $finalPostList = [];
-
-                          for ($i = 0; $i < 9; $i++) {
-                              $finalPostList[] = $postList;
-                          }
-                          
-                          $postList = $finalPostList;
-                                                    
+                        <?php                                   
                           for($i = 0; $i < count($postList); $i++) {
                             echo '
                               <a href="post.php">
