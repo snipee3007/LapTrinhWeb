@@ -20,6 +20,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
 
   <script defer src="./controller/likeDislikeController.js"></script>
+  <script defer src="./controller/textareaController.js"></script>
+
   <title>CochaGear</title>
 
   <style>
