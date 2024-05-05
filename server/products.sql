@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2024 at 12:35 AM
+-- Generation Time: May 06, 2024 at 12:55 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -134,7 +134,12 @@ INSERT INTO `products` (`ID_Product`, `Name`, `Category`, `Brand`, `Price`, `Des
 (7, 'Màn hình cong GIGABYTE G34WQC A 34\" 2K 144Hz HDR400 chuyên game', 'Screen', 'GIGABYTE', 8590000, 'This is a description', 'hl_lcd:34 inch;hl_res:2K (3440 x 1440);hl_hz:144Hz;hl_panel:VA'),
 (8, 'Màn hình cong GIGABYTE GS27FC 27\" 180Hz chuyên game', 'Screen', 'GIGABYTE', 3990000, 'This is a description', 'hl_res:Full HD (1920 x 1080);hl_lcd:27 inch;hl_hz:180Hz;hl_panel:VA'),
 (9, 'Màn hình cong Asus ROG Strix XG49VQ 49\" VA 144Hz', 'Screen', 'ASUS', 24990000, 'This is a description', 'hl_res:Full HD (3840 x 1080);hl_hz:144Hz;hl_lcd:49 inch;hl_panel:VA'),
-(10, 'Màn hình MSI PRO MP275 27\" IPS 100Hz', 'Screen', 'MSI', 2890000, 'This is a description', 'hl_hz:100Hz;hl_res:Full HD (1920 x 1080);hl_panel:IPS;hl_lcd:27 inch');
+(10, 'Màn hình MSI PRO MP275 27\" IPS 100Hz', 'Screen', 'MSI', 2890000, 'This is a description', 'hl_hz:100Hz;hl_res:Full HD (1920 x 1080);hl_panel:IPS;hl_lcd:27 inch'),
+(11, 'Laptop gaming Gigabyte G7 KE 52VN263SH', 'Laptop', 'GIGABYTE', 27490000, 'This is a description', 'hl_hz:144 Hz;hl_ram:8 GB;hl_cpu:i5-12500H;hl_ssd:512 GB;hl_vga:RTX 3060;hl_lcd:15.6 inch FHD'),
+(12, 'Laptop Acer Aspire 5 A515 58P 71EJ', 'Laptop', 'ACER', 18990000, 'This is a description', 'hl_ssd:1 TB;hl_cpu:i7-1335U;hl_vga:Onboard;hl_lcd:15.6 inch FHD;hl_ram:16 GB'),
+(13, 'Laptop Dell Inspiron T7430 N7430I58W1 Silver', 'Laptop', 'DELL', 22990000, 'This is a description', 'hl_cpu:i5-1335U;hl_vga:Onboard;hl_ssd:512 GB;hl_ram:8 GB;hl_lcd:14 inch FHD+'),
+(14, 'Laptop Dell Vostro 3530 V5I5267W1 Gray', 'Laptop', 'DELL', 15490000, 'This is a description', 'hl_cpu:i5-1335U;hl_hz:120 Hz;hl_ssd:256 GB;hl_ram:8 GB;hl_lcd:15.6 inch FHD IPS;hl_vga:Onboard'),
+(15, 'Laptop gaming Acer Aspire 7 A715 76G 5806', 'Laptop', 'ACER', 20990000, 'This is a description', 'hl_ssd:512 GB;hl_hz:144 Hz;hl_vga:RTX 3050;hl_cpu:i5-12450H;hl_ram:16 GB;hl_lcd:15.6 inch FHD');
 
 -- --------------------------------------------------------
 
@@ -232,7 +237,49 @@ INSERT INTO `products' images` (`ID_Product`, `Image`) VALUES
 (10, 'https://product.hstatic.net/200000722513/product/1024__2__27c1d0bdc83c44bd83865fb9b8c8f253.png'),
 (10, 'https://product.hstatic.net/200000722513/product/product_1693980419f7f6800b10eacdfbb16cab889c814ba0_c60460cafcb545239e377803b4213a6c.png'),
 (10, 'https://product.hstatic.net/200000722513/product/1024__4__bee0ed68cf83472caf24bc4aaa41b167.png'),
-(10, 'https://product.hstatic.net/200000722513/product/1024__3__58d9c7410135489ca44e24aef772002b.png');
+(10, 'https://product.hstatic.net/200000722513/product/1024__3__58d9c7410135489ca44e24aef772002b.png'),
+(11, 'https://product.hstatic.net/200000722513/product/top-gaming-gigabyte-g7-ke-52vn263sh-1_534bcc4059944bd9941c419281e7b23c_acb1cac548584041acd0c1176050b547.png'),
+(11, 'https://product.hstatic.net/200000722513/product/top-gaming-gigabyte-g7-ke-52vn263sh-2_09b7c4cb700d4a2f99c0bab98688752d_b5bbb5bf7a0846d5b1bb99fdd0384d33.png'),
+(11, 'https://product.hstatic.net/200000722513/product/top-gaming-gigabyte-g7-ke-52vn263sh-3_84b7f81803ce4c9586b29990b75921c7_b258f25e51ae48aa861e61a480d040bd.png'),
+(11, 'https://product.hstatic.net/200000722513/product/top-gaming-gigabyte-g7-ke-52vn263sh-4_297069bf67f94580aa43807d0570fc46_dd9a432e53bf4ac9a4e6cbe36ac3d555.png'),
+(11, 'https://product.hstatic.net/200000722513/product/top-gaming-gigabyte-g7-ke-52vn263sh-5_1702ece873ab44ee9b8ebd57ffb372ca_8d6cb246ecea4f68af73372fc02dbba5.png'),
+(12, 'https://product.hstatic.net/200000722513/product/gearvn-laptop-acer-aspire-5-a515-58p-71ej-1_e9e697ec1a934534891d0129e495e9b9.png'),
+(12, 'https://product.hstatic.net/200000722513/product/gearvn-laptop-acer-aspire-5-a515-58p-71ej-2_cf332b9be35e4974bad323aac17a4f9a.png'),
+(12, 'https://product.hstatic.net/200000722513/product/gearvn-laptop-acer-aspire-5-a515-58p-71ej-3_14d9c51b2e4545abb018edf17604da04.png'),
+(12, 'https://product.hstatic.net/200000722513/product/gearvn-laptop-acer-aspire-5-a515-58p-71ej-4_256cd42ce244420c9f774e99f70859f4.png'),
+(12, 'https://product.hstatic.net/200000722513/product/gearvn-laptop-acer-aspire-5-a515-58p-71ej-5_0bf9279d69794995bcbe9bd6bfce91ab.png'),
+(12, 'https://product.hstatic.net/200000722513/product/gearvn-laptop-acer-aspire-5-a515-58p-71ej-6_e6c5d104890e45978e7d6f99e2cbf5c5.png'),
+(12, 'https://product.hstatic.net/200000722513/product/gearvn-laptop-acer-aspire-5-a515-58p-71ej-7_1fef261e1daf469cb1caddf1e6ad569b.png'),
+(12, 'https://product.hstatic.net/200000722513/product/gearvn-laptop-acer-aspire-5-a515-58p-71ej-8_6f691d481e4449579a94d20120718605.png'),
+(12, 'https://product.hstatic.net/200000722513/product/gearvn-laptop-acer-aspire-5-a515-58p-71ej-9_545b6ee0867244888e3a6b66a9d159e7.png'),
+(13, 'https://product.hstatic.net/200000722513/product/n7430i58w1_97351009345a4702bf2d4edbf560bc3f.png'),
+(13, 'https://product.hstatic.net/200000722513/product/notebook-inspiron-14-7430-silver-fpr-gallery-2_775d712dd05041e7b1cdabfcee5579ac.png'),
+(13, 'https://product.hstatic.net/200000722513/product/notebook-inspiron-14-7430-silver-fpr-gallery-5_a67556c51bef417db7384474189ff584.png'),
+(13, 'https://product.hstatic.net/200000722513/product/notebook-inspiron-14-7430-silver-gallery-1_cee09245e30b468683f9310775b3b60a.png'),
+(13, 'https://product.hstatic.net/200000722513/product/notebook-inspiron-14-7435-t-silver-gallery-11_10ddf5611e9441e7aefb790fa5527629.png'),
+(13, 'https://product.hstatic.net/200000722513/product/notebook-inspiron-14-7430-silver-gallery-2_51463e28df074ca2bee91592fa5296ba.png'),
+(13, 'https://product.hstatic.net/200000722513/product/notebook-inspiron-14-7430-silver-gallery-4_51dd62e0ff3b4652a9e20a569448d713.png'),
+(13, 'https://product.hstatic.net/200000722513/product/notebook-inspiron-14-7430-silver-gallery-7_af2482f990984a72b4f9263b5341e530.png'),
+(13, 'https://product.hstatic.net/200000722513/product/notebook-inspiron-14-7430-silver-gallery-8_b2a9388d91b6483b9d8fd9f8c790f906.png'),
+(13, 'https://product.hstatic.net/200000722513/product/notebook-inspiron-14-7430-silver-gallery-12_73210fec250843e69fcbfcce0c6fa0e7.png'),
+(14, 'https://product.hstatic.net/200000722513/product/vostro-3530_7a36c45673a54b8cb130f07130d1af0d.gif'),
+(14, 'https://product.hstatic.net/200000722513/product/gray-aluminum-fpr-gallery-1_eb897d0b3d224bc1a20aba564da865f6_1024x1024_a06db015558d4e73acc553223994cdcd.png'),
+(14, 'https://product.hstatic.net/200000722513/product/gray-aluminum-fpr-gallery-2_bdaaa90de42c4b13b75a3984747eaa98_1024x1024_ff5cb7ee1178478cbc8e8f5546a8e3ac.png'),
+(14, 'https://product.hstatic.net/200000722513/product/gray-aluminum-fpr-gallery-9_3b019daf77f04f7db163398a0253c844_1024x1024_34bc78c663bc4a38b3c31fc857ec85b4.png'),
+(14, 'https://product.hstatic.net/200000722513/product/ray-aluminum-fpr-gallery-10_2fd49555d17348e69c04e2908ce7e09f_1024x1024_e48b41dd4c86496891181adedebccd13.png'),
+(14, 'https://product.hstatic.net/200000722513/product/gray-aluminum-fpr-gallery-4_4272458c77214a0a8027c7656e4110d0_1024x1024_af9a088e989a4daf8555020141b6eea3.png'),
+(14, 'https://product.hstatic.net/200000722513/product/gray-aluminum-fpr-gallery-5_87b07f58af8d420fb6cbdf2cd8db1ae1_1024x1024_4c93e138f7524a5b85e5cb2b35e0cda7.png'),
+(14, 'https://product.hstatic.net/200000722513/product/gray-aluminum-fpr-gallery-6_ff3fb22d23e84048b6930574ac1a8c50_1024x1024_c02ae38dcc50445ba0c129564bd3003e.png'),
+(14, 'https://product.hstatic.net/200000722513/product/gray-aluminum-fpr-gallery-7_8eea00b7e585481e8ee402e486355310_1024x1024_76c18cd363284caea6642186b9ecf505.png'),
+(15, 'https://product.hstatic.net/200000722513/product/5806_c7b77a20dc234b98a9ae5c1289728814.png'),
+(15, 'https://product.hstatic.net/200000722513/product/c74499a310d44709fb6d41b882f68c8_275ee33f2a01496095b715fc1be60638_large_059e8615432d4f909bf3d662f6eeed38.jpg'),
+(15, 'https://product.hstatic.net/200000722513/product/b3f29729975431fa497bdf282c836b7_98f154a3842d4df1b0190bff7986b8da_large_3e6f9a80989f4fc8b9b5ca35939f3ce8.jpg'),
+(15, 'https://product.hstatic.net/200000722513/product/e4bfc5668a547969331f8d1af45c907_998b1fe06f544acdac1ac40094dae452_large_cdd7b8c10d1a468099ec8dcfb5162474.jpg'),
+(15, 'https://product.hstatic.net/200000722513/product/4046d08cb9a4bae8aa644980f0d8186_4a3bcc95b50549b0afa019c24ba529a1_large_5f36410588e940ac976193508c744832.jpg'),
+(15, 'https://product.hstatic.net/200000722513/product/9493d712d5b42b993cbdf2c26542c9d_2dbd7c3a58cf499ba4a3da8b5a6c05c5_large_0c3bff9c51af4bf2b67989e736a39f65.jpg'),
+(15, 'https://product.hstatic.net/200000722513/product/9a9f6d623584acfa92523b0ed717a19_13c3b0679f564e55b387e14f0bb382be_large_14a535a18fb640a8af8f24c4b6cb8d7f.jpg'),
+(15, 'https://product.hstatic.net/200000722513/product/38b41bf896b4627b39cacc5f2c52da8_6094b1df14dc42558e61b2b03a8a5e57_large_1c875c1aba6d47cbbd94ddb96547424f.jpg'),
+(15, 'https://product.hstatic.net/200000722513/product/a3596b657f54da2953e1755242f7af2_dddf8aec3c684c0f920a506cf552b478_large_f01ca91fa6fe407bb4088f5eac5167d6.jpg');
 
 --
 -- Indexes for dumped tables
@@ -298,7 +345,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `ID_Product` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Product''s ID', AUTO_INCREMENT=11;
+  MODIFY `ID_Product` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Product''s ID', AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
