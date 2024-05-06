@@ -1,4 +1,3 @@
-
 <div class="relative z-50">
     <div class="flex items-center justify-center">
         <form id="signupForm" action="./../../server/signup_data.php" method="post" class="bg-white rounded-lg border p-5" style="font-family: Space Mono; width: 500px">

@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(isset($_SESSION['rememberme']) && $_SESSION['rememberme'] == True){
+    // header('location: ./home.php?user_id='.$_SESSION['hash_id']);
+  }
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

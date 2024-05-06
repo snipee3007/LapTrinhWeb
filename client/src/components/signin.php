@@ -20,7 +20,7 @@
             <input class="rounded-lg mb-5 w-full" type="password" id="password" name="password" placeholder="Mật khẩu"><br> 
             
             <div class="mb-5">
-                <input type="checkbox" class="rounded-lg" id="save" name="save">
+                <input type="checkbox" class="rounded-lg" id="save" name="save" value="save">
                 <label for="save">Ghi nhớ mật khẩu</label>
             </div>
  

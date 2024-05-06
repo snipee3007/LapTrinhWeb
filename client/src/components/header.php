@@ -32,7 +32,7 @@
         <div class="hidden lg:flex lg:gap-x-12 lg:flex-1 lg:justify-end">
 
         <div x-data="{openLogin: false, openReg: false}" class="z-50">
-            <button type="button" x-on:click="openLogin = true" class="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-x-1">
+            <button id="signin_button" type="button" x-on:click="openLogin = true" class="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-x-1">
                 <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
@@ -40,13 +40,47 @@
                 </span>
                 Đăng nhập
             </button>
-            <div x-cloak x-on:click="openLogin = false; openReg = false" x-show="openLogin || openReg" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black bg-opacity-50 z-49"></div>
-            <div x-cloak x-show="openLogin" x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <?php include_once 'components/signin.php'; ?>
+            <div id="signin_button" x-cloak x-on:click="openLogin = false; openReg = false" x-show="openLogin || openReg" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black bg-opacity-50 z-49"></div>
+            <div id="signin_button" x-cloak x-show="openLogin" x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+               <?php 
+                    if(!isset($_SESSION['hash_id'])){
+                        include_once 'components/signin.php'; 
+                    }
+                ?>
             </div>
-            <div x-cloak x-show="openReg" x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <?php include_once 'components/signup.php'; ?>
+            <div id="signin_button" x-cloak x-show="openReg" x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <?php 
+                    if(!isset($_SESSION['hash_id'])){
+                        include_once 'components/signup.php'; 
+                    }
+                ?>
             </div>
+            <?php 
+                include_once("./../../connect_db.php");
+                if(isset($_SESSION['hash_id'])){
+                    echo '<script type="text/JavaScript">
+                        const signin_button = document.querySelectorAll("#signin_button");
+                        signin_button.forEach(ele=>{
+                            console.log(ele)
+                            ele.remove();
+                        });
+                    </script>';
+                    $user_id = $_SESSION['hash_id'];
+                    $query = "SELECT * FROM members WHERE Hash_id = '{$user_id}'";
+                    $result = mysqli_query($con, $query);
+                    $data = $result->fetch_assoc();
+                    $image = $data["Image"];
+                    $name = $data["Name"];
+                    $role = $data["Role"];
+                    echo "<img src='{$image}' class='rounded-full w-12 h-12'>"; 
+                    if($role == 'member'){
+                        echo "<a href='./profile.php?user_id=$user_id'><p class='loged_in text-center'>{$name}</p></a>";
+                    }
+                    else{
+                        echo "<a href='./profile.php?user_id=$user_id'><p class='loged_in text-center'>{$name}</p></a>";
+                    }
+                }
+            ?>
         </div>
 
         <a href="#" class="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-x-1">

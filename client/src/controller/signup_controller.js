@@ -99,4 +99,7 @@ document.querySelector("#submit").addEventListener("click", async function(e){
     if (!success) {
         e.preventDefault();
     }
+    else{
+        alert("Đăng kí thành công");
+    }
 });
