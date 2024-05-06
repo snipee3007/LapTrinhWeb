@@ -1,11 +1,12 @@
 <?php
+session_start();
   $list = [
-    ['name' => 'PC', 'image' => 'https://file.hstatic.net/200000837185/file/pc_6a03da302fb245b8b688d9182829c877_compact.png'],
-    ['name' => 'Laptop', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg'],
-    ['name' => 'Màn hình', 'image' => '	https://file.hstatic.net/200000837185/file/man_hinh_38c9e1c109824ded9015de333bc2c198_compact.png'],
-    ['name' => 'Linh kiện', 'image' => 'https://file.hstatic.net/200000837185/file/ram_92b2c0d8edd64777b3e8133bcf4f30bd_compact.png'],
-    ['name' => 'Chuột', 'image' => 'https://product.hstatic.net/200000837185/product/chuot-gaming-khong-day-razer-viper-v2-pro_130b1fe900fb434299c57228b6c12ea6_grande.jpg'],
-    ['name' => 'Bàn phím', 'image' => '//file.hstatic.net/200000837185/file/gaming_gear_b4b15044a0dd49febc5e6f818667fd39_compact.png'],
+      ['name' => 'PC', 'link' => 'pc.php', 'image' => 'https://file.hstatic.net/200000837185/file/pc_6a03da302fb245b8b688d9182829c877_compact.png'],
+      ['name' => 'Laptop', 'link' => 'laptop.php', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg'],
+      ['name' => 'Màn hình', 'link' => 'screen.php', 'image' => '	https://file.hstatic.net/200000837185/file/man_hinh_38c9e1c109824ded9015de333bc2c198_compact.png'],
+      ['name' => 'Tai nghe', 'link' => 'headphone.php', 'image' => 'https://product.hstatic.net/200000722513/product/7q3arvrl_34a2259ac9714da0adad025b0d38ea51.png'],
+      ['name' => 'Chuột', 'link' => 'mouse.php', 'image' => 'https://product.hstatic.net/200000837185/product/chuot-gaming-khong-day-razer-viper-v2-pro_130b1fe900fb434299c57228b6c12ea6_grande.jpg'],
+      ['name' => 'Bàn phím', 'link' => 'keyboard.php', 'image' => '//file.hstatic.net/200000837185/file/gaming_gear_b4b15044a0dd49febc5e6f818667fd39_compact.png'],
   ];
 
   $postList = [
@@ -42,13 +43,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
   <title>CochaGear | Tin tức</title>  
+
+  <style>
+    [x-cloak] { display: none; }
+  </style>
+
 </head>
 
 <body style="background-color: #ececec">
   <?php include_once 'components/subHeader.php'; ?>
 
   <div class="max-w-screen-2xl mx-auto" style='font-family: Victor Mono'>
-      <div class="flex flex-row justify-between">
+      <div class="flex flex-row justify-center">
           <?php include_once 'components/leftBanner.php'; ?>
 
           <div class="max-w-5xl 2xl:max-w-6xl">
@@ -76,10 +82,10 @@
                         <div class="grid grid-cols-2 gap-4">
                           <?php 
                               for ($i = 0; $i < count($list); $i++) {
-                                echo '<div class="flex flex-col text-sm items-center justify-center text-center cursor-pointer">
+                                echo '<a href='. $list[$i]['link'].' class="flex flex-col text-sm items-center justify-center text-center cursor-pointer">
                                       <div class="flex items-center justify-center w-24 h-24 shadow-md bg-white rounded-lg border mb-2 p-2">
                                           <img class="w-16 h-16 object-cover transition-all duration-1000 ease-in-out hover:w-full hover:h-full" src="' . $list[$i]['image'] . '" alt="' . $list[$i]['name'] . '">
-                                      </div>' . $list[$i]['name'] . '</div>';
+                                      </div>' . $list[$i]['name'] . '</a>';
                               }
                           ?>
                         </div>

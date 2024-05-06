@@ -9,6 +9,8 @@ module.exports = {
       },
       width: {
         "3/10": "30%",
+        "5xl": "64rem",
+        "6xl": "72rem",
       },
       maxWidth: {
         "3/10": "30%",
