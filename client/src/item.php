@@ -1,9 +1,36 @@
 <?php 
 session_start();
-$product = ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg',
-'price' => '22.990.000đ', 'brand' => 'Acer', 'type' => 'Laptop', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz',
-'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius dapibus leo, ac efficitur arcu sagittis sit amet. Maecenas interdum mi sed metus viverra semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut eros a risus blandit aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin aliquam mauris eu orci mattis, ac porttitor velit vehicula. Donec condimentum nibh vel felis fermentum, sed scelerisque risus vehicula. Maecenas ut vulputate quam. Pellentesque vel interdum nisl. Vivamus tempus sem pulvinar lorem fermentum, eget vehicula nisi porta. Pellentesque interdum scelerisque hendrerit. Suspendisse diam enim, pharetra a sollicitudin nec, porta a magna. Quisque vel finibus nunc. Nullam sit amet facilisis libero. In justo elit, tempor vel lorem eget, hendrerit sollicitudin orci.'];
-
+$currentUser;
+include_once ('./../../server/connect_db.php');
+if(isset($_SESSION["hash_id"])){
+  $query = 'SELECT * FROM members WHERE Hash_ID="' . $_SESSION['hash_id'].'"';
+  $currentUser = mysqli_fetch_assoc(mysqli_query($con, $query));
+}
+$commentsList = array();
+$avgStar = 0;
+if(isset($_SERVER['PATH_INFO'])) {
+  $linkName = str_replace('/', '', $_SERVER['PATH_INFO']);
+  $query = 'SELECT * FROM products WHERE slug = "'. $linkName . '"';
+  $foundProduct = mysqli_fetch_assoc(mysqli_query($con,$query));
+  $query = 'SELECT * FROM `products\' images` WHERE ID_Product = ' . $foundProduct['ID_Product'];
+  $linkImage = mysqli_fetch_assoc(mysqli_query($con, $query));
+  $CUSTOM_PATH = "../";
+  $query = 'SELECT * FROM comments WHERE ID_Product = ' . $foundProduct['ID_Product'];
+  $rawData = mysqli_query($con, $query);
+  while($data = mysqli_fetch_assoc($rawData)){
+    $avgStar += $data['Rating'];
+    array_push($commentsList, $data);
+  }
+}
+else{
+  $CUSTOM_PATH = "";
+}
+if (sizeof($commentsList) == 0) {
+  $avgStar = 0;
+}
+else{
+  $avgStar = round(($avgStar / sizeof($commentsList)) * 2) / 2;
+}
 $relatedProduct = [
   ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
   ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
@@ -16,20 +43,6 @@ $relatedProduct = [
   ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
   ['name' => 'Laptop Gaming Acer Aspire 7 A715 42G R05G', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg', 'price' => '22.990.000đ', 'chip' => 'i5 11400H', 'ram' => '8GB DDR4', 'vga' => 'RTX 2050', 'screen' => '15.6" FHD 144Hz'],
 ];
-
-$comments = [
-  ['name' => 'FazeCT', 'avatar' => 'https://avatars.githubusercontent.com/FazeCT', 'date' => '01-05-2024', 'star' => 5, 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed ullamcorper velit. Praesent quis scelerisque quam, eu imperdiet lorem. Donec vestibulum ante vel felis interdum, eget auctor tellus maximus. Nulla vel turpis vitae libero tincidunt volutpat.'],
-  ['name' => 'Snipee', 'avatar' => 'https://avatars.githubusercontent.com/snipee3007', 'date' => '02-05-2024', 'star' => 2, 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed ullamcorper velit. Praesent quis scelerisque quam, eu imperdiet lorem. Donec vestibulum ante vel felis interdum, eget auctor tellus maximus. Nulla vel turpis vitae libero tincidunt volutpat.'],
-  ['name' => 'Onirique', 'avatar' => 'https://avatars.githubusercontent.com/junvalentine', 'date' => '03-05-2024', 'star' => 4, 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed ullamcorper velit. Praesent quis scelerisque quam, eu imperdiet lorem. Donec vestibulum ante vel felis interdum, eget auctor tellus maximus. Nulla vel turpis vitae libero tincidunt volutpat.']
-];
-
-$avgStar = 0;
-
-for ($i = 0; $i < count($comments); $i++) {
-  $avgStar += $comments[$i]['star'];
-}
-
-$avgStar = round(($avgStar / count($comments)) * 2) / 2;
 
 $halfStar = '<div style="position: relative" class="w-4 h-4">
               <svg style="position: absolute; top: 0; left: 0;" class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -71,9 +84,9 @@ $star .= '</span>';
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <link rel="stylesheet" href="./css/output.css">
-  <link rel="stylesheet" href="./css/custom.css">
-  <link rel="icon" type="image/x-icon" href="images/logoBK.png">
+  <link rel="stylesheet" href="./<?php echo $CUSTOM_PATH;?>css/output.css">
+  <link rel="stylesheet" href="./<?php echo $CUSTOM_PATH;?>css/custom.css">
+  <link rel="icon" type="image/x-icon" href="<?php echo $CUSTOM_PATH;?>images/logoBK.png">
 
   <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script> -->
   <script defer src="https://unpkg.com/alpinejs@3.13.10/dist/cdn.min.js"></script>
@@ -85,11 +98,17 @@ $star .= '</span>';
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
 
-  <script defer src="./controller/likeDislikeController.js"></script>
-  <script defer src="./controller/textareaController.js"></script>
-  <script defer src="./controller/ratingController.js"></script>
-
-  <title>CochaGear | <?php echo $product['name']; ?></title>
+  <?php
+    echo '
+        <script defer src="./'. $CUSTOM_PATH .'controller/likeDislikeController.js"></script>
+        <script defer src="./'. $CUSTOM_PATH .'controller/textareaController.js"></script>
+        <script defer src="./'. $CUSTOM_PATH .'controller/ratingController.js"></script>
+      ';
+  ?>
+  <title>CochaGear | 
+    <?php if (isset($foundProduct)) echo $foundProduct['Name'];
+           else echo "No Product" ?>
+  </title>
 
   <style>
     [x-cloak] { display: none; }
@@ -107,20 +126,31 @@ $star .= '</span>';
 
       <div class="max-w-5xl 2xl:max-w-6xl">
         <div class="text-sm text-gray-900 mb-5 mt-5">
-            <a href="home.php" class="hover:text-blue-700">Trang chủ</a> > 
-            <a href="#" class="hover:text-blue-700">Laptop</a> > 
-            <a href="#" class="hover:text-blue-700">ACER</a> > 
-            <span><?php echo $product['name']; ?></span>
+            <a href="<?php echo $CUSTOM_PATH;?>home.php" class="hover:text-blue-700">Trang chủ</a> > 
+            <a href="#" class="hover:text-blue-700"><?php if (isset($foundProduct)) echo $foundProduct['Category']; else echo "Not Found"?></a> > 
+            <a href="#" class="hover:text-blue-700"><?php if (isset($foundProduct)) echo $foundProduct['Brand']; else echo "Not Found"?></a> > 
+            <span><?php if (isset($foundProduct)) echo $foundProduct['Name']; else echo "No Product" ?></span>
         </div>
 
         <?php
-        include_once ('./../../server/connect_db.php');
-        if(isset($_SERVER['PATH_INFO'])) $linkName = str_replace('/', '', $_SERVER['PATH_INFO']);
-        $query = 'SELECT * FROM products WHERE slug= "'. $linkName . '"';
-        $foundProduct = mysqli_fetch_assoc(mysqli_query($con,$query));
-        $query = 'SELECT * FROM `products\' images` WHERE ID_Product = ' . $foundProduct['ID_Product'];
-        $linkImage = mysqli_fetch_assoc(mysqli_query($con, $query));
         if (isset($foundProduct)) {
+          $Price = "";
+          $tmp = $foundProduct['Price'];
+          while ($tmp > 0){
+            if ($tmp % 1000 == 0){
+              $Price = '.000' . $Price;
+            }
+            else{
+              if ((int)($tmp / 1000) == 0){
+                $Price = intval($tmp % 1000, 10) . $Price;
+              }
+              else{
+                $Price = "." . str_pad(intval($tmp % 1000, 10),3,'0', STR_PAD_LEFT) . $Price;
+              }
+            }
+            $tmp = (int)($tmp / 1000);
+          };
+          $Price = $Price . " VND";
           echo '<div class="rounded-lg shadow-lg p-4 mb-10 bg-white">
                   <div class="grid grid-cols-7 gap-4 mt-5">';
 
@@ -131,9 +161,9 @@ $star .= '</span>';
           echo '<div class="col-span-4">
                   <div class="font-bold mb-5 text-xl">' . $foundProduct['Name'] . '</div>
                   <div class="text-sm mb-5">Thương hiệu: <span class="font-bold text-blue-700">' . $foundProduct['Brand'] . '</span> | Loại: <span class="font-bold text-blue-700">' . $foundProduct['Category'] . '</span></div>
-                  <div class="flex items-center text-sm mb-5">Đánh giá: ' . $star . ' (' . count($comments) . ' lượt đánh giá)</div>
+                  <div class="flex items-center text-sm mb-5">Đánh giá: ' . $star . ' (' . sizeof($commentsList) . ' lượt đánh giá)</div>
 
-                  <div class="font-bold mb-5 text-blue-700">' . $foundProduct['Price'] . '</div>
+                  <div class="font-bold mb-5 text-blue-700">' . $Price . '</div>
                   <div class="flex mb-5">
                     <div class="cursor-pointer p-1 mr-2 bg-blue-700 text-white text-xs rounded-lg flex flex-wrap">Bảo hành 12 tháng chính hãng</div>
                     <div class="cursor-pointer p-1 bg-blue-700 text-white text-xs rounded-lg flex flex-wrap">Đã bao gồm VAT</div>
@@ -504,6 +534,7 @@ $star .= '</span>';
           echo '<div class="font-bold mb-5">| MÔ TẢ SẢN PHẨM </div>';
           echo '<div class="text-sm mb-5">' . $foundProduct['Description'] . '</div>';
           echo '</div>';
+          echo '</div>';
         }
         ?>
 
@@ -587,17 +618,17 @@ $star .= '</span>';
             | ĐÁNH GIÁ - NHẬN XÉT
           </div>
 
-          <div class="font-bold mb-5 text-sm"><?php echo count($comments); ?> lượt đánh giá</div>
+          <div class="font-bold mb-5 text-sm"><?php echo sizeof($commentsList); ?> lượt đánh giá</div>
 
           <div class="grid grid-cols-18 gap-2 mb-8">
               <div class="col-span-1">
                   <div class="rounded-full w-12 h-12 overflow-hidden border-2 border-gray">
-                      <img src="<?php echo $comments[0]['avatar'] ?>" alt="<?php $comments[0]['name'] ?>'" class="object-cover w-full h-full">
+                      <img src="<?php echo $CUSTOM_PATH. $currentUser['Image'] ?>" alt="<?php $currentUser['Name'] ?>'" class="object-cover w-full h-full">
                   </div>
               </div>
 
               <div class="col-span-17">
-                <div class="text-sm font-bold mb-2"><?php echo $comments[0]['name'] ?></div>
+                <div class="text-sm font-bold mb-2"><?php echo $currentUser['Name'] ?></div>
                 <form class="mr-5 mb-2">
                   <textarea rows="3" class="p-0 w-full text-sm" name="comment" style="border: none; border-bottom: 1px solid;" placeholder="Viết đánh giá..."></textarea>
                 </form>
@@ -624,33 +655,36 @@ $star .= '</span>';
           </div>
 
           <?php
-            for($i = 0; $i < count($comments); $i++) {
+            for($i = 0; $i < sizeof($commentsList); $i++) {
+                $query = "SELECT * FROM members WHERE ID_Member =" . $commentsList[$i]["ID_Member"];
+                $member = mysqli_fetch_assoc(mysqli_query($con, $query));
+
                 echo '<div class="grid grid-cols-18 gap-2 mb-8">
                       <div class="col-span-1">
                           <div class="rounded-full w-12 h-12 overflow-hidden border-2 border-gray">
-                              <img src="' . $comments[$i]['avatar'] . '" alt="' . $comments[$i]['name'] . '" class="object-cover w-full h-full">
+                              <img src="./'. $CUSTOM_PATH . $member['Image'] . '" alt="' . $member['Name'] . '" class="object-cover w-full h-full">
                           </div>
                       </div>
 
                       <div class="col-span-17">
-                        <div class="text-sm font-bold mb-1">'. $comments[$i]['name'] .' | Đã đăng ngày '. $comments[$i]['date'] .'</div>
+                        <div class="text-sm font-bold mb-1">'. $member['Name'] .' | Đã đăng ngày '. $commentsList[$i]['Date'] .'</div>
                         <div class="mb-3 flex">
                           <div class="text-sm mr-2">Đã đánh giá</div>';
                 
-                for($j = 0; $j < $comments[$i]['star']; $j++) {
+                for($j = 0; $j < $commentsList[$i]['Rating']; $j++) {
                   echo '<svg class="w-4 h-4 text-yellow-500 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
                         </svg>';
                 }
 
-                for($j = 0; $j < 5 - $comments[$i]['star']; $j++) {
+                for($j = 0; $j < 5 - $commentsList[$i]['Rating']; $j++) {
                   echo '<svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                           <path stroke="currentColor" stroke-width="2" d="M11.083 5.104c.35-.8 1.485-.8 1.834 0l1.752 4.022a1 1 0 0 0 .84.597l4.463.342c.9.069 1.255 1.2.556 1.771l-3.33 2.723a1 1 0 0 0-.337 1.016l1.03 4.119c.214.858-.71 1.552-1.474 1.106l-3.913-2.281a1 1 0 0 0-1.008 0L7.583 20.8c-.764.446-1.688-.248-1.474-1.106l1.03-4.119A1 1 0 0 0 6.8 14.56l-3.33-2.723c-.698-.571-.342-1.702.557-1.771l4.462-.342a1 1 0 0 0 .84-.597l1.753-4.022Z"/>
                         </svg>';
                 }
                            
                 echo '   </div>
-                        <div class="text-sm mb-2 mr-5">' .$comments[$i]['content']. '</div>
+                        <div class="text-sm mb-2 mr-5">' .$commentsList[$i]['Context']. '</div>
                         <div class="flex">
                           <div id="like-container'.$i.'">
                             <svg id="like'.$i.'" class="w-6 h-6 mr-5 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

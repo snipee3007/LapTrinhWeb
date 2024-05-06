@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2024 at 05:53 AM
+-- Generation Time: May 06, 2024 at 10:54 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `products`
+CREATE DATABASE IF NOT EXISTS `products` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `products`;
 --
 
 -- --------------------------------------------------------
@@ -75,7 +76,6 @@ CREATE TABLE `members` (
   `Address_2` varchar(255) DEFAULT NULL,
   `Address_3` varchar(255) DEFAULT NULL,
   `Gender` varchar(6) DEFAULT NULL,
-  `Account_Name` varchar(20) NOT NULL,
   `Account_Password` varchar(255) NOT NULL,
   `Image` varchar(100) NOT NULL,
   `Role` varchar(10) NOT NULL,
@@ -86,13 +86,15 @@ CREATE TABLE `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`ID_Member`, `Name`, `Phone_Number`, `Email`, `Address_1`, `Address_2`, `Address_3`, `Gender`, `Account_Name`, `Account_Password`, `Image`, `Role`, `Hash_ID`) VALUES
-(1, 'Lê Minh Chánh', '0835599955', 'chanh.leminh@hcmut.edu.vn', '203/06/14 Huỳnh Văn Nghệ, Phường 12, Quận Gò Vấp, Thành phố Hồ Chí Minh', NULL, NULL, 'male', 'ShiroSnipee', 'kekwlmao', 'hmmge', 'admin', ''),
-(2, 'Phạm Nguyễn Nam', '0937113543', 'nam.phamnguyen1512@hcmut.edu.vn', '8 Hoàng Minh Giám, Phường 9, Quận Phú Nhuận, Thành phố Hồ Chí Minh ', NULL, NULL, 'male', 'FazeCT', 'lmaolmao', 'bedge', 'admin', ''),
-(3, 'Lê Thiên Ân', '0356556216', 'an.lethien@hcmut.edu.vn', '808B Hậu Giang, Phường 11, Quận 6, Thành phố Hồ Chí Minh', NULL, NULL, 'male', 'Ittoday', 'kekwkekw', 'gayge', 'admin', ''),
-(4, 'Lê Hồng Minh', '0704927263', 'minh.lehong2003@hcmut.edu.vn', '268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh', NULL, NULL, 'male', 'Onirique', 'lmaokekw', 'sleep', 'admin', ''),
-(5, 'Trần Nhân Khánh', '0961322985', 'khanh.tran2003csejpn@hcmut.edu.vn', 'Ngã 5 Chuồng Chó, Quận Gò Vấp', NULL, NULL, 'male', 'Khartist', 'Lmouse', 'dedge', 'user', ''),
-(6, 'Phạm Quang Minh', '0812676767', 'minh.phamquang@hcmut.edu.vn', 'Rạp xiếc công viên Gia Định Hoàng Minh Giám', NULL, NULL, 'female', 'Masamune', 'LmaoKekw', 'okayge', 'user', '');
+INSERT INTO `members` (`ID_Member`, `Name`, `Phone_Number`, `Email`, `Address_1`, `Address_2`, `Address_3`, `Gender`, `Account_Password`, `Image`, `Role`, `Hash_ID`) VALUES
+(1, 'Lê Minh Chánh', '0835599955', 'chanh.leminh@hcmut.edu.vn', '', '', '', 'male', 'kekwlmao', 'hmmge', 'admin', ''),
+(2, 'Phạm Nguyễn Nam', '0937113543', 'nam.phamnguyen1512@hcmut.edu.vn', '', '', '', 'male', 'lmaolmao', 'bedge', 'admin', ''),
+(3, 'Lê Thiên Ân', '0356556216', 'an.lethien@hcmut.edu.vn', '', '', '', 'male', 'kekwkekw', 'gayge', 'admin', ''),
+(4, 'Lê Hồng Minh', '0704927263', 'minh.lehong2003@hcmut.edu.vn', '', '', '', 'male', 'lmaokekw', 'sleep', 'admin', ''),
+(5, 'Trần Nhân Khánh', '0961322985', 'khanh.tran2003csejpn@hcmut.edu.vn', '', '', '', 'male', 'Lmouse', 'dedge', 'user', ''),
+(6, 'Phạm Quang Minh', '0812676767', 'minh.phamquang@hcmut.edu.vn', '', '', '', 'female', 'LmaoKekw', 'okayge', 'user', ''),
+(7, 'test11111212121', '1111111111', 'abc@gmail.com', '', '', '', 'male', '$2y$10$C9pZfs74qPBuSXZUAnRe7uswOXLeOs7fzMixfAh85qJ6DRiPE34IW', '', 'user', '$2y$10$vD28HakmgGzTNmVXWYJnkOhwZJxIIIqJ6ZvYsqmK0bDx7kIdR.rQq'),
+(9, 'BKISC2', '77777777777', 'bedge@gmail.cochaloz', '', '', '', 'female', '$2y$10$lBGZSho0DwKlIY.QckRcuOAljBRyWj1Utj7cTaOSogxxj6eIvYSra', './image/logoBK.png', 'user', '$2y$10$fyLRGntQm1xvTrmMBp2.W.3gkvIsxc6/lLHzYyNmVqb5Kujpj.RZi');
 
 -- --------------------------------------------------------
 
@@ -122,49 +124,50 @@ CREATE TABLE `products` (
   `Brand` varchar(100) NOT NULL COMMENT 'Product''s brand',
   `Price` int(11) NOT NULL COMMENT 'Product''s price',
   `Description` varchar(1000) NOT NULL COMMENT 'Product''s description',
-  `Tags` varchar(1000) NOT NULL COMMENT 'Product''s components'
+  `Tags` varchar(1000) NOT NULL COMMENT 'Product''s components',
+  `slug` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`ID_Product`, `Name`, `Category`, `Brand`, `Price`, `Description`, `Tags`) VALUES
-(1, 'Laptop ASUS Zenbook Duo OLED UX8406MA PZ307W', 'Laptop', 'ASUS', 48990000, 'This is a description', 'hl_ssd:512 GB;hl_lcd:14 inch 3K OLED TOUCH;hl_cpu:Ultra 7 155H;spec_VGA:Intel Arc;hl_hz:120 Hz;hl_ram:16 GB;hl_vga:Intel Arc'),
-(2, 'Laptop MSI Summit E14 Evo A12M 211VN', 'Laptop', 'MSI', 22490000, 'This is a description', 'hl_ram:16 GB;hl_ssd:512 GB;hl_cpu:i7-1280P;hl_vga:Onboard;hl_lcd:14 inch FHD+ IPS'),
-(3, 'Laptop MSI Modern 14 C13M 609VN', 'Laptop', 'MSI', 13990000, 'This is a description', 'hl_ram:8 GB;hl_cpu:i5-1335U;hl_ssd:512 GB;hl_lcd:14 inch FHD IPS;hl_sticker:asus-vp;hl_vga:Onboard'),
-(4, 'Laptop ASUS Vivobook 14 OLED A1405VA KM095W', 'Laptop', 'ASUS', 17790000, 'This is a description', 'hl_cpu:i5-13500H;hl_ssd:512 GB;hl_ram:16 GB;hl_vga:Onboard;hl_lcd:14 inch 2K8 OLED'),
-(5, 'Laptop gaming ASUS TUF Gaming F15 FX507VI LP088W', 'Laptop', 'ASUS', 43990000, 'This is a description', 'hl_hz:144 Hz;hl_ram:16 GB;hl_vga:RTX 4070;hl_cpu:i7-13620H;hl_lcd:15.6 inch FHD;spec_VGA:RTX 4070;hl_ssd:512 GB\"'),
-(6, 'Màn hình Asus TUF GAMING VG279Q3A 27\" Fast IPS 180Hz Gsync chuyên game', 'Screen', 'ASUS', 4490000, 'This is a description', 'hl_hz:180Hz;hl_panel:IPS;hl_lcd:27 inch;hl_res:Full HD (1920 x 1080)'),
-(7, 'Màn hình cong GIGABYTE G34WQC A 34\" 2K 144Hz HDR400 chuyên game', 'Screen', 'GIGABYTE', 8590000, 'This is a description', 'hl_lcd:34 inch;hl_res:2K (3440 x 1440);hl_hz:144Hz;hl_panel:VA'),
-(8, 'Màn hình cong GIGABYTE GS27FC 27\" 180Hz chuyên game', 'Screen', 'GIGABYTE', 3990000, 'This is a description', 'hl_res:Full HD (1920 x 1080);hl_lcd:27 inch;hl_hz:180Hz;hl_panel:VA'),
-(9, 'Màn hình cong Asus ROG Strix XG49VQ 49\" VA 144Hz', 'Screen', 'ASUS', 24990000, 'This is a description', 'hl_res:Full HD (3840 x 1080);hl_hz:144Hz;hl_lcd:49 inch;hl_panel:VA'),
-(10, 'Màn hình MSI PRO MP275 27\" IPS 100Hz', 'Screen', 'MSI', 2890000, 'This is a description', 'hl_hz:100Hz;hl_res:Full HD (1920 x 1080);hl_panel:IPS;hl_lcd:27 inch'),
-(11, 'Laptop gaming Gigabyte G7 KE 52VN263SH', 'Laptop', 'GIGABYTE', 27490000, 'This is a description', 'hl_hz:144 Hz;hl_ram:8 GB;hl_cpu:i5-12500H;hl_ssd:512 GB;hl_vga:RTX 3060;hl_lcd:15.6 inch FHD'),
-(12, 'Laptop Acer Aspire 5 A515 58P 71EJ', 'Laptop', 'ACER', 18990000, 'This is a description', 'hl_ssd:1 TB;hl_cpu:i7-1335U;hl_vga:Onboard;hl_lcd:15.6 inch FHD;hl_ram:16 GB'),
-(13, 'Laptop Dell Inspiron T7430 N7430I58W1 Silver', 'Laptop', 'DELL', 22990000, 'This is a description', 'hl_cpu:i5-1335U;hl_vga:Onboard;hl_ssd:512 GB;hl_ram:8 GB;hl_lcd:14 inch FHD+'),
-(14, 'Laptop Dell Vostro 3530 V5I5267W1 Gray', 'Laptop', 'DELL', 15490000, 'This is a description', 'hl_cpu:i5-1335U;hl_hz:120 Hz;hl_ssd:256 GB;hl_ram:8 GB;hl_lcd:15.6 inch FHD IPS;hl_vga:Onboard'),
-(15, 'Laptop gaming Acer Aspire 7 A715 76G 5806', 'Laptop', 'ACER', 20990000, 'This is a description', 'hl_ssd:512 GB;hl_hz:144 Hz;hl_vga:RTX 3050;hl_cpu:i5-12450H;hl_ram:16 GB;hl_lcd:15.6 inch FHD'),
-(16, 'Bàn phím E-Dra EK312 Alpha Blue Switch', 'Keyboard', 'E-DRA', 579000, 'This is a description', 'hl_keycap:ABS;hl_size:Full size;hl_connect:Có dây'),
-(17, 'Bàn phím chơi game cơ E-Dra EK384 Triple Mode Beta Red Switch', 'Keyboard', 'E-DRA', 749000, 'This is a description', 'hl_connect:Wireless;hl_keycap:ABS;hl_size:TKL'),
-(18, 'Bàn phím Rapoo V500 Pro Multimode TKL Blue Switch', 'Keyboard', 'RAPOO', 890000, 'This is a description', 'hl_connect:Wireless;hl_keycap:ABS;hl_size:TKL'),
-(19, 'Bàn phím cơ Corsair K100 RGB Opx Switch (CH-912A01A-NA)', 'Keyboard', 'CORSAIR', 5390000, 'This is a description', 'hl_size:Full size;hl_keycap:PBT;hl_connect:Có dây'),
-(20, 'Bàn phím Razer BlackWidow V4 X Green Switch', 'Keyboard', 'RAZER', 3290000, 'This is a description', 'hl_connect:Có dây;hl_size:Full size;hl_keycap:ABS'),
-(21, 'Chuột Logitech G Pro X Superlight 2 Black', 'Mouse', 'LOGITECH', 3390000, 'This is description', 'hl_led:Led RGB;hl_connect:Wireless;hl_pin:Pin sạc'),
-(22, 'Chuột công thái học Logitech Lift Vertical Pink', 'Mouse', 'LOGITECH', 1290000, 'This is a description', 'hl_connect:Wireless;hl_pin:Pin rời;hl_led:DPI - 4.000'),
-(23, 'Chuột Logitech MX Anywhere 3S Graphite', 'Mouse', 'LOGITECH', 1690000, 'This is a description', 'hl_pin:Pin sạc;hl_connect:Wireless;hl_led:DPI - 8.000'),
-(24, 'Chuột E-DRA EM623W Không dây RGB Trắng', 'Mouse', 'E-DRA', 279000, 'This is a description', 'hl_led:RGB;hl_pin:Pin sạc;hl_connect:Wireless'),
-(25, 'Chuột DareU EM901X RGB Superlight Wireless Pink', 'Mouse', 'DAREU', 790000, 'This is a description', 'hl_connect:Wireless;hl_pin:Pin sạc;hl_led:Led RGB'),
-(26, 'Tai nghe Razer Barracuda X 2022', 'Headphone', 'RAZER', 2390000, 'This is a description', 'hl_connect:Wireless;hl_typehp:Chụp tai;hl_connector:USB A'),
-(27, 'Tai nghe Gaming Rapoo VH160', 'Headphone', 'RAPOO', 390000, 'This is a description', 'hl_typehp:Chụp tai;hl_connector:USB A;hl_connect:Có dây'),
-(28, 'Tai nghe Corsair HS35 V2 Xanh', 'Headphone', 'CORSAIR', 990000, 'This is a description', 'hl_typehp:Chụp tai;hl_connector:Jack 3.5mm;hl_connect:Có dây'),
-(29, 'Tai nghe Asus ROG Delta Core', 'Headphone', 'ASUS', 1990000, 'This is a description', 'hl_connect:Có dây;hl_typehp:Chụp tai;hl_connector:Jack 3.5mm'),
-(30, 'Tai nghe Edifier Không dây W820NB Plus Trắng Ngà', 'Headphone', 'EDIFIER', 1090000, 'This is a description', 'hl_connect:Wireless;hl_connector:USB C;hl_typehp:Chụp tai'),
-(31, 'PC CCG AMD R5-5600X/ VGA RTX 3050 (Powered by ASUS)', 'PC', 'COCHAGEAR', 17990000, 'This is a description', 'hl_ram:16GB;hl_cpu:R5 5600X;hl_main:B550;hl_vga:RTX 3050;hl_ssd:500GB'),
-(32, 'PC CCG G-STUDIO Intel i7-13700/ VGA RTX 3060', 'PC', 'COCHAGEAR', 35490000, 'This is a description', 'hl_main:B760;hl_ssd:1TB;hl_cpu:i7 13700;hl_ram:16GB;hl_vga:RTX 3060\"'),
-(33, 'PC CCG Intel i7-14700F/ VGA RTX 4070 Ti', 'PC', 'COCHAGEAR', 52990000, 'This is a description', 'hl_vga:RTX 4070 Ti;hl_ram:32GB;hl_ssd:500GB;hl_main:Z790;hl_cpu:i7 14700F'),
-(34, 'PC CCG AMD R9-7900X/VGA RTX 4080', 'PC', 'COCHAGEAR', 99990000, 'This is a description', 'hl_cpu:R9 7900X;hl_main:X670;hl_ssd:1TB;hl_vga:RTX 4080;hl_ram:32GB'),
-(35, 'PC CCG AMD R9-7950X/VGA RTX 4090', 'PC', 'COCHAGEAR', 115990000, 'This is a description', 'hl_main:X670;hl_ram:32GB;hl_cpu:R9 7950X;hl_vga:RTX 4090;hl_ssd:1TB');
+INSERT INTO `products` (`ID_Product`, `Name`, `Category`, `Brand`, `Price`, `Description`, `Tags`, `slug`) VALUES
+(1, 'Laptop ASUS Zenbook Duo OLED UX8406MA PZ307W', 'Laptop', 'ASUS', 48990000, 'This is a description', 'hl_ssd:512 GB;hl_lcd:14 inch 3K OLED TOUCH;hl_cpu:Ultra 7 155H;spec_VGA:Intel Arc;hl_hz:120 Hz;hl_ram:16 GB;hl_vga:Intel Arc', 'laptop-asus-zenbook-duo-oled-ux8406ma-pz307w'),
+(2, 'Laptop MSI Summit E14 Evo A12M 211VN', 'Laptop', 'MSI', 22490000, 'This is a description', 'hl_ram:16 GB;hl_ssd:512 GB;hl_cpu:i7-1280P;hl_vga:Onboard;hl_lcd:14 inch FHD+ IPS', 'laptop-msi-summit-e14-evo-a12m-211vn'),
+(3, 'Laptop MSI Modern 14 C13M 609VN', 'Laptop', 'MSI', 13990000, 'This is a description', 'hl_ram:8 GB;hl_cpu:i5-1335U;hl_ssd:512 GB;hl_lcd:14 inch FHD IPS;hl_sticker:asus-vp;hl_vga:Onboard', 'laptop-msi-modern-14-c13m-609vn'),
+(4, 'Laptop ASUS Vivobook 14 OLED A1405VA KM095W', 'Laptop', 'ASUS', 17790000, 'This is a description', 'hl_cpu:i5-13500H;hl_ssd:512 GB;hl_ram:16 GB;hl_vga:Onboard;hl_lcd:14 inch 2K8 OLED', 'laptop-asus-vivobook-14-oled-a1405va-km095w'),
+(5, 'Laptop gaming ASUS TUF Gaming F15 FX507VI LP088W', 'Laptop', 'ASUS', 43990000, 'This is a description', 'hl_hz:144 Hz;hl_ram:16 GB;hl_vga:RTX 4070;hl_cpu:i7-13620H;hl_lcd:15.6 inch FHD;spec_VGA:RTX 4070;hl_ssd:512 GB\"', 'laptop-gaming-asus-tuf-gaming-f15-fx507vi-lp088w'),
+(6, 'Màn hình Asus TUF GAMING VG279Q3A 27\" Fast IPS 180Hz Gsync chuyên game', 'Screen', 'ASUS', 4490000, 'This is a description', 'hl_hz:180Hz;hl_panel:IPS;hl_lcd:27 inch;hl_res:Full HD (1920 x 1080)', 'màn-hình-asus-tuf-gaming-vg279q3a-27\"-fast-ips-180hz-gsync-chuyên-game'),
+(7, 'Màn hình cong GIGABYTE G34WQC A 34\" 2K 144Hz HDR400 chuyên game', 'Screen', 'GIGABYTE', 8590000, 'This is a description', 'hl_lcd:34 inch;hl_res:2K (3440 x 1440);hl_hz:144Hz;hl_panel:VA', 'màn-hình-cong-gigabyte-g34wqc-a-34\"-2k-144hz-hdr400-chuyên-game'),
+(8, 'Màn hình cong GIGABYTE GS27FC 27\" 180Hz chuyên game', 'Screen', 'GIGABYTE', 3990000, 'This is a description', 'hl_res:Full HD (1920 x 1080);hl_lcd:27 inch;hl_hz:180Hz;hl_panel:VA', 'màn-hình-cong-gigabyte-gs27fc-27\"-180hz-chuyên-game'),
+(9, 'Màn hình cong Asus ROG Strix XG49VQ 49\" VA 144Hz', 'Screen', 'ASUS', 24990000, 'This is a description', 'hl_res:Full HD (3840 x 1080);hl_hz:144Hz;hl_lcd:49 inch;hl_panel:VA', 'màn-hình-cong-asus-rog-strix-xg49vq-49\"-va-144hz'),
+(10, 'Màn hình MSI PRO MP275 27\" IPS 100Hz', 'Screen', 'MSI', 2890000, 'This is a description', 'hl_hz:100Hz;hl_res:Full HD (1920 x 1080);hl_panel:IPS;hl_lcd:27 inch', 'màn-hình-msi-pro-mp275-27\"-ips-100hz'),
+(11, 'Laptop gaming Gigabyte G7 KE 52VN263SH', 'Laptop', 'GIGABYTE', 27490000, 'This is a description', 'hl_hz:144 Hz;hl_ram:8 GB;hl_cpu:i5-12500H;hl_ssd:512 GB;hl_vga:RTX 3060;hl_lcd:15.6 inch FHD', 'laptop-gaming-gigabyte-g7-ke-52vn263sh'),
+(12, 'Laptop Acer Aspire 5 A515 58P 71EJ', 'Laptop', 'ACER', 18990000, 'This is a description', 'hl_ssd:1 TB;hl_cpu:i7-1335U;hl_vga:Onboard;hl_lcd:15.6 inch FHD;hl_ram:16 GB', 'laptop-acer-aspire-5-a515-58p-71ej'),
+(13, 'Laptop Dell Inspiron T7430 N7430I58W1 Silver', 'Laptop', 'DELL', 22990000, 'This is a description', 'hl_cpu:i5-1335U;hl_vga:Onboard;hl_ssd:512 GB;hl_ram:8 GB;hl_lcd:14 inch FHD+', 'laptop-dell-inspiron-t7430-n7430i58w1-silver'),
+(14, 'Laptop Dell Vostro 3530 V5I5267W1 Gray', 'Laptop', 'DELL', 15490000, 'This is a description', 'hl_cpu:i5-1335U;hl_hz:120 Hz;hl_ssd:256 GB;hl_ram:8 GB;hl_lcd:15.6 inch FHD IPS;hl_vga:Onboard', 'laptop-dell-vostro-3530-v5i5267w1-gray'),
+(15, 'Laptop gaming Acer Aspire 7 A715 76G 5806', 'Laptop', 'ACER', 20990000, 'This is a description', 'hl_ssd:512 GB;hl_hz:144 Hz;hl_vga:RTX 3050;hl_cpu:i5-12450H;hl_ram:16 GB;hl_lcd:15.6 inch FHD', 'laptop-gaming-acer-aspire-7-a715-76g-5806'),
+(16, 'Bàn phím E-Dra EK312 Alpha Blue Switch', 'Keyboard', 'E-DRA', 579000, 'This is a description', 'hl_keycap:ABS;hl_size:Full size;hl_connect:Có dây', 'bàn-phím-e-dra-ek312-alpha-blue-switch'),
+(17, 'Bàn phím chơi game cơ E-Dra EK384 Triple Mode Beta Red Switch', 'Keyboard', 'E-DRA', 749000, 'This is a description', 'hl_connect:Wireless;hl_keycap:ABS;hl_size:TKL', 'bàn-phím-chơi-game-cơ-e-dra-ek384-triple-mode-beta-red-switch'),
+(18, 'Bàn phím Rapoo V500 Pro Multimode TKL Blue Switch', 'Keyboard', 'RAPOO', 890000, 'This is a description', 'hl_connect:Wireless;hl_keycap:ABS;hl_size:TKL', 'bàn-phím-rapoo-v500-pro-multimode-tkl-blue-switch'),
+(19, 'Bàn phím cơ Corsair K100 RGB Opx Switch', 'Keyboard', 'CORSAIR', 5390000, 'This is a description', 'hl_size:Full size;hl_keycap:PBT;hl_connect:Có dây', 'bàn-phím-cơ-corsair-k100-rgb-opx-switch'),
+(20, 'Bàn phím Razer BlackWidow V4 X Green Switch', 'Keyboard', 'RAZER', 3290000, 'This is a description', 'hl_connect:Có dây;hl_size:Full size;hl_keycap:ABS', 'bàn-phím-razer-blackwidow-v4-x-green-switch'),
+(21, 'Chuột Logitech G Pro X Superlight 2 Black', 'Mouse', 'LOGITECH', 3390000, 'This is description', 'hl_led:Led RGB;hl_connect:Wireless;hl_pin:Pin sạc', 'chuột-logitech-g-pro-x-superlight-2-black'),
+(22, 'Chuột công thái học Logitech Lift Vertical Pink', 'Mouse', 'LOGITECH', 1290000, 'This is a description', 'hl_connect:Wireless;hl_pin:Pin rời;hl_led:DPI - 4.000', 'chuột-công-thái-học-logitech-lift-vertical-pink'),
+(23, 'Chuột Logitech MX Anywhere 3S Graphite', 'Mouse', 'LOGITECH', 1690000, 'This is a description', 'hl_pin:Pin sạc;hl_connect:Wireless;hl_led:DPI - 8.000', 'chuột-logitech-mx-anywhere-3s-graphite'),
+(24, 'Chuột E-DRA EM623W Không dây RGB Trắng', 'Mouse', 'E-DRA', 279000, 'This is a description', 'hl_led:RGB;hl_pin:Pin sạc;hl_connect:Wireless', 'chuột-e-dra-em623w-không-dây-rgb-trắng'),
+(25, 'Chuột DareU EM901X RGB Superlight Wireless Pink', 'Mouse', 'DAREU', 790000, 'This is a description', 'hl_connect:Wireless;hl_pin:Pin sạc;hl_led:Led RGB', 'chuột-dareu-em901x-rgb-superlight-wireless-pink'),
+(26, 'Tai nghe Razer Barracuda X 2022', 'Headphone', 'RAZER', 2390000, 'This is a description', 'hl_connect:Wireless;hl_typehp:Chụp tai;hl_connector:USB A', 'tai-nghe-razer-barracuda-x-2022'),
+(27, 'Tai nghe Gaming Rapoo VH160', 'Headphone', 'RAPOO', 390000, 'This is a description', 'hl_typehp:Chụp tai;hl_connector:USB A;hl_connect:Có dây', 'tai-nghe-gaming-rapoo-vh160'),
+(28, 'Tai nghe Corsair HS35 V2 Xanh', 'Headphone', 'CORSAIR', 990000, 'This is a description', 'hl_typehp:Chụp tai;hl_connector:Jack 3.5mm;hl_connect:Có dây', 'tai-nghe-corsair-hs35-v2-xanh'),
+(29, 'Tai nghe Asus ROG Delta Core', 'Headphone', 'ASUS', 1990000, 'This is a description', 'hl_connect:Có dây;hl_typehp:Chụp tai;hl_connector:Jack 3.5mm', 'tai-nghe-asus-rog-delta-core'),
+(30, 'Tai nghe Edifier Không dây W820NB Plus Trắng Ngà', 'Headphone', 'EDIFIER', 1090000, 'This is a description', 'hl_connect:Wireless;hl_connector:USB C;hl_typehp:Chụp tai', 'tai-nghe-edifier-không-dây-w820nb-plus-trắng-ngà'),
+(31, 'PC CCG AMD R5-5600X/ VGA RTX 3050', 'PC', 'COCHAGEAR', 17990000, 'This is a description', 'hl_ram:16GB;hl_cpu:R5 5600X;hl_main:B550;hl_vga:RTX 3050;hl_ssd:500GB', 'pc-ccg-amd-r5-5600x--vga-rtx-3050'),
+(32, 'PC CCG G-STUDIO Intel i7-13700/ VGA RTX 3060', 'PC', 'COCHAGEAR', 35490000, 'This is a description', 'hl_main:B760;hl_ssd:1TB;hl_cpu:i7 13700;hl_ram:16GB;hl_vga:RTX 3060\"', 'pc-ccg-g-studio-intel-i7-13700--vga-rtx-3060'),
+(33, 'PC CCG Intel i7-14700F/ VGA RTX 4070 Ti', 'PC', 'COCHAGEAR', 52990000, 'This is a description', 'hl_vga:RTX 4070 Ti;hl_ram:32GB;hl_ssd:500GB;hl_main:Z790;hl_cpu:i7 14700F', 'pc-ccg-intel-i7-14700f--vga-rtx-4070-ti'),
+(34, 'PC CCG AMD R9-7900X/VGA RTX 4080', 'PC', 'COCHAGEAR', 99990000, 'This is a description', 'hl_cpu:R9 7900X;hl_main:X670;hl_ssd:1TB;hl_vga:RTX 4080;hl_ram:32GB', 'pc-ccg-amd-r9-7900x-vga-rtx-4080'),
+(35, 'PC CCG AMD R9-7950X/VGA RTX 4090', 'PC', 'COCHAGEAR', 115990000, 'This is a description', 'hl_main:X670;hl_ram:32GB;hl_cpu:R9 7950X;hl_vga:RTX 4090;hl_ssd:1TB', 'pc-ccg-amd-r9-7950x-vga-rtx-4090');
 
 -- --------------------------------------------------------
 
@@ -453,8 +456,7 @@ ALTER TABLE `comments`
 -- Indexes for table `members`
 --
 ALTER TABLE `members`
-  ADD PRIMARY KEY (`ID_Member`),
-  ADD UNIQUE KEY `Account_Name` (`Account_Name`);
+  ADD PRIMARY KEY (`ID_Member`);
 
 --
 -- Indexes for table `news`
@@ -489,7 +491,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `ID_Member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_Member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `news`

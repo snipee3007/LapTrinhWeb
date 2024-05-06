@@ -22,7 +22,7 @@
                 $data = $result->fetch_assoc();
                 $hash_id = password_hash($data, PASSWORD_BCRYPT);
                 $query = "INSERT INTO members (Name, Phone_Number, Email, Account_Password, Image, Role, Hash_ID, Gender, Address_1, Address_2, Address_3) 
-                VALUES ('$name', '$phone_number', '$email', '$hashed_password','./images/logoBK.png','user', '$hash_id', '', '','','')"; 
+                VALUES ('$name', '$phone_number', '$email', '$hashed_password','images/logoBK.png','user', '$hash_id', '', '','','')"; 
                 if(mysqli_query($con, $query)){
                     $_SESSION['rememberme'] = true; 
                     $_SESSION['email'] = $email;

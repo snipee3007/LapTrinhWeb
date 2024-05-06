@@ -892,3 +892,8 @@
 </body>
 
 </html>
+<?php
+  if(isset($_SESSION['rememberme']) && $_SESSION['rememberme'] == False){
+    $_SESSION = array();
+  }
+?>

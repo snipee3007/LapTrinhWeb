@@ -64,14 +64,17 @@
                         });
                     </script>';
                     $user_id = $_SESSION['hash_id'];
-                    $query = "SELECT * FROM members WHERE Hash_id = '{$user_id}'";
+                    $query = "SELECT * FROM members WHERE Hash_ID = '{$user_id}'";
                     $result = mysqli_query($con, $query);
                     $data = $result->fetch_assoc();
                     $image = $data["Image"];
                     $name = $data["Name"];
                     $role = $data["Role"];
-                    if(isset($image)){
+                    if(!isset($image)){
                         $image = "./images/logoBK.png";
+                    }
+                    else{
+                        $image = "./". $image;
                     }
 
                     if($role == 'user'){

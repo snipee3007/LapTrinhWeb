@@ -22,14 +22,14 @@ ob_start();
 //     $profile['email'] = substr($emailParts[0], 0, 1) . str_repeat('*', max(0, strlen($emailParts[0]) - 1)) . '@' . $emailParts[1];
 // }
 include_once("./../../server/connect_db.php");
-if(isset($_GET['user_id']))
+if(isset($_GET['id']))
 {
-    $user_id = $_GET['user_id'];
+    $user_id = $_GET['id'];
     $_SESSION['hash_id'] = $user_id;
-    $query = "SELECT * FROM members WHERE Hash_id = '{$user_id}'";
+    $query = "SELECT * FROM members WHERE Hash_ID = '{$user_id}'";
     $result = mysqli_query($con, $query);
     $profile = $result->fetch_assoc();
-    if(isset($profile['Image'])){
+    if(!isset($profile['Image'])){
         $profile['Image'] = "./images/logoBK.png";
     }
     $phone = substr($profile['Phone_Number'], 0, 3) . str_repeat('*', strlen($profile['Phone_Number']) - 6) . substr($profile['Phone_Number'], -3);
@@ -102,6 +102,15 @@ $recent = [
                                     <span class="font-bold"><?php echo $profile['Name']; ?></span>
                                 </div>
                             </div>
+                            <div x-data = "{openPic : false}">
+                                <button type="button" x-on:click="openPic = true" class="ml-3 text-xs text-blue-700 hover:underline">Đổi ảnh đại diện</button>
+                                <div x-cloak x-on:click="openPic = false" x-show="openPic" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black bg-opacity-50 z-49"></div>
+                                <div x-cloak x-show="openPic" x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                    <?php include_once 'components/changeImage.php'; ?>
+                                </div>
+                            </div>
+                            
+
 
                             <hr class="mb-4">
 
@@ -225,7 +234,7 @@ $recent = [
                                         Email = '{$email}',
                                         Phone_Number = '{$phone}',
                                         Gender = '{$gender}'
-                                        WHERE Hash_id = '{$user_id}'";
+                                        WHERE Hash_ID = '{$user_id}'";
                                         if(mysqli_query($con, $query)){
                                             echo '<script>
                                             document.querySelector("#submit_change").addEventListener("click", async function(e){
@@ -313,10 +322,10 @@ $recent = [
                                 <div x-cloak x-on:click="openDel = false" x-show="openDel" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black bg-opacity-50 z-49"></div>
                                 <div x-cloak x-on:click="openAdd = false" x-show="openAdd" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black bg-opacity-50 z-49"></div>
 
-                                
                                 <div x-cloak x-show="openDel" x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                     <?php include_once 'components/deleteAddressPopup.php'; ?>
                                 </div>
+
                                 <div x-cloak x-show="openAdd" x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                     <?php include_once 'components/addAddressPopup.php'; ?>
                                 </div>

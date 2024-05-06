@@ -1,8 +1,17 @@
 <header x-data="{open: false}" @keydown.window.escape="open = false" style="background-color: #ececec" >
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
-            <a href="home.php" class="-m-1.5 p-1.5 flex items-center">
-                <img class="h-12 w-auto" src="images/logoBK.png" alt="Logo">
+            <a href="<?php echo $CUSTOM_PATH;?>home.php" class="-m-1.5 p-1.5 flex items-center">
+                <img class="h-12 w-auto" src=
+                <?php
+                    if (isset($_SERVER["PATH_INFO"])){
+                        echo "../images/logoBK.png";
+                    }
+                    else{
+                        echo "images/logoBK.png";
+                    }
+                ?>
+                alt="Logo">
                 <div class="ml-2 flex flex-col">
                     <span class="font-medium text-4xl -mb-2" style="font-family: 'Jersey 10'">CochaGear</span>
                     <span class="font-bold text-sm">cochagear.com</span>
@@ -41,6 +50,12 @@
             <div id="signin_button" x-cloak x-on:click="openLogin = false; openReg = false" x-show="openLogin || openReg" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black bg-opacity-50 z-50"></div>
             <div id="signin_button" x-cloak x-show="openLogin" x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
                 <?php 
+                    if (isset($_SERVER['PATH_INFO'])){
+                        $CUSTOM_PATH = "../";
+                    }
+                    else{
+                        $CUSTOM_PATH = "";
+                    }
                     if(!isset($_SESSION['hash_id'])){
                         include_once 'components/signin.php'; 
                     }
@@ -64,23 +79,28 @@
                         });
                     </script>';
                     $user_id = $_SESSION['hash_id'];
-                    $query = "SELECT * FROM members WHERE Hash_id = '{$user_id}'";
+                    $query = "SELECT * FROM members WHERE Hash_ID = '{$user_id}'";
                     $result = mysqli_query($con, $query);
                     $data = $result->fetch_assoc();
                     $image = $data["Image"];
-                    if(isset($image)){
-                        $image = "./images/logoBK.png";
+                    if(!isset($image)){
+                        $image = "./". $CUSTOM_PATH . "images/logoBK.png";
                     }
+                    else{
+                        $image = "./". $CUSTOM_PATH . $image;
+                    }
+
                     $name = $data["Name"];
                     $role = $data["Role"];
                     // echo "<img src='{$image}' class='rounded-full w-12 h-12'>"; 
+
                     if($role == 'user'){
-                        echo '<a href="./profile.php?user_id='.$user_id.'">
+                        echo '<a href="./'. $CUSTOM_PATH .'profile.php?user_id='.$user_id.'">
                                 <img class="border border-3 border-gray-500 rounded-full w-12 h-12 bg-white" src='.$image.'>
                             </a>';
                     }
                     else{
-                        echo '<a href="./profile.php?user_id='.$user_id.'">
+                        echo '<a href="./'. $CUSTOM_PATH .'profile.php?user_id='.$user_id.'">
                                 <img class="border border-3 border-gray-500 rounded-full w-12 h-12 bg-white" src='.$image.'>
                             </a>';
                     }
