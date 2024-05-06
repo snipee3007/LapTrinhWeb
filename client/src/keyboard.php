@@ -1,13 +1,11 @@
 <?php 
 session_start();
-$keyboardList = [
-  ['Name' => 'Bàn phím cơ AKKO 3084', 'Price' => '1.500.000 VND', 'Image' => 'https://file.hstatic.net/200000837185/file/gaming_gear_b4b15044a0dd49febc5e6f818667fd39_compact.png', 'hl_connect' => 'Không dây', 'hl_size' => 'Fullsize', 'hl_keycap' => 'PBT'],
-  ['Name' => 'Bàn phím cơ AKKO 3098', 'Price' => '1.800.000 VND', 'Image' => 'https://file.hstatic.net/200000837185/file/gaming_gear_b4b15044a0dd49febc5e6f818667fd39_compact.png', 'hl_connect' => 'Không dây', 'hl_size' => 'Fullsize', 'hl_keycap' => 'PBT'],
-  ['Name' => 'Bàn phím cơ AKKO 3068', 'Price' => '1.200.000 VND', 'Image' => 'https://file.hstatic.net/200000837185/file/gaming_gear_b4b15044a0dd49febc5e6f818667fd39_compact.png', 'hl_connect' => 'Không dây', 'hl_size' => 'Fullsize', 'hl_keycap' => 'PBT'],
-  ['Name' => 'Bàn phím cơ AKKO 3087', 'Price' => '1.700.000 VND', 'Image' => 'https://file.hstatic.net/200000837185/file/gaming_gear_b4b15044a0dd49febc5e6f818667fd39_compact.png', 'hl_connect' => 'Không dây', 'hl_size' => 'Fullsize', 'hl_keycap' => 'PBT'],
-  ['Name' => 'Bàn phím cơ AKKO 3084', 'Price' => '1.500.000 VND', 'Image' => 'https://file.hstatic.net/200000837185/file/gaming_gear_b4b15044a0dd49febc5e6f818667fd39_compact.png', 'hl_connect' => 'Không dây', 'hl_size' => 'Fullsize', 'hl_keycap' => 'PBT'],
-];
-
+if (isset($_SERVER["PATH_INFO"])){
+  $CUSTOM_PATH = "../";
+}
+else{
+  $CUSTOM_PATH = "";
+}
 ?>
 
 <!DOCTYPE html>

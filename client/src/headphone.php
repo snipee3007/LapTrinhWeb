@@ -1,9 +1,11 @@
 <?php 
 session_start();
-$headphoneList = [
-    ['Name' => 'Tai nghe Corsair HS35 V2 Xanh', 'Price' => '990.000 VND', 'Image' => 'https://product.hstatic.net/200000722513/product/7q3arvrl_34a2259ac9714da0adad025b0d38ea51.png', 'hl_connector' => 'Type C', 'hl_connect' => 'Wireless', 'hl_typehp' => 'Chùm tai'],
-];
-
+if (isset($_SERVER["PATH_INFO"])){
+  $CUSTOM_PATH = "../";
+}
+else{
+  $CUSTOM_PATH = "";
+}
 ?>
 
 <!DOCTYPE html>

@@ -1,9 +1,11 @@
 <?php 
 session_start();
-$mouseList = [
-    ['Name' => 'Chuột không dây Corsair Nightsabre RGB (CH-931B011-AP)', 'Price' => '3.590.000 VND', 'Image' => 'https://product.hstatic.net/200000837185/product/chuot-gaming-khong-day-razer-viper-v2-pro_130b1fe900fb434299c57228b6c12ea6_grande.jpg', 'hl_connect' => 'Không dây', 'hl_pin' => 'Pin rời', 'hl_led' => 'DPI - 4000'],
-];
-
+if (isset($_SERVER["PATH_INFO"])){
+  $CUSTOM_PATH = "../";
+}
+else{
+  $CUSTOM_PATH = "";
+}
 ?>
 
 <!DOCTYPE html>

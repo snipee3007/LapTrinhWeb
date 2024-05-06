@@ -1,5 +1,11 @@
 <?php
 session_start();
+if (isset($_SERVER["PATH_INFO"])){
+    $CUSTOM_PATH = "../";
+  }
+  else{
+    $CUSTOM_PATH = "";
+  }
 ob_start();
 // $query = ['name' => 'Nam Pham Nguyen', 
 //             'image' => 'https://avatars.githubusercontent.com/FazeCT',
@@ -85,7 +91,7 @@ $recent = [
 </head>
 
 <body style="background-color: #ececec">
-    <?php include_once 'components/subHeader.php'; ?>
+    <?php include_once 'components/header.php'; ?>
 
     <div class="max-w-screen-2xl mx-auto" style='font-family: Victor Mono'>
         <div class="flex flex-row justify-between mt-10 mb-10">

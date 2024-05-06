@@ -1,5 +1,11 @@
 <?php
 session_start();
+if (isset($_SERVER["PATH_INFO"])){
+    $CUSTOM_PATH = "../";
+  }
+  else{
+    $CUSTOM_PATH = "";
+  }
 $list = [
     ['name' => 'PC', 'link' => 'pc.php', 'image' => 'https://file.hstatic.net/200000837185/file/pc_6a03da302fb245b8b688d9182829c877_compact.png'],
     ['name' => 'Laptop', 'link' => 'laptop.php', 'image' => 'https://product.hstatic.net/200000837185/product/acer-gaming-nitro-v-2023-3_3f86f33c67e94923bede7fd98bc31098_grande.jpg'],
@@ -42,7 +48,7 @@ $categoryLink = '#';
 </head>
 
 <body style="background-color: #ececec">
-    <?php include_once 'components/subHeader.php'; ?>
+    <?php include_once 'components/header.php'; ?>
 
     <div class="max-w-screen-2xl mx-auto" style='font-family: Victor Mono'>
         <div class="flex flex-row justify-center">

@@ -1,5 +1,11 @@
 <?php
     session_start();
+    if (isset($_SERVER["PATH_INFO"])){
+      $CUSTOM_PATH = "../";
+    }
+    else{
+      $CUSTOM_PATH = "";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,5 +1,12 @@
 <?php
   session_start();
+  if (isset($_SERVER["PATH_INFO"])){
+    $CUSTOM_PATH = "../";
+  }
+  else{
+    $CUSTOM_PATH = "";
+  }
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,6 +81,18 @@
                       </div>' . $list[$i]['name'] . '</a>';
               }
           ?>
+        </div>
+
+        
+        <div class="rounded-lg p-4 mb-10 shadow-md bg-white">
+          <div class="font-bold text-xl mb-8 mt-5">
+            | TÌM KIẾM SẢN PHẨM
+          </div>
+
+          <form class="flex flex-row items-center w-full mb-5" action="search.php" method="get">
+            <input type="text" class="border border-gray-300 p-2 rounded-lg mr-3 w-full" placeholder="Tìm kiếm sản phẩm" name="search">
+            <button type="submit" class="w-32 p-2 text-white rounded-lg text-sm bg-gray-900 border border-white hover:text-black hover:bg-white hover:border-gray-900 transition-colors duration-300 ease-in-out">Tìm kiếm</button>
+          </form>
         </div>
 
         <div class="rounded-lg p-4 mb-10 shadow-md bg-white">

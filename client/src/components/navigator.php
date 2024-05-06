@@ -1,5 +1,5 @@
 
-<div class="relative"> 
+<div class="relative mt-5"> 
         <div class="bg-gray-900 text-white text-sm rounded-lg px-2 hidden md:block w-full">
             <div class="grid grid-cols-6 gap-1 navbarContainer">
                 <a href="pc.php" data-name="pc" class="py-2 navbarItem flex flex-col items-center text-center hover:underline decoration-2">
@@ -52,16 +52,16 @@
                 <div class="font-bold mb-2">PC Intel</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">i3</a>
+                    <a href="search.php?search=i3+pc" class="hover:text-blue-700">i3</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">i5</a>
+                    <a href="search.php?search=i5+pc" class="hover:text-blue-700">i5</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">i7</a>
+                    <a href="search.php?search=i7+pc" class="hover:text-blue-700">i7</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">i9</a>
+                    <a href="search.php?search=i9+pc" class="hover:text-blue-700">i9</a>
                     </li>
                     <li>
                     <a href="pc.php" class="hover:text-blue-700">Xem tất cả</a>
@@ -73,16 +73,16 @@
                 <div class="font-bold mb-2">PC AMD</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">R3</a>
+                    <a href="search.php?search=r3+pc" class="hover:text-blue-700">R3</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">R5</a>
+                    <a href="search.php?search=r5+pc" class="hover:text-blue-700">R5</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">R7</a>
+                    <a href="search.php?search=r7+pc" class="hover:text-blue-700">R7</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">R9</a>
+                    <a href="search.php?search=r9+pc" class="hover:text-blue-700">R9</a>
                     </li>
                     <li>
                     <a href="pc.php" class="hover:text-blue-700">Xem tất cả</a>
@@ -91,20 +91,15 @@
                 </div>
 
                 <div>
-                <div class="font-bold mb-2">PC VGA</div>
+                <div class="font-bold mb-2">PC RAM</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">PC GTX 1650</a>
+                    <a href="search.php?search=PC+RAM+16+GB" class="hover:text-blue-700">PC RAM 16GB</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">PC GTX 2060</a>
+                    <a href="search.php?search=PC+RAM+32+GB" class="hover:text-blue-700">PC RAM 32GB</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">PC RTX 3050</a>
-                    </li>
-                    <li>
-                    <a href="#" class="hover:text-blue-700">PC RTX 3060</a>
-                    </li>
                 </ul>
                 </div>
 
@@ -112,19 +107,19 @@
                 <div class="font-bold mb-2">PC VGA</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">PC RTX 4060</a>
+                    <a href="search.php?search=PC+RTX+4060" class="hover:text-blue-700">PC RTX 4060</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">PC RTX 4070</a>
+                    <a href="search.php?search=PC+RTX+4070" class="hover:text-blue-700">PC RTX 4070</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">PC RTX 4080</a>
+                    <a href="search.php?search=PC+RTX+4080" class="hover:text-blue-700">PC RTX 4080</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">PC RTX 4090</a>
+                    <a href="search.php?search=PC+RTX+4090" class="hover:text-blue-700">PC RTX 4090</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Xem tất cả</a>
+                    <a href="pc.php" class="hover:text-blue-700">Xem tất cả</a>
                     </li>
                 </ul>
                 </div>
@@ -138,22 +133,22 @@
                 <div class="font-bold mb-2">Hãng sản xuất</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">ACER</a>
+                    <a href="search.php?search=laptop+acer" class="hover:text-blue-700">ACER</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">ASUS</a>
+                    <a href="search.php?search=laptop+asus" class="hover:text-blue-700">ASUS</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">MSI</a>
+                    <a href="search.php?search=laptop+msi" class="hover:text-blue-700">MSI</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">LENOVO</a>
+                    <a href="search.php?search=laptop+lenovo" class="hover:text-blue-700">LENOVO</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">GIGABYTE</a>
+                    <a href="search.php?search=laptop+gigabyte" class="hover:text-blue-700">GIGABYTE</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">DELL</a>
+                    <a href="search.php?search=laptop+dell" class="hover:text-blue-700">DELL</a>
                     </li>
                     <li>
                     <a href="laptop.php" class="hover:text-blue-700">Xem tất cả</a>
@@ -165,19 +160,19 @@
                 <div class="font-bold mb-2">CPU</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Intel Core i3</a>
+                    <a href="search.php?search=laptop+i3" class="hover:text-blue-700">Intel Core i3</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Intel Core i5</a>
+                    <a href="search.php?search=laptop+i5" class="hover:text-blue-700">Intel Core i5</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Intel Core i7</a>
+                    <a href="search.php?search=laptop+i7" class="hover:text-blue-700">Intel Core i7</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Intel Core i9</a>
+                    <a href="search.php?search=laptop+i9" class="hover:text-blue-700">Intel Core i9</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">AMD Ryzen</a>
+                    <a href="search.php?search=laptop+amd+ryzen" class="hover:text-blue-700">AMD Ryzen</a>
                     </li>
                     <li>
                     <a href="laptop.php" class="hover:text-blue-700">Xem tất cả</a>
@@ -189,20 +184,19 @@
                 <div class="font-bold mb-2">RAM</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">8 GB</a>
+                    <a href="search.php?search=laptop+ram+8+GB" class="hover:text-blue-700">8 GB</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">16 GB</a>
+                    <a href="search.php?search=laptop+ram+16+GB" class="hover:text-blue-700">16 GB</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">24 GB</a>
+                    <a href="search.php?search=laptop+ram+24+GB" class="hover:text-blue-700">24 GB</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">32 GB</a>
+                    <a href="search.php?search=laptop+ram+32+GB" class="hover:text-blue-700">32 GB</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">64 GB trở lên</a>
-                    </li>
+
                 </ul>
                 </div>
 
@@ -210,28 +204,28 @@
                 <div class="font-bold mb-2">VGA</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Onboard</a>
+                    <a href="search.php?search=laptop+vga+onboard" class="hover:text-blue-700">Onboard</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">RTX 1650</a>
+                    <a href="search.php?search=laptop+rtx+1650" class="hover:text-blue-700">RTX 1650</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">RTX 3050</a>
+                    <a href="search.php?search=laptop+rtx+3050" class="hover:text-blue-700">RTX 3050</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">RTX 3060</a>
+                    <a href="search.php?search=laptop+rtx+3060" class="hover:text-blue-700">RTX 3060</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">RTX 4060</a>
+                    <a href="search.php?search=laptop+rtx+4060" class="hover:text-blue-700">RTX 4060</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">RTX 4070</a>
+                    <a href="search.php?search=laptop+rtx+4070" class="hover:text-blue-700">RTX 4070</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">RTX 4080</a>
+                    <a href="search.php?search=laptop+rtx+4080" class="hover:text-blue-700">RTX 4080</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">RTX 4090</a>
+                    <a href="search.php?search=laptop+rtx+4090" class="hover:text-blue-700">RTX 4090</a>
                     </li>
                 </ul>
                 </div>

@@ -31,7 +31,7 @@ if(isset($_GET['user_id']))
 {
     $user_id = $_GET['user_id'];
     $_SESSION['hash_id'] = $user_id;
-    $query = "SELECT * FROM members WHERE Hash_ID = '{$user_id}'";
+    $query = "SELECT * FROM members WHERE Hash_id = '{$user_id}'";
     $result = mysqli_query($con, $query);
     $profile = $result->fetch_assoc();
     if(isset($profile['Image'])){
@@ -97,9 +97,9 @@ $postList = [
 </head>
 
 <body style="background-color: #ececec">
-    <?php include_once 'components/subHeader.php'; ?>
+    <?php include_once 'components/header.php'; ?>
 
-    <div class="max-w-screen-2xl mx-auto" style='font-family: Victor Mono'>
+    <div class="max-w-screen-2xl mx-auto min-h-max" style='font-family: Victor Mono'>
         <div class="flex flex-row justify-between mt-10 mb-10">
             <div class="w-5xl 2xl:w-6xl mx-auto">
                 <div class="grid grid-cols-6 gap-4">
@@ -116,7 +116,7 @@ $postList = [
                                 <svg class="w-6 h-6 text-gray-800 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                     <path fill-rule="evenodd" d="M14 7h-4v3a1 1 0 0 1-2 0V7H6a1 1 0 0 0-.997.923l-.917 11.924A2 2 0 0 0 6.08 22h11.84a2 2 0 0 0 1.994-2.153l-.917-11.924A1 1 0 0 0 18 7h-2v3a1 1 0 1 1-2 0V7Zm-2-3a2 2 0 0 0-2 2v1H8V6a4 4 0 0 1 8 0v1h-2V6a2 2 0 0 0-2-2Z" clip-rule="evenodd"/>
                                 </svg>
-                                Quản lý mặt hàng
+                                Thêm mặt hàng
                             </button>
 
                             <button type="button" id="newsButton" class="text-sm flex items-center hover:text-blue-700">
@@ -199,8 +199,90 @@ $postList = [
                         </div>
                         
                         <div id="items" class="hidden rounded-lg shadow-md p-4 bg-white">
-                            <div class="font-bold mb-4">| Quản lý mặt hàng</div>
+                            <div class="font-bold mb-4">| Thêm mặt hàng</div>
                             <hr class="mb-3">
+                            <form>
+                                <div class="mb-4">
+                                    <input class="text-xs h-6 p-0 w-full" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="name" name="name" placeholder="Tên sản phẩm">
+                                </div>
+
+                                <div class="mb-4">
+                                    <select name="productType" id="productType" class="text-xs h-6 p-0 w-full" style="border: none; border-bottom: 1px solid; outline: none;">
+                                        <option value="" selected disabled>Loại sản phẩm</option>
+                                        <option value="PC">PC</option>
+                                        <option value="Laptop">Laptop</option>
+                                        <option value="Màn hình">Màn hình</option>
+                                        <option value="Tai nghe">Tai nghe</option>
+                                        <option value="Bàn phím">Bàn phím</option>
+                                        <option value="Chuột">Chuột</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-4">
+                                    <textarea rows="3" class="p-0 w-full text-xs" name="comment" style="border: none; border-bottom: 1px solid;" placeholder="Mô tả sản phẩm"></textarea>
+                                </div>
+
+                                <div class="mb-4">
+                                    <input class="text-xs h-6 p-0 w-full" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="image" name="image" placeholder="Link ảnh">
+                                </div>
+
+                                <div id="PC" class="" style="display: none;">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="CPU_PC" name="CPU_PC" placeholder="CPU">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="VGA_PC" name="VGA_PC" placeholder="VGA">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="main" name="main" placeholder="Main">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="RAM_PC" name="RAM_PC" placeholder="RAM">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="SSD" name="SSD" placeholder="SSD">
+                                </div>
+
+                                <div id="Laptop" class="" style="display: none;">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="CPU" name="CPU" placeholder="CPU">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="VGA" name="VGA" placeholder="VGA">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="RAM" name="RAM" placeholder="RAM">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="screen" name="screen" placeholder="Màn hình">
+                                </div>
+
+                                <div id="Màn hình" class="" style="display: none;">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="sizeScreen" name="sizeScreen" placeholder="Kích thước">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="rate" name="rate" placeholder="Tần số quét">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="res" name="res" placeholder="Độ phân giải">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="panel" name="panel" placeholder="Tấm nền">
+                                </div>
+
+                                <div id="Tai nghe" class="" style="display: none;">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="typehp" name="typehp" placeholder="Kiểu tai nghe (chụp tai, nhét tai, ...)">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="connecthp" name="connecthp" placeholder="Kiểu kết nối (Wireless, có dây, ...)">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="connector" name="connector" placeholder="Kiểu dây (USB A, USB C, ...)">
+                                </div>
+
+                                <div id="Bàn phím" class="" style="display: none;">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="size" name="size" placeholder="Kích thước (fullsize, 90%, ...)">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="connectkb" name="connectkb" placeholder="Kiểu kết nối (Wireless, có dây, ...)">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="keycap" name="keycap" placeholder="Kiểu dây (USB A, USB C, ...)">
+                                </div>
+
+                                <div id="Chuột" class="" style="display: none;">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="pin" name="pin" placeholder="Kiểu pin (pin rời, ...)">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="connectkb" name="connectkb" placeholder="Kiểu kết nối (Wireless, có dây, ...)">
+                                    <input class="text-xs h-6 p-0 w-full mb-4" style="border: none; border-bottom: 1px solid; outline: none;" type="text" id="led" name="led" placeholder="LED">
+                                </div>
+
+                                <script>
+                                    document.getElementById('productType').addEventListener('change', function() {
+                                        document.getElementById('PC').style.display = 'none';
+                                        document.getElementById('Laptop').style.display = 'none';
+                                        document.getElementById('Màn hình').style.display = 'none';
+                                        document.getElementById('Tai nghe').style.display = 'none';
+                                        document.getElementById('Bàn phím').style.display = 'none';
+                                        document.getElementById('Chuột').style.display = 'none';
+                                        if (this.value) {
+                                            document.getElementById(this.value).style.display = 'block';
+                                        }
+                                    });
+                                </script>
+
+                                <button id="submit_change" type="submit" class="w-full p-2 text-white rounded-lg text-xs bg-blue-700 border border-white hover:text-blue-700 hover:bg-white hover:border-blue-700 transition-colors duration-300 ease-in-out">Tạo mặt hàng</button>
+                            </form>
+
                         </div>
 
                         <div id="news" class="hidden rounded-lg shadow-md p-4 bg-white">

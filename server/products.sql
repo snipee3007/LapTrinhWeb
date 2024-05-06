@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2024 at 10:54 AM
+-- Generation Time: May 06, 2024 at 09:03 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,8 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
-CREATE DATABASE IF NOT EXISTS `products` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `products`;
+-- Database: `product`
 --
 
 -- --------------------------------------------------------
@@ -34,32 +33,33 @@ CREATE TABLE `comments` (
   `ID_Product` int(11) NOT NULL,
   `ID_Member` int(11) NOT NULL,
   `Rating` float NOT NULL,
-  `Image` varchar(200) DEFAULT NULL
+  `Image` varchar(200) DEFAULT NULL,
+  `Date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`ID_Comment`, `Context`, `ID_Product`, `ID_Member`, `Rating`, `Image`) VALUES
-(1, 'Quá tuyệt vời', 1, 2, 5, NULL),
-(2, 'Máy không dùng để đập maimai được. Quá tệ!', 1, 1, 1, NULL),
-(3, 'Cũng được nhưng máy không nướng sườn được', 1, 3, 3, NULL),
-(4, 'Máy cấu hình đẹp, chạy nhanh, thích hợp cho việc chơi game, giá tiền hơi chát xíu', 1, 4, 4, NULL),
-(5, 'Cho hỏi máy này bên shop còn không?', 1, 5, 5, NULL),
-(6, 'Laptop chơi game này phù hợp giá sinh viên', 2, 1, 5, 'someImagePath'),
-(7, 'Cho mình hỏi máy này có giảm giá không?', 2, 5, 5, NULL),
-(8, 'Máy xài chạy khá nóng, nướng sườn OK', 2, 3, 5, NULL),
-(9, 'Máy xài RAM 16GB Onboard, thường mình phải xài trên 16GB RAM nên giờ mình muốn nâng cấp thêm cũng không được', 2, 4, 3, 'someImagePath'),
-(10, NULL, 2, 2, 4, NULL),
-(11, 'Màn hình rộng, chạy mượt như sunsilk', 9, 1, 5, 'someImagePath'),
-(12, 'Với kích thước màn này rất vừa với bàn của mình', 9, 3, 5, 'someImagePath'),
-(13, 'Màn rộng quá', 9, 5, 1, ''),
-(14, 'Màn phù hợp túi tiền của các game thủ', 9, 2, 4, ''),
-(15, 'Cho hỏi máy này có cài sẵn bộ Office chưa?', 4, 5, 5, NULL),
-(16, NULL, 4, 4, 4, NULL),
-(17, 'Mình vừa mua con màn này với con laptop gaming TUF, phải gọi là một sự kết hợp quá hoàn hảo ', 6, 1, 5, NULL),
-(18, 'Mình vừa mua con màn này với con màn hình gaming TUF, phải gọi là một sự kết hợp quá hoàn hảo ', 5, 1, 5, NULL);
+INSERT INTO `comments` (`ID_Comment`, `Context`, `ID_Product`, `ID_Member`, `Rating`, `Image`, `Date`) VALUES
+(1, 'Quá tuyệt vời', 1, 2, 5, NULL, '2024-05-06'),
+(2, 'Máy không dùng để đập maimai được. Quá tệ!', 1, 1, 1, NULL, '2024-05-06'),
+(3, 'Cũng được nhưng máy không nướng sườn được', 1, 3, 3, NULL, '2024-05-06'),
+(4, 'Máy cấu hình đẹp, chạy nhanh, thích hợp cho việc chơi game, giá tiền hơi chát xíu', 1, 4, 4, NULL, '2024-05-06'),
+(5, 'Cho hỏi máy này bên shop còn không?', 1, 5, 5, NULL, '2024-05-06'),
+(6, 'Laptop chơi game này phù hợp giá sinh viên', 2, 1, 5, 'someImagePath', '2024-05-06'),
+(7, 'Cho mình hỏi máy này có giảm giá không?', 2, 5, 5, NULL, '2024-05-06'),
+(8, 'Máy xài chạy khá nóng, nướng sườn OK', 2, 3, 5, NULL, '2024-05-06'),
+(9, 'Máy xài RAM 16GB Onboard, thường mình phải xài trên 16GB RAM nên giờ mình muốn nâng cấp thêm cũng không được', 2, 4, 3, 'someImagePath', '2024-05-06'),
+(10, NULL, 2, 2, 4, NULL, '2024-05-06'),
+(11, 'Màn hình rộng, chạy mượt như sunsilk', 9, 1, 5, 'someImagePath', '2024-05-06'),
+(12, 'Với kích thước màn này rất vừa với bàn của mình', 9, 3, 5, 'someImagePath', '2024-05-06'),
+(13, 'Màn rộng quá', 9, 5, 1, '', '2024-05-06'),
+(14, 'Màn phù hợp túi tiền của các game thủ', 9, 2, 4, '', '2024-05-06'),
+(15, 'Cho hỏi máy này có cài sẵn bộ Office chưa?', 4, 5, 5, NULL, '2024-05-06'),
+(16, NULL, 4, 4, 4, NULL, '2024-05-06'),
+(17, 'Mình vừa mua con màn này với con laptop gaming TUF, phải gọi là một sự kết hợp quá hoàn hảo ', 6, 1, 5, NULL, '2024-05-06'),
+(18, 'Mình vừa mua con màn này với con màn hình gaming TUF, phải gọi là một sự kết hợp quá hoàn hảo ', 5, 1, 5, NULL, '2024-05-06');
 
 -- --------------------------------------------------------
 
@@ -79,22 +79,23 @@ CREATE TABLE `members` (
   `Account_Password` varchar(255) NOT NULL,
   `Image` varchar(100) NOT NULL,
   `Role` varchar(10) NOT NULL,
-  `Hash_ID` varchar(255) NOT NULL
+  `Hash_ID` varchar(255) NOT NULL,
+  `Status` varchar(10) NOT NULL DEFAULT 'active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`ID_Member`, `Name`, `Phone_Number`, `Email`, `Address_1`, `Address_2`, `Address_3`, `Gender`, `Account_Password`, `Image`, `Role`, `Hash_ID`) VALUES
-(1, 'Lê Minh Chánh', '0835599955', 'chanh.leminh@hcmut.edu.vn', '', '', '', 'male', 'kekwlmao', 'hmmge', 'admin', ''),
-(2, 'Phạm Nguyễn Nam', '0937113543', 'nam.phamnguyen1512@hcmut.edu.vn', '', '', '', 'male', 'lmaolmao', 'bedge', 'admin', ''),
-(3, 'Lê Thiên Ân', '0356556216', 'an.lethien@hcmut.edu.vn', '', '', '', 'male', 'kekwkekw', 'gayge', 'admin', ''),
-(4, 'Lê Hồng Minh', '0704927263', 'minh.lehong2003@hcmut.edu.vn', '', '', '', 'male', 'lmaokekw', 'sleep', 'admin', ''),
-(5, 'Trần Nhân Khánh', '0961322985', 'khanh.tran2003csejpn@hcmut.edu.vn', '', '', '', 'male', 'Lmouse', 'dedge', 'user', ''),
-(6, 'Phạm Quang Minh', '0812676767', 'minh.phamquang@hcmut.edu.vn', '', '', '', 'female', 'LmaoKekw', 'okayge', 'user', ''),
-(7, 'test11111212121', '1111111111', 'abc@gmail.com', '', '', '', 'male', '$2y$10$C9pZfs74qPBuSXZUAnRe7uswOXLeOs7fzMixfAh85qJ6DRiPE34IW', '', 'user', '$2y$10$vD28HakmgGzTNmVXWYJnkOhwZJxIIIqJ6ZvYsqmK0bDx7kIdR.rQq'),
-(9, 'BKISC2', '77777777777', 'bedge@gmail.cochaloz', '', '', '', 'female', '$2y$10$lBGZSho0DwKlIY.QckRcuOAljBRyWj1Utj7cTaOSogxxj6eIvYSra', './image/logoBK.png', 'user', '$2y$10$fyLRGntQm1xvTrmMBp2.W.3gkvIsxc6/lLHzYyNmVqb5Kujpj.RZi');
+INSERT INTO `members` (`ID_Member`, `Name`, `Phone_Number`, `Email`, `Address_1`, `Address_2`, `Address_3`, `Gender`, `Account_Password`, `Image`, `Role`, `Hash_ID`, `Status`) VALUES
+(1, 'Lê Minh Chánh', '0835599955', 'chanh.leminh@hcmut.edu.vn', '', '', '', 'male', 'kekwlmao', 'images/snipee3007.gif', 'admin', '', 'active'),
+(2, 'Phạm Nguyễn Nam', '0937113543', 'nam.phamnguyen1512@hcmut.edu.vn', '', '', '', 'male', 'lmaolmao', 'images/fazect.png', 'admin', '', 'active'),
+(3, 'Lê Thiên Ân', '0356556216', 'an.lethien@hcmut.edu.vn', '', '', '', 'male', 'kekwkekw', 'images/founder.png', 'admin', '', 'active'),
+(4, 'Lê Hồng Minh', '0704927263', 'minh.lehong2003@hcmut.edu.vn', '', '', '', 'male', 'lmaokekw', 'images/junvalentine.png', 'admin', '', 'active'),
+(5, 'Trần Nhân Khánh', '0961322985', 'khanh.tran2003csejpn@hcmut.edu.vn', '', '', '', 'male', 'Lmouse', 'images/khartist.jpg', 'user', '', 'active'),
+(6, 'Phạm Quang Minh', '0812676767', 'minh.phamquang@hcmut.edu.vn', '', '', '', 'female', 'LmaoKekw', 'images/masamuneee.png', 'user', '', 'active'),
+(7, 'test11111212121', '1111111111', 'abc@gmail.com', '', '', '', 'male', '$2y$10$C9pZfs74qPBuSXZUAnRe7uswOXLeOs7fzMixfAh85qJ6DRiPE34IW', 'images/text.png', 'user', '$2y$10$vD28HakmgGzTNmVXWYJnkOhwZJxIIIqJ6ZvYsqmK0bDx7kIdR.rQq', 'active'),
+(9, 'BKISC2', '77777777777', 'bedge@gmail.cochaloz', '', '', '', 'female', '$2y$10$lBGZSho0DwKlIY.QckRcuOAljBRyWj1Utj7cTaOSogxxj6eIvYSra', 'images/logoBK.png', 'admin', '$2y$10$fyLRGntQm1xvTrmMBp2.W.3gkvIsxc6/lLHzYyNmVqb5Kujpj.RZi', 'active');
 
 -- --------------------------------------------------------
 
@@ -133,41 +134,41 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`ID_Product`, `Name`, `Category`, `Brand`, `Price`, `Description`, `Tags`, `slug`) VALUES
-(1, 'Laptop ASUS Zenbook Duo OLED UX8406MA PZ307W', 'Laptop', 'ASUS', 48990000, 'This is a description', 'hl_ssd:512 GB;hl_lcd:14 inch 3K OLED TOUCH;hl_cpu:Ultra 7 155H;spec_VGA:Intel Arc;hl_hz:120 Hz;hl_ram:16 GB;hl_vga:Intel Arc', 'laptop-asus-zenbook-duo-oled-ux8406ma-pz307w'),
-(2, 'Laptop MSI Summit E14 Evo A12M 211VN', 'Laptop', 'MSI', 22490000, 'This is a description', 'hl_ram:16 GB;hl_ssd:512 GB;hl_cpu:i7-1280P;hl_vga:Onboard;hl_lcd:14 inch FHD+ IPS', 'laptop-msi-summit-e14-evo-a12m-211vn'),
-(3, 'Laptop MSI Modern 14 C13M 609VN', 'Laptop', 'MSI', 13990000, 'This is a description', 'hl_ram:8 GB;hl_cpu:i5-1335U;hl_ssd:512 GB;hl_lcd:14 inch FHD IPS;hl_sticker:asus-vp;hl_vga:Onboard', 'laptop-msi-modern-14-c13m-609vn'),
-(4, 'Laptop ASUS Vivobook 14 OLED A1405VA KM095W', 'Laptop', 'ASUS', 17790000, 'This is a description', 'hl_cpu:i5-13500H;hl_ssd:512 GB;hl_ram:16 GB;hl_vga:Onboard;hl_lcd:14 inch 2K8 OLED', 'laptop-asus-vivobook-14-oled-a1405va-km095w'),
-(5, 'Laptop gaming ASUS TUF Gaming F15 FX507VI LP088W', 'Laptop', 'ASUS', 43990000, 'This is a description', 'hl_hz:144 Hz;hl_ram:16 GB;hl_vga:RTX 4070;hl_cpu:i7-13620H;hl_lcd:15.6 inch FHD;spec_VGA:RTX 4070;hl_ssd:512 GB\"', 'laptop-gaming-asus-tuf-gaming-f15-fx507vi-lp088w'),
-(6, 'Màn hình Asus TUF GAMING VG279Q3A 27\" Fast IPS 180Hz Gsync chuyên game', 'Screen', 'ASUS', 4490000, 'This is a description', 'hl_hz:180Hz;hl_panel:IPS;hl_lcd:27 inch;hl_res:Full HD (1920 x 1080)', 'màn-hình-asus-tuf-gaming-vg279q3a-27\"-fast-ips-180hz-gsync-chuyên-game'),
-(7, 'Màn hình cong GIGABYTE G34WQC A 34\" 2K 144Hz HDR400 chuyên game', 'Screen', 'GIGABYTE', 8590000, 'This is a description', 'hl_lcd:34 inch;hl_res:2K (3440 x 1440);hl_hz:144Hz;hl_panel:VA', 'màn-hình-cong-gigabyte-g34wqc-a-34\"-2k-144hz-hdr400-chuyên-game'),
-(8, 'Màn hình cong GIGABYTE GS27FC 27\" 180Hz chuyên game', 'Screen', 'GIGABYTE', 3990000, 'This is a description', 'hl_res:Full HD (1920 x 1080);hl_lcd:27 inch;hl_hz:180Hz;hl_panel:VA', 'màn-hình-cong-gigabyte-gs27fc-27\"-180hz-chuyên-game'),
-(9, 'Màn hình cong Asus ROG Strix XG49VQ 49\" VA 144Hz', 'Screen', 'ASUS', 24990000, 'This is a description', 'hl_res:Full HD (3840 x 1080);hl_hz:144Hz;hl_lcd:49 inch;hl_panel:VA', 'màn-hình-cong-asus-rog-strix-xg49vq-49\"-va-144hz'),
-(10, 'Màn hình MSI PRO MP275 27\" IPS 100Hz', 'Screen', 'MSI', 2890000, 'This is a description', 'hl_hz:100Hz;hl_res:Full HD (1920 x 1080);hl_panel:IPS;hl_lcd:27 inch', 'màn-hình-msi-pro-mp275-27\"-ips-100hz'),
-(11, 'Laptop gaming Gigabyte G7 KE 52VN263SH', 'Laptop', 'GIGABYTE', 27490000, 'This is a description', 'hl_hz:144 Hz;hl_ram:8 GB;hl_cpu:i5-12500H;hl_ssd:512 GB;hl_vga:RTX 3060;hl_lcd:15.6 inch FHD', 'laptop-gaming-gigabyte-g7-ke-52vn263sh'),
-(12, 'Laptop Acer Aspire 5 A515 58P 71EJ', 'Laptop', 'ACER', 18990000, 'This is a description', 'hl_ssd:1 TB;hl_cpu:i7-1335U;hl_vga:Onboard;hl_lcd:15.6 inch FHD;hl_ram:16 GB', 'laptop-acer-aspire-5-a515-58p-71ej'),
-(13, 'Laptop Dell Inspiron T7430 N7430I58W1 Silver', 'Laptop', 'DELL', 22990000, 'This is a description', 'hl_cpu:i5-1335U;hl_vga:Onboard;hl_ssd:512 GB;hl_ram:8 GB;hl_lcd:14 inch FHD+', 'laptop-dell-inspiron-t7430-n7430i58w1-silver'),
-(14, 'Laptop Dell Vostro 3530 V5I5267W1 Gray', 'Laptop', 'DELL', 15490000, 'This is a description', 'hl_cpu:i5-1335U;hl_hz:120 Hz;hl_ssd:256 GB;hl_ram:8 GB;hl_lcd:15.6 inch FHD IPS;hl_vga:Onboard', 'laptop-dell-vostro-3530-v5i5267w1-gray'),
-(15, 'Laptop gaming Acer Aspire 7 A715 76G 5806', 'Laptop', 'ACER', 20990000, 'This is a description', 'hl_ssd:512 GB;hl_hz:144 Hz;hl_vga:RTX 3050;hl_cpu:i5-12450H;hl_ram:16 GB;hl_lcd:15.6 inch FHD', 'laptop-gaming-acer-aspire-7-a715-76g-5806'),
-(16, 'Bàn phím E-Dra EK312 Alpha Blue Switch', 'Keyboard', 'E-DRA', 579000, 'This is a description', 'hl_keycap:ABS;hl_size:Full size;hl_connect:Có dây', 'bàn-phím-e-dra-ek312-alpha-blue-switch'),
-(17, 'Bàn phím chơi game cơ E-Dra EK384 Triple Mode Beta Red Switch', 'Keyboard', 'E-DRA', 749000, 'This is a description', 'hl_connect:Wireless;hl_keycap:ABS;hl_size:TKL', 'bàn-phím-chơi-game-cơ-e-dra-ek384-triple-mode-beta-red-switch'),
-(18, 'Bàn phím Rapoo V500 Pro Multimode TKL Blue Switch', 'Keyboard', 'RAPOO', 890000, 'This is a description', 'hl_connect:Wireless;hl_keycap:ABS;hl_size:TKL', 'bàn-phím-rapoo-v500-pro-multimode-tkl-blue-switch'),
-(19, 'Bàn phím cơ Corsair K100 RGB Opx Switch', 'Keyboard', 'CORSAIR', 5390000, 'This is a description', 'hl_size:Full size;hl_keycap:PBT;hl_connect:Có dây', 'bàn-phím-cơ-corsair-k100-rgb-opx-switch'),
-(20, 'Bàn phím Razer BlackWidow V4 X Green Switch', 'Keyboard', 'RAZER', 3290000, 'This is a description', 'hl_connect:Có dây;hl_size:Full size;hl_keycap:ABS', 'bàn-phím-razer-blackwidow-v4-x-green-switch'),
-(21, 'Chuột Logitech G Pro X Superlight 2 Black', 'Mouse', 'LOGITECH', 3390000, 'This is description', 'hl_led:Led RGB;hl_connect:Wireless;hl_pin:Pin sạc', 'chuột-logitech-g-pro-x-superlight-2-black'),
-(22, 'Chuột công thái học Logitech Lift Vertical Pink', 'Mouse', 'LOGITECH', 1290000, 'This is a description', 'hl_connect:Wireless;hl_pin:Pin rời;hl_led:DPI - 4.000', 'chuột-công-thái-học-logitech-lift-vertical-pink'),
-(23, 'Chuột Logitech MX Anywhere 3S Graphite', 'Mouse', 'LOGITECH', 1690000, 'This is a description', 'hl_pin:Pin sạc;hl_connect:Wireless;hl_led:DPI - 8.000', 'chuột-logitech-mx-anywhere-3s-graphite'),
-(24, 'Chuột E-DRA EM623W Không dây RGB Trắng', 'Mouse', 'E-DRA', 279000, 'This is a description', 'hl_led:RGB;hl_pin:Pin sạc;hl_connect:Wireless', 'chuột-e-dra-em623w-không-dây-rgb-trắng'),
-(25, 'Chuột DareU EM901X RGB Superlight Wireless Pink', 'Mouse', 'DAREU', 790000, 'This is a description', 'hl_connect:Wireless;hl_pin:Pin sạc;hl_led:Led RGB', 'chuột-dareu-em901x-rgb-superlight-wireless-pink'),
-(26, 'Tai nghe Razer Barracuda X 2022', 'Headphone', 'RAZER', 2390000, 'This is a description', 'hl_connect:Wireless;hl_typehp:Chụp tai;hl_connector:USB A', 'tai-nghe-razer-barracuda-x-2022'),
-(27, 'Tai nghe Gaming Rapoo VH160', 'Headphone', 'RAPOO', 390000, 'This is a description', 'hl_typehp:Chụp tai;hl_connector:USB A;hl_connect:Có dây', 'tai-nghe-gaming-rapoo-vh160'),
-(28, 'Tai nghe Corsair HS35 V2 Xanh', 'Headphone', 'CORSAIR', 990000, 'This is a description', 'hl_typehp:Chụp tai;hl_connector:Jack 3.5mm;hl_connect:Có dây', 'tai-nghe-corsair-hs35-v2-xanh'),
-(29, 'Tai nghe Asus ROG Delta Core', 'Headphone', 'ASUS', 1990000, 'This is a description', 'hl_connect:Có dây;hl_typehp:Chụp tai;hl_connector:Jack 3.5mm', 'tai-nghe-asus-rog-delta-core'),
-(30, 'Tai nghe Edifier Không dây W820NB Plus Trắng Ngà', 'Headphone', 'EDIFIER', 1090000, 'This is a description', 'hl_connect:Wireless;hl_connector:USB C;hl_typehp:Chụp tai', 'tai-nghe-edifier-không-dây-w820nb-plus-trắng-ngà'),
-(31, 'PC CCG AMD R5-5600X/ VGA RTX 3050', 'PC', 'COCHAGEAR', 17990000, 'This is a description', 'hl_ram:16GB;hl_cpu:R5 5600X;hl_main:B550;hl_vga:RTX 3050;hl_ssd:500GB', 'pc-ccg-amd-r5-5600x--vga-rtx-3050'),
-(32, 'PC CCG G-STUDIO Intel i7-13700/ VGA RTX 3060', 'PC', 'COCHAGEAR', 35490000, 'This is a description', 'hl_main:B760;hl_ssd:1TB;hl_cpu:i7 13700;hl_ram:16GB;hl_vga:RTX 3060\"', 'pc-ccg-g-studio-intel-i7-13700--vga-rtx-3060'),
-(33, 'PC CCG Intel i7-14700F/ VGA RTX 4070 Ti', 'PC', 'COCHAGEAR', 52990000, 'This is a description', 'hl_vga:RTX 4070 Ti;hl_ram:32GB;hl_ssd:500GB;hl_main:Z790;hl_cpu:i7 14700F', 'pc-ccg-intel-i7-14700f--vga-rtx-4070-ti'),
-(34, 'PC CCG AMD R9-7900X/VGA RTX 4080', 'PC', 'COCHAGEAR', 99990000, 'This is a description', 'hl_cpu:R9 7900X;hl_main:X670;hl_ssd:1TB;hl_vga:RTX 4080;hl_ram:32GB', 'pc-ccg-amd-r9-7900x-vga-rtx-4080'),
-(35, 'PC CCG AMD R9-7950X/VGA RTX 4090', 'PC', 'COCHAGEAR', 115990000, 'This is a description', 'hl_main:X670;hl_ram:32GB;hl_cpu:R9 7950X;hl_vga:RTX 4090;hl_ssd:1TB', 'pc-ccg-amd-r9-7950x-vga-rtx-4090');
+(1, 'Laptop ASUS Zenbook Duo OLED UX8406MA PZ307W', 'Laptop', 'ASUS', 48990000, 'Nếu bạn đang muốn tìm cho mình một chiếc laptop có thiết kế độc đáo và linh hoạt mà vẫn đảm bảo hiệu năng ổn định thì đừng bỏ qua Asus Zenbook Duo UX8406MA PZ307W. Mẫu laptop Asus Zenbook này sở hữu màn hình duo 120Hz và con chip thế hệ mới nhất hứa hẹn sẽ mang tới cho bạn trải nghiệm xử lý công việc hiệu quả và bền bỉ. ', 'hl_ssd:512 GB;hl_lcd:14 inch 3K OLED TOUCH;hl_cpu:Ultra 7 155H;spec_VGA:Intel Arc;hl_hz:120 Hz;hl_ram:16 GB;hl_vga:Intel Arc', 'laptop-asus-zenbook-duo-oled-ux8406ma-pz307w'),
+(2, 'Laptop MSI Summit E14 Evo A12M 211VN', 'Laptop', 'MSI', 22490000, 'Laptop MSI Summit E14 Evo A12M i7 1280P (211VN) mới nhất đến từ MSI đã có mặt tại CoChaGear, không chỉ có ngoại hình thời thượng đúng chuẩn một chiếc laptop cao cấp mà còn được trang bị các tính năng ấn tượng đáp ứng tốt nhu cầu của người dùng trong cả công việc và giải trí.', 'hl_ram:16 GB;hl_ssd:512 GB;hl_cpu:i7-1280P;hl_vga:Onboard;hl_lcd:14 inch FHD+ IPS', 'laptop-msi-summit-e14-evo-a12m-211vn'),
+(3, 'Laptop MSI Modern 14 C13M 609VN', 'Laptop', 'MSI', 13990000, 'Thị trường laptop văn phòng chưa bao giờ là hết nhiệt, dòng sản phẩm MSI Modern 14 xuất hiện như một sự hoàn hảo về hiệu suất và thiết kế! Với thiết kế mỏng gọn nhẹ và trẻ trung, năng động, Modern 14 là người bạn đồng hành đáng tin cậy cho công việc và giải trí. CPU Intel thế hệ 13 và SSD tốc độ cao giúp máy khởi động nhanh và xử lý dữ liệu mượt mà. Hỗ trợ đồ họa 2D, bạn có thể sử dụng mượt mà nhiều phần mềm thiết kế. ', 'hl_ram:8 GB;hl_cpu:i5-1335U;hl_ssd:512 GB;hl_lcd:14 inch FHD IPS;hl_sticker:asus-vp;hl_vga:Onboard', 'laptop-msi-modern-14-c13m-609vn'),
+(4, 'Laptop ASUS Vivobook 14 OLED A1405VA KM095W', 'Laptop', 'ASUS', 17790000, 'Laptop Asus Vivobook 14 OLED A1405VA-KM095W có sự nổi bật nhất là màn hình OLED, chuẩn điện ảnh, đem lại trải nghiệm về thị giác cực kỳ tốt. Bên cạnh đó, chiếc laptop Asus Vivobook này thiết kế theo dạng bản lề xoay 180 độ, để điều chỉnh phù hợp với tầm nhìn của người dùng. ', 'hl_cpu:i5-13500H;hl_ssd:512 GB;hl_ram:16 GB;hl_vga:Onboard;hl_lcd:14 inch 2K8 OLED', 'laptop-asus-vivobook-14-oled-a1405va-km095w'),
+(5, 'Laptop gaming ASUS TUF Gaming F15 FX507VI LP088W', 'Laptop', 'ASUS', 43990000, 'Laptop Gaming Asus TUF F15 FX507VI LP088W là chiếc laptop chơi game thực sự mạnh mẽ với sự xuất hiện của bộ vi xử lý Intel Core i7 13620H, GPU RTX 4060 và dung lượng lên đến 16GB DDR5 đi cùng giá bán 37,890,000₫ giúp anh em game thủ tha hồ thể hiện bản lĩnh trong các game AAA đời mới với chất lượng đồ họa tuyệt đỉnh và trải nghiệm mượt mà trên một sản phẩm di động.', 'hl_hz:144 Hz;hl_ram:16 GB;hl_vga:RTX 4070;hl_cpu:i7-13620H;hl_lcd:15.6 inch FHD;spec_VGA:RTX 4070;hl_ssd:512 GB\"', 'laptop-gaming-asus-tuf-gaming-f15-fx507vi-lp088w'),
+(6, 'Màn hình Asus TUF GAMING VG279Q3A 27\" Fast IPS 180Hz Gsync chuyên game', 'Screen', 'ASUS', 4490000, 'Màn hình chơi game TUF Gaming VG279Q3A Full HD 27 inch có tấm nền Fast IPS để chơi game tốc độ 180 Hz cực nhanh. ASUS Extreme Low Motion Blur Sync (ELMB Sync) và AMD FreeSync™ Premium, tương thích với G-SYNC, các công nghệ VESA AdaptiveSync cho phép chơi game mượt mà. Ngoài ra, nó còn có gam màu sRGB 99% để mang lại màu sắc và độ tương phản vượt trội.', 'hl_hz:180Hz;hl_panel:IPS;hl_lcd:27 inch;hl_res:Full HD (1920 x 1080)', 'màn-hình-asus-tuf-gaming-vg279q3a-27\"-fast-ips-180hz-gsync-chuyên-game'),
+(7, 'Màn hình cong GIGABYTE G34WQC A 34 Inch 2K 144Hz HDR400 chuyên game', 'Screen', 'GIGABYTE', 8590000, 'Màn Hình Cong Gigabyte G34WQC Gaming cung cấp các thông số kỹ thuật và chất lượng tối ưu, người dùng có thể thực sự tận hưởng hiệu suất cao cấp mà không cần tốn quá nhiều chi phí.', 'hl_lcd:34 inch;hl_res:2K (3440 x 1440);hl_hz:144Hz;hl_panel:VA', 'màn-hình-cong-gigabyte-g34wqc-a-34-inch-2k-144hz-hdr400-chuyên-game'),
+(8, 'Màn hình cong GIGABYTE GS27FC 27 Inch 180Hz chuyên game', 'Screen', 'GIGABYTE', 3990000, 'Màn hình Gaming Gigabyte GS27FC là một sản phẩm được thiết kế đặc biệt để đáp ứng nhu cầu chơi game cao cấp và cung cấp trải nghiệm hình ảnh sắc nét và mượt mà. Tấm nền VA cong 1500R giúp bao quát tầm nhìn cùng tần số quét 180Hz. Công nghệ AMD FreeSync Premium cùng Adaptive Sync đồng bộ nội dung hiển thị một cách mượt mà nhất', 'hl_res:Full HD (1920 x 1080);hl_lcd:27 inch;hl_hz:180Hz;hl_panel:VA', 'màn-hình-cong-gigabyte-gs27fc-27-inch-180hz-chuyên-game'),
+(9, 'Màn hình cong Asus ROG Strix XG49VQ 49 Inch VA 144Hz', 'Screen', 'ASUS', 24990000, 'Màn hình chuyên game ROG Strix XG49VQ 49 inch với độ cong 1800R cho trải nghiệm chơi game đắm chìm tột đỉnh và mức độ linh hoạt hơn đối với xử lý đa tác vụ. Với tỷ lệ khung hình 32:9, màn hình siêu siêu rộng cho khung hình hiển thị bằng với hai màn hình 27-inch đặt cạnh nhau không có khe hở và viền màn hình trong tầm nhìn của bạn.', 'hl_res:Full HD (3840 x 1080);hl_hz:144Hz;hl_lcd:49 inch;hl_panel:VA', 'màn-hình-cong-asus-rog-strix-xg49vq-49-inch-va-144hz'),
+(10, 'Màn hình MSI PRO MP275 27 Inch IPS 100Hz', 'Screen', 'MSI', 2890000, 'Với kích thước không gian hiển thị lên đến 27 inch và tần số quét 100Hz, Màn hình MSI PRO MP275 - Chính hãng mang lại trải nghiệm hình ảnh rộng lớn và mượt mà, tạo nên không gian hiển thị thân thiện và chuyên nghiệp cho người dùng. Thiết bị không chỉ là nơi hiển thị hình ảnh, mà còn là người bạn đồng hành quan trọng trong mọi hoạt động. Bởi tại đây, MSI đã tích hợp nhiều công nghệ tiên tiến như Eye-Q Check, lọc ánh sáng xanh và chống nhấp nháy. Điều này giúp giảm căng thẳng cho mắt, tối ưu hóa trải nghiệm làm việc, học tập và giải trí của bạn.', 'hl_hz:100Hz;hl_res:Full HD (1920 x 1080);hl_panel:IPS;hl_lcd:27 inch', 'màn-hình-msi-pro-mp275-27-inch-ips-100hz'),
+(11, 'Laptop gaming Gigabyte G7 KE 52VN263SH', 'Laptop', 'GIGABYTE', 27490000, 'Gigabyte G7 KE-52VN263SH trang bị bộ vi xử lý intel Core thế hệ 12th với hiệu suất vượt trội cho phép thực hiện các tác vụ hàng ngày nhanh chóng và mượt mà. Để bạn có thể tự do sáng tạo nội dung, livestream hay chơi game bất cứ khi nào bạn muốn.', 'hl_hz:144 Hz;hl_ram:8 GB;hl_cpu:i5-12500H;hl_ssd:512 GB;hl_vga:RTX 3060;hl_lcd:15.6 inch FHD', 'laptop-gaming-gigabyte-g7-ke-52vn263sh'),
+(12, 'Laptop Acer Aspire 5 A515 58P 71EJ', 'Laptop', 'ACER', 18990000, 'ới độ phủ sóng trên toàn thế giới, Acer luôn luôn xuất hiện với những dòng sản phẩm mới vô cùng ấn tượng và phù hợp với nhu cầu khách hàng. Không chỉ là tập đoàn đa quốc gia về thiết bị điện tử và phần cứng máy tính, Acer còn đặc biệt đầu tư sản xuất máy tính cá nhân. Trong lần trình làng mới này, nhà sản xuất đã cho ra mắt chiếc Laptop Acer Aspire 5 A515-58P-71EJ NX.KHJSV.00A (Intel Core i7-1355U | 16GB | 1TB | Intel UHD Graphics | 15.6 inch FHD | Win 11 | Steel Gray), đặc biệt phù hợp với dân văn phòng cùng những thông số kỹ thuật hiện đại đáng bất ngờ. ', 'hl_ssd:1 TB;hl_cpu:i7-1335U;hl_vga:Onboard;hl_lcd:15.6 inch FHD;hl_ram:16 GB', 'laptop-acer-aspire-5-a515-58p-71ej'),
+(13, 'Laptop Dell Inspiron T7430 N7430I58W1 Silver', 'Laptop', 'DELL', 22990000, 'Laptop Dell Inspiron T7430 N7430I58W1 là một sản phẩm rất thú vị, với khả năng gập 360 độ của bản lề, bạn có thể sử dụng như một chiếc tablet, cùng màn hình cảm ứng đầy nhạy bén, cho bạn trả nghiệm laptop đấy thời thượng, đẳng cấp. Kích thước nhỏ gọn 314 x 226 x 17.4 mm cùng cân nặng 1,64kg, sẽ là chiếc laptop đầy tiện lợi dành cho bạn, có thể đồng hành cùng bạn trên mọi chặng đường thành công. Phần nắp và phần nghỉ tay được sử dụng vật liệu kim loại cho bạn cảm giác thoải mái khi sử dụng laptop. Bạn còn được Dell ưu ái tặng 1 chiếc bút, cho bạn sử dụng màn hình cảm ứng hiệu quả hơn. Cài đặt sẵn hệ điều hành Windows 11 Home + Office Student cho bạn không cần tốn thêm chi phí khi muốn sử hửu sản phẩm cao cấp này.', 'hl_cpu:i5-1335U;hl_vga:Onboard;hl_ssd:512 GB;hl_ram:8 GB;hl_lcd:14 inch FHD+', 'laptop-dell-inspiron-t7430-n7430i58w1-silver'),
+(14, 'Laptop Dell Vostro 3530 V5I5267W1 Gray', 'Laptop', 'DELL', 15490000, 'Bạn đang cần một chiếc laptop phục vụ cho nhu cầu học tập, hay bạn dân văn phòng thì hiệu năng của Dell Vostro 3530 V5I5267W1 đều xử lý các tác vụ ổn định nhất. Thiết kế tinh tế nhỏ gọn 358 x 235 x 16.69 mm, phù hợp với tính chất công việc linh động của bạn, chỉ nhẹ có 1,66kg dễ dàng cho bạn mang đi bất kỳ đâu. Phục vụ nhu cầu của bạn xuyên suốt  khoảng 3 đến 4 tiếng với pin 3-cell cho bạn thời gian sử dụng vừa đủ cho một buổi làm việc. ', 'hl_cpu:i5-1335U;hl_hz:120 Hz;hl_ssd:256 GB;hl_ram:8 GB;hl_lcd:15.6 inch FHD IPS;hl_vga:Onboard', 'laptop-dell-vostro-3530-v5i5267w1-gray'),
+(15, 'Laptop gaming Acer Aspire 7 A715 76G 5806', 'Laptop', 'ACER', 20990000, 'Laptop Acer Aspire 7 Gaming A715 76G 5806 i5 12450H (NH.QMFSV.002) đến từ nhà Acer với các thông số cấu hình đầy mạnh mẽ, card rời RTX 30 series cũng như sở hữu một mức giá thành lý tưởng, chắc chắn sẽ mang đến cho anh em những trải nghiệm tuyệt vời.', 'hl_ssd:512 GB;hl_hz:144 Hz;hl_vga:RTX 3050;hl_cpu:i5-12450H;hl_ram:16 GB;hl_lcd:15.6 inch FHD', 'laptop-gaming-acer-aspire-7-a715-76g-5806'),
+(16, 'Bàn phím E-Dra EK312 Alpha Blue Switch', 'Keyboard', 'E-DRA', 579000, 'E-Dra EK312 là dòng sản phẩm bàn phím cơ chủ đạo của hãng, chính vì vậy mà phím được trang bị ngay dòng switch E-Dra (chính hãng sản xuất) mới nhất với đầy đủ cả 3 loại switch cơ bản: Blue - Brown - Red. Loại switch mới này có stem vuông, chống bụi cực tốt và tăng độ chắc chắn, giảm rung lắc khi gõ. Được trang bị loại switch mới này, E-Dra EK312 cho chất lượng phím bấm cực tốt, có thể nói là chất lượng phấm bấm tốt nhất, mượt mà nhất trong phân khúc giá.', 'hl_keycap:ABS;hl_size:Full size;hl_connect:Có dây', 'bàn-phím-e-dra-ek312-alpha-blue-switch'),
+(17, 'Bàn phím chơi game cơ E-Dra EK384 Triple Mode Beta Red Switch', 'Keyboard', 'E-DRA', 749000, 'E-Dra EK384 Triple Mode có thể coi là một bản nâng cấp lớn từ mẫu bàn phím cơ EK384 RGB trước đây, với đủ 3 chế độ kết nối \"hợp thời\" nhất là Wireless 2.4Ghz (dùng đầu nhận USB), Bluetooth và Có dây (dây tháo rời). Với đầy đủ các mode kết nối đa dạng tời vậy, E-Dra EK384 Triple Mode có thể thương thích với tất cả các thiết bị từ PC, Laptop cho tới máy MAC, Smartphone...... Và đây cũng đang là phím cơ không dây 3 mode có giá tốt nhất trên thị trường hiện tại.', 'hl_connect:Wireless;hl_keycap:ABS;hl_size:TKL', 'bàn-phím-chơi-game-cơ-e-dra-ek384-triple-mode-beta-red-switch'),
+(18, 'Bàn phím Rapoo V500 Pro Multimode TKL Blue Switch', 'Keyboard', 'RAPOO', 890000, 'Bàn phím cơ không dây Rapoo V500 Pro Multimode TKL 87 được trang bị switch phím cơ độc quyền của Rapoo cùng khả năng kết nối không dây Wireless 2.4Ghz. Bàn phím còn tích hợp đầy đủ các phím Multimedia kèm đèn LED nhiều màu tuyệt đẹp. Bên cạnh đó, sản phẩm sở hữu viên pin có dung lượng lên đến 4000mAh mang lại thời lượng sử dụng ổn định.', 'hl_connect:Wireless;hl_keycap:ABS;hl_size:TKL', 'bàn-phím-rapoo-v500-pro-multimode-tkl-blue-switch'),
+(19, 'Bàn phím cơ Corsair K100 RGB Opx Switch', 'Keyboard', 'CORSAIR', 5390000, 'Thiết kế tinh tế của bàn phím cơ Corsair K100 RGB có khung nhôm bền và đèn nền RGB động cho mỗi phím được tạo điểm nhấn bởi Đèn RGB ba mặt 44 vùng.\n\nNút bánh xe điều khiển iCUE đa chức năng, hoàn toàn có thể lập trình để thực hiện các hành động tùy chỉnh trong trò chơi và ứng dụng.\n\nVới sáu phím macro chuyên dụng, hoàn toàn có thể lập trình cho các macro phức tạp và tùy chỉnh lại phím trong phần mềm iCUE.', 'hl_size:Full size;hl_keycap:PBT;hl_connect:Có dây', 'bàn-phím-cơ-corsair-k100-rgb-opx-switch'),
+(20, 'Bàn phím Razer BlackWidow V4 X Green Switch', 'Keyboard', 'RAZER', 3290000, 'Chạy trạm chiến đấu của bạn ở công suất tối ưu với trung tâm điều khiển hoàn hảo cho thiết lập PC của bạn. Được trang bị các phím macro và phím đa phương tiện, có quyền truy cập vào các lệnh và phím tắt nâng cao khi bạn đắm mình trong bàn phím cơ cải tiến cao, kết hợp hoàn hảo với Razer Chroma™ RGB.', 'hl_connect:Có dây;hl_size:Full size;hl_keycap:ABS', 'bàn-phím-razer-blackwidow-v4-x-green-switch'),
+(21, 'Chuột Logitech G Pro X Superlight 2 Black', 'Mouse', 'LOGITECH', 3390000, 'Tiếp nối sự thành công vang dội của siêu phẩm G Pro X Superlight, phiên bản tiếp theo của dòng chuột Logitech đình đám này đã chính thực được ra mắt với tên gọi Logitech G Pro X Superlight 2 Wireless. Nhanh hơn, nhẹ hơn, chính xác hơn, bền bỉ hơn, không quá khi khẳng định Logitech G Pro X Superlight 2 Wireless chính là mẫu chuột Gaming số 1 hiện tại.', 'hl_led:Led RGB;hl_connect:Wireless;hl_pin:Pin sạc', 'chuột-logitech-g-pro-x-superlight-2-black'),
+(22, 'Chuột công thái học Logitech Lift Vertical Pink', 'Mouse', 'LOGITECH', 1290000, 'Bạn là một nhân viên nữ đang tìm kiếm mã chuột công thái học vừa vặn với bàn tay nhỏ hoặc vừa. Tìm hiểu ngay mã chuột Logitech Lift Vertical màu Hồng này nhé. Gọn nhẹ, cuộn- nhấp vô cùng êm ái, tốc độ có thể điều chỉnh từ thấp đến cao, nói chung những gì được thiết kế với sản phẩm này là hướng tới chăm sóc sức khỏe và bảo vệ môi trường.', 'hl_connect:Wireless;hl_pin:Pin rời;hl_led:DPI - 4.000', 'chuột-công-thái-học-logitech-lift-vertical-pink'),
+(23, 'Chuột Logitech MX Anywhere 3S Graphite', 'Mouse', 'LOGITECH', 1690000, 'Chuột không dây Logitech MX Anywhere 3S với thiết kế kết nối không dây tiện lợi cùng màu đen huyền bí sẽ hài hòa với máy tính bàn hay laptop của bạn. Với tính năng Quiet Clicks của chuột Logitech giúp bạn tập trung vào công việc mà không bị mất tập trung. Trải nghiệm cảm biến 8k DPI nhanh chóng, chuẩn trong từng cú nhấp chuột.', 'hl_pin:Pin sạc;hl_connect:Wireless;hl_led:DPI - 8.000', 'chuột-logitech-mx-anywhere-3s-graphite'),
+(24, 'Chuột E-DRA EM623W Không dây RGB Trắng', 'Mouse', 'E-DRA', 279000, 'Với mức giá không thể hợp lý hơn, chỉ chưa tới 300.000d mà bạn đã có thể sở hữu một sản phẩm chuột gaming với những tính năng vượt trội, bạn có tin được không? Không gì là không thể với E-Dra EM623W – sản phẩm chuột gaming mới ra mắt nhà E-Dra hỗ trợ chơi game hoàn hảo với 03 chế độ kết nối, có tích hợp LED RGB rực rỡ. Không để bạn chờ đợi lâu, hãy cùng Phúc Anh tìm hiểu thêm các thông tin chi tiết về sản phẩm Gaming Gear này!', 'hl_led:RGB;hl_pin:Pin sạc;hl_connect:Wireless', 'chuột-e-dra-em623w-không-dây-rgb-trắng'),
+(25, 'Chuột DareU EM901X RGB Superlight Wireless Pink', 'Mouse', 'DAREU', 790000, 'DareU EM901X là phiên bản nâng cấp từ EM901 khi tích hợp một số tính năng và phụ kiện kèm theo. Trong đó nổi bật nhất chính là đi kèm dock sạc rất cao cấp và tiện lợi. DareU EM901X là mẫu chuột gaming không dây duy nhất có mức giá dưới 1 triệu đồng - có tích hợp dock sạc. Dock đi kèm của chuột được kết nối với PC thông qua dây USB, dock có LED gầm RGB tự động đồi màu rất đẹp (có thể tắt - bật led theo ý muốn). Trên dock có khe cắm đầu USB Receiver tháo lắp dễ dàng, để biến dock thành trạm thu tín hiệu, giúp cho DareU EM901X cực kỳ linh hoạt khi người dùng có thể mang chuột theo laptop mà không cần phải mang theo cả dock.', 'hl_connect:Wireless;hl_pin:Pin sạc;hl_led:Led RGB', 'chuột-dareu-em901x-rgb-superlight-wireless-pink'),
+(26, 'Tai nghe Razer Barracuda X 2022', 'Headphone', 'RAZER', 2390000, 'Đã từ lâu, Razer luôn được biết tới như một thương hiệu rất chiều lòng khách hàng. Để mang tới một lựa chọn chất lượng, Razer cùng đội ngũ thiết kế chuyên nghiệp đã nghiên cứu, phát triển và cho ra mắt chiếc tai nghe gaming không dây mới nhất của mình. Chiếc tai nghe Razer Barracuda X Wireless.', 'hl_connect:Wireless;hl_typehp:Chụp tai;hl_connector:USB A', 'tai-nghe-razer-barracuda-x-2022'),
+(27, 'Tai nghe Gaming Rapoo VH160', 'Headphone', 'RAPOO', 390000, 'Là chiếc tai nghe lý tưởng dành cho các tín đồ eSports, Rapoo VH160 sở hữu cúp tai mềm cách âm tốt, đồng thời thể hiện chất âm xuất sắc nhờ công nghệ âm thanh vòm 7.1 sống động. Bạn sẽ dễ dàng kết nối sản phẩm với laptop, PC và khơi dậy cảm hứng gaming qua đèn LED RGB độc đáo.', 'hl_typehp:Chụp tai;hl_connector:USB A;hl_connect:Có dây', 'tai-nghe-gaming-rapoo-vh160'),
+(28, 'Tai nghe Corsair HS35 V2 Xanh', 'Headphone', 'CORSAIR', 990000, 'Bạn đang tìm kiếm một tai nghe chơi game mang lại âm thanh sống động, thoải mái khi đeo và tương thích đa nền tảng? Tai nghe Corsair HS35 Surround v2, Carbon chính là lựa chọn hoàn hảo dành cho bạn. Với thiết kế hiện đại, chất lượng âm thanh tuyệt vời và micro thu âm rõ ràng, HS35 Surround v2 sẽ giúp bạn chinh phục mọi trận chiến một cách dễ dàng.', 'hl_typehp:Chụp tai;hl_connector:Jack 3.5mm;hl_connect:Có dây', 'tai-nghe-corsair-hs35-v2-xanh'),
+(29, 'Tai nghe Asus ROG Delta Core', 'Headphone', 'ASUS', 1990000, 'Tai nghe Asus ROG Delta Core', 'hl_connect:Có dây;hl_typehp:Chụp tai;hl_connector:Jack 3.5mm', 'tai-nghe-asus-rog-delta-core'),
+(30, 'Tai nghe Edifier Không dây W820NB Plus Trắng Ngà', 'Headphone', 'EDIFIER', 1090000, 'Tai nghe bluetooth Edifier W820NB Plus là một bản nâng cấp rất đáng giá, trang bị nhiều tính năng hiện đại. Và nhà sản xuất hoàn thiện thiết bị tai nghe Edifier cực kỳ tối ưu, đơn giản, thiết kế trẻ trung. ', 'hl_connect:Wireless;hl_connector:USB C;hl_typehp:Chụp tai', 'tai-nghe-edifier-không-dây-w820nb-plus-trắng-ngà'),
+(31, 'PC CCG AMD R5-5600X/ VGA RTX 3050', 'PC', 'COCHAGEAR', 17990000, 'Nếu bạn là một người thường phải làm việc nhiều với các phần mềm dựng phim nhưng vẫn cần chơi game thì chắc chắn là bạn phải xem qua PC GVN AMD R5-5600X/ VGA RTX 3050 - một dàn PC toàn năng vừa cho hiệu năng làm việc xuất sắc, vừa có card đồ họa đủ mạnh để bạn cân tốt mọi game hiện nay.', 'hl_ram:16GB;hl_cpu:R5 5600X;hl_main:B550;hl_vga:RTX 3050;hl_ssd:500GB', 'pc-ccg-amd-r5-5600x--vga-rtx-3050'),
+(32, 'PC CCG G-STUDIO Intel i7-13700/ VGA RTX 3060', 'PC', 'COCHAGEAR', 35490000, 'Sở hữu tổng thể đẹp mắt, hiệu năng đỉnh cao PC GVN G-STUDIO Intel i7-13700/ VGA RTX 3060 sẽ là cấu hình PC đồ họa bạn đang tìm kiếm.', 'hl_main:B760;hl_ssd:1TB;hl_cpu:i7 13700;hl_ram:16GB;hl_vga:RTX 3060\"', 'pc-ccg-g-studio-intel-i7-13700--vga-rtx-3060'),
+(33, 'PC CCG Intel i7-14700F/ VGA RTX 4070 Ti', 'PC', 'COCHAGEAR', 52990000, 'PC GVN Intel i7-14700F/ VGA RTX 4070 Ti bộ máy PC chơi game cấu hình cao, thiết kế đẹp mắt ấn tượng mang đến cho người chơi những trải nghiệm thú vị giải trí với những tựa game AAA, game Moba & FPS,..mình yêu thích.', 'hl_vga:RTX 4070 Ti;hl_ram:32GB;hl_ssd:500GB;hl_main:Z790;hl_cpu:i7 14700F', 'pc-ccg-intel-i7-14700f--vga-rtx-4070-ti'),
+(34, 'PC CCG AMD R9-7900X/VGA RTX 4080', 'PC', 'COCHAGEAR', 99990000, 'Đặt nền móng cho nguồn sức mạnh khổng lồ trên PC GVN AMD R9-7900X/VGA RTX 4080, cái tên được lựa chọn chính là ASUS ROG CROSSHAIR X670E HERO (DDR5). Là sản phẩm thuộc về dòng sản phẩm mainboard cao cấp từ ASUS, ASUS ROG CROSSHAIR X670E HERO (DDR5) trang bị gần như mọi công nghệ tối tân nhất cho khả năng khai thác sức mạnh từ linh kiện trên bo mạch. Chipset X670 cao cấp cho khả năng tương thích cùng thế hệ vi xử lý tiên tiến nhất với mục tiêu tạo nên bộ PC AMD cao cấp nhất.', 'hl_cpu:R9 7900X;hl_main:X670;hl_ssd:1TB;hl_vga:RTX 4080;hl_ram:32GB', 'pc-ccg-amd-r9-7900x-vga-rtx-4080'),
+(35, 'PC CCG AMD R9-7950X/VGA RTX 4090', 'PC', 'COCHAGEAR', 115990000, 'Sở hữu thiết kế một cách hiện đại và mọi thông số được cải tiến gấp nhiều lần so với phiên bản tiền nhiệm trước. Dòng mainboard ASUS với những nâng cấp trong phiên bản ASUS ROG CROSSHAIR X670E HERO (DDR5) hứa hẹn PC GVN AMD R9-7950X/VGA RTX 4090 sẽ tăng hiệu suất lên đáng kể.', 'hl_main:X670;hl_ram:32GB;hl_cpu:R9 7950X;hl_vga:RTX 4090;hl_ssd:1TB', 'pc-ccg-amd-r9-7950x-vga-rtx-4090');
 
 -- --------------------------------------------------------
 

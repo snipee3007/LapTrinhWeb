@@ -1,4 +1,4 @@
-<footer class="bg-gray-900">
+<footer class="bg-gray-900 relative bottom-0">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
       <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8"/>
       <div class="md:flex md:justify-between">
@@ -85,10 +85,10 @@
             <h2 class="mb-6 text-sm font-semibold text-white uppercase">TỔNG ĐÀI HỖ TRỢ</h2>
             <ul class="text-white text-sm">
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">0912.345.678</a>
+                  <a href="tel:0912345678" class="hover:underline">0912.345.678</a>
                 </li>
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">0912.345.679</a>
+                  <a href="tel:0912345679" class="hover:underline">0912.345.679</a>
                 </li>
               </ul>
           </div>
