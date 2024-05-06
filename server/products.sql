@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2024 at 12:55 AM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.1.32
+-- Generation Time: May 06, 2024 at 05:53 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -35,7 +34,7 @@ CREATE TABLE `comments` (
   `ID_Member` int(11) NOT NULL,
   `Rating` float NOT NULL,
   `Image` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `comments`
@@ -70,24 +69,30 @@ INSERT INTO `comments` (`ID_Comment`, `Context`, `ID_Product`, `ID_Member`, `Rat
 CREATE TABLE `members` (
   `ID_Member` int(11) NOT NULL,
   `Name` varchar(50) NOT NULL,
-  `Phone Number` varchar(20) NOT NULL,
+  `Phone_Number` varchar(20) NOT NULL,
   `Email` varchar(50) NOT NULL,
+  `Address_1` varchar(255) DEFAULT NULL,
+  `Address_2` varchar(255) DEFAULT NULL,
+  `Address_3` varchar(255) DEFAULT NULL,
+  `Gender` varchar(6) DEFAULT NULL,
   `Account_Name` varchar(20) NOT NULL,
-  `Account_Password` varchar(20) NOT NULL,
+  `Account_Password` varchar(255) NOT NULL,
   `Image` varchar(100) NOT NULL,
-  `Role` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Role` varchar(10) NOT NULL,
+  `Hash_ID` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`ID_Member`, `Name`, `Phone Number`, `Email`, `Account_Name`, `Account_Password`, `Image`, `Role`) VALUES
-(1, 'Lê Minh Chánh', '0835599955', 'chanh.leminh@hcmut.edu.vn', 'ShiroSnipee', 'kekwlmao', 'hmmge', 'admin'),
-(2, 'Phạm Nguyễn Nam', '0937113543', 'nam.phamnguyen1512@hcmut.edu.vn', 'FazeCT', 'lmaolmao', 'bedge', 'admin'),
-(3, 'Lê Thiên Ân', '0356556216', 'an.lethien@hcmut.edu.vn', 'Ittoday', 'kekwkekw', 'gayge', 'admin'),
-(4, 'Lê Hồng Minh', '0704927263', 'minh.lehong2003@hcmut.edu.vn', 'Onirique', 'lmaokekw', 'sleep', 'admin'),
-(5, 'Trần Nhân Khánh', '0961322985', 'khanh.tran2003csejpn@hcmut.edu.vn', 'Khartist', 'Lmouse', 'dedge', 'user');
+INSERT INTO `members` (`ID_Member`, `Name`, `Phone_Number`, `Email`, `Address_1`, `Address_2`, `Address_3`, `Gender`, `Account_Name`, `Account_Password`, `Image`, `Role`, `Hash_ID`) VALUES
+(1, 'Lê Minh Chánh', '0835599955', 'chanh.leminh@hcmut.edu.vn', '203/06/14 Huỳnh Văn Nghệ, Phường 12, Quận Gò Vấp, Thành phố Hồ Chí Minh', NULL, NULL, 'male', 'ShiroSnipee', 'kekwlmao', 'hmmge', 'admin', ''),
+(2, 'Phạm Nguyễn Nam', '0937113543', 'nam.phamnguyen1512@hcmut.edu.vn', '8 Hoàng Minh Giám, Phường 9, Quận Phú Nhuận, Thành phố Hồ Chí Minh ', NULL, NULL, 'male', 'FazeCT', 'lmaolmao', 'bedge', 'admin', ''),
+(3, 'Lê Thiên Ân', '0356556216', 'an.lethien@hcmut.edu.vn', '808B Hậu Giang, Phường 11, Quận 6, Thành phố Hồ Chí Minh', NULL, NULL, 'male', 'Ittoday', 'kekwkekw', 'gayge', 'admin', ''),
+(4, 'Lê Hồng Minh', '0704927263', 'minh.lehong2003@hcmut.edu.vn', '268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh', NULL, NULL, 'male', 'Onirique', 'lmaokekw', 'sleep', 'admin', ''),
+(5, 'Trần Nhân Khánh', '0961322985', 'khanh.tran2003csejpn@hcmut.edu.vn', 'Ngã 5 Chuồng Chó, Quận Gò Vấp', NULL, NULL, 'male', 'Khartist', 'Lmouse', 'dedge', 'user', ''),
+(6, 'Phạm Quang Minh', '0812676767', 'minh.phamquang@hcmut.edu.vn', 'Rạp xiếc công viên Gia Định Hoàng Minh Giám', NULL, NULL, 'female', 'Masamune', 'LmaoKekw', 'okayge', 'user', '');
 
 -- --------------------------------------------------------
 
@@ -102,7 +107,7 @@ CREATE TABLE `news` (
   `Context` varchar(1000) NOT NULL COMMENT 'News'' Context',
   `Image` varchar(100) NOT NULL COMMENT 'News'' Image',
   `ID_Member` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -118,7 +123,7 @@ CREATE TABLE `products` (
   `Price` int(11) NOT NULL COMMENT 'Product''s price',
   `Description` varchar(1000) NOT NULL COMMENT 'Product''s description',
   `Tags` varchar(1000) NOT NULL COMMENT 'Product''s components'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
@@ -139,7 +144,27 @@ INSERT INTO `products` (`ID_Product`, `Name`, `Category`, `Brand`, `Price`, `Des
 (12, 'Laptop Acer Aspire 5 A515 58P 71EJ', 'Laptop', 'ACER', 18990000, 'This is a description', 'hl_ssd:1 TB;hl_cpu:i7-1335U;hl_vga:Onboard;hl_lcd:15.6 inch FHD;hl_ram:16 GB'),
 (13, 'Laptop Dell Inspiron T7430 N7430I58W1 Silver', 'Laptop', 'DELL', 22990000, 'This is a description', 'hl_cpu:i5-1335U;hl_vga:Onboard;hl_ssd:512 GB;hl_ram:8 GB;hl_lcd:14 inch FHD+'),
 (14, 'Laptop Dell Vostro 3530 V5I5267W1 Gray', 'Laptop', 'DELL', 15490000, 'This is a description', 'hl_cpu:i5-1335U;hl_hz:120 Hz;hl_ssd:256 GB;hl_ram:8 GB;hl_lcd:15.6 inch FHD IPS;hl_vga:Onboard'),
-(15, 'Laptop gaming Acer Aspire 7 A715 76G 5806', 'Laptop', 'ACER', 20990000, 'This is a description', 'hl_ssd:512 GB;hl_hz:144 Hz;hl_vga:RTX 3050;hl_cpu:i5-12450H;hl_ram:16 GB;hl_lcd:15.6 inch FHD');
+(15, 'Laptop gaming Acer Aspire 7 A715 76G 5806', 'Laptop', 'ACER', 20990000, 'This is a description', 'hl_ssd:512 GB;hl_hz:144 Hz;hl_vga:RTX 3050;hl_cpu:i5-12450H;hl_ram:16 GB;hl_lcd:15.6 inch FHD'),
+(16, 'Bàn phím E-Dra EK312 Alpha Blue Switch', 'Keyboard', 'E-DRA', 579000, 'This is a description', 'hl_keycap:ABS;hl_size:Full size;hl_connect:Có dây'),
+(17, 'Bàn phím chơi game cơ E-Dra EK384 Triple Mode Beta Red Switch', 'Keyboard', 'E-DRA', 749000, 'This is a description', 'hl_connect:Wireless;hl_keycap:ABS;hl_size:TKL'),
+(18, 'Bàn phím Rapoo V500 Pro Multimode TKL Blue Switch', 'Keyboard', 'RAPOO', 890000, 'This is a description', 'hl_connect:Wireless;hl_keycap:ABS;hl_size:TKL'),
+(19, 'Bàn phím cơ Corsair K100 RGB Opx Switch (CH-912A01A-NA)', 'Keyboard', 'CORSAIR', 5390000, 'This is a description', 'hl_size:Full size;hl_keycap:PBT;hl_connect:Có dây'),
+(20, 'Bàn phím Razer BlackWidow V4 X Green Switch', 'Keyboard', 'RAZER', 3290000, 'This is a description', 'hl_connect:Có dây;hl_size:Full size;hl_keycap:ABS'),
+(21, 'Chuột Logitech G Pro X Superlight 2 Black', 'Mouse', 'LOGITECH', 3390000, 'This is description', 'hl_led:Led RGB;hl_connect:Wireless;hl_pin:Pin sạc'),
+(22, 'Chuột công thái học Logitech Lift Vertical Pink', 'Mouse', 'LOGITECH', 1290000, 'This is a description', 'hl_connect:Wireless;hl_pin:Pin rời;hl_led:DPI - 4.000'),
+(23, 'Chuột Logitech MX Anywhere 3S Graphite', 'Mouse', 'LOGITECH', 1690000, 'This is a description', 'hl_pin:Pin sạc;hl_connect:Wireless;hl_led:DPI - 8.000'),
+(24, 'Chuột E-DRA EM623W Không dây RGB Trắng', 'Mouse', 'E-DRA', 279000, 'This is a description', 'hl_led:RGB;hl_pin:Pin sạc;hl_connect:Wireless'),
+(25, 'Chuột DareU EM901X RGB Superlight Wireless Pink', 'Mouse', 'DAREU', 790000, 'This is a description', 'hl_connect:Wireless;hl_pin:Pin sạc;hl_led:Led RGB'),
+(26, 'Tai nghe Razer Barracuda X 2022', 'Headphone', 'RAZER', 2390000, 'This is a description', 'hl_connect:Wireless;hl_typehp:Chụp tai;hl_connector:USB A'),
+(27, 'Tai nghe Gaming Rapoo VH160', 'Headphone', 'RAPOO', 390000, 'This is a description', 'hl_typehp:Chụp tai;hl_connector:USB A;hl_connect:Có dây'),
+(28, 'Tai nghe Corsair HS35 V2 Xanh', 'Headphone', 'CORSAIR', 990000, 'This is a description', 'hl_typehp:Chụp tai;hl_connector:Jack 3.5mm;hl_connect:Có dây'),
+(29, 'Tai nghe Asus ROG Delta Core', 'Headphone', 'ASUS', 1990000, 'This is a description', 'hl_connect:Có dây;hl_typehp:Chụp tai;hl_connector:Jack 3.5mm'),
+(30, 'Tai nghe Edifier Không dây W820NB Plus Trắng Ngà', 'Headphone', 'EDIFIER', 1090000, 'This is a description', 'hl_connect:Wireless;hl_connector:USB C;hl_typehp:Chụp tai'),
+(31, 'PC CCG AMD R5-5600X/ VGA RTX 3050 (Powered by ASUS)', 'PC', 'COCHAGEAR', 17990000, 'This is a description', 'hl_ram:16GB;hl_cpu:R5 5600X;hl_main:B550;hl_vga:RTX 3050;hl_ssd:500GB'),
+(32, 'PC CCG G-STUDIO Intel i7-13700/ VGA RTX 3060', 'PC', 'COCHAGEAR', 35490000, 'This is a description', 'hl_main:B760;hl_ssd:1TB;hl_cpu:i7 13700;hl_ram:16GB;hl_vga:RTX 3060\"'),
+(33, 'PC CCG Intel i7-14700F/ VGA RTX 4070 Ti', 'PC', 'COCHAGEAR', 52990000, 'This is a description', 'hl_vga:RTX 4070 Ti;hl_ram:32GB;hl_ssd:500GB;hl_main:Z790;hl_cpu:i7 14700F'),
+(34, 'PC CCG AMD R9-7900X/VGA RTX 4080', 'PC', 'COCHAGEAR', 99990000, 'This is a description', 'hl_cpu:R9 7900X;hl_main:X670;hl_ssd:1TB;hl_vga:RTX 4080;hl_ram:32GB'),
+(35, 'PC CCG AMD R9-7950X/VGA RTX 4090', 'PC', 'COCHAGEAR', 115990000, 'This is a description', 'hl_main:X670;hl_ram:32GB;hl_cpu:R9 7950X;hl_vga:RTX 4090;hl_ssd:1TB');
 
 -- --------------------------------------------------------
 
@@ -150,7 +175,7 @@ INSERT INTO `products` (`ID_Product`, `Name`, `Category`, `Brand`, `Price`, `Des
 CREATE TABLE `products' images` (
   `ID_Product` int(11) NOT NULL,
   `Image` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products' images`
@@ -279,7 +304,138 @@ INSERT INTO `products' images` (`ID_Product`, `Image`) VALUES
 (15, 'https://product.hstatic.net/200000722513/product/9493d712d5b42b993cbdf2c26542c9d_2dbd7c3a58cf499ba4a3da8b5a6c05c5_large_0c3bff9c51af4bf2b67989e736a39f65.jpg'),
 (15, 'https://product.hstatic.net/200000722513/product/9a9f6d623584acfa92523b0ed717a19_13c3b0679f564e55b387e14f0bb382be_large_14a535a18fb640a8af8f24c4b6cb8d7f.jpg'),
 (15, 'https://product.hstatic.net/200000722513/product/38b41bf896b4627b39cacc5f2c52da8_6094b1df14dc42558e61b2b03a8a5e57_large_1c875c1aba6d47cbbd94ddb96547424f.jpg'),
-(15, 'https://product.hstatic.net/200000722513/product/a3596b657f54da2953e1755242f7af2_dddf8aec3c684c0f920a506cf552b478_large_f01ca91fa6fe407bb4088f5eac5167d6.jpg');
+(15, 'https://product.hstatic.net/200000722513/product/a3596b657f54da2953e1755242f7af2_dddf8aec3c684c0f920a506cf552b478_large_f01ca91fa6fe407bb4088f5eac5167d6.jpg'),
+(16, 'https://product.hstatic.net/200000722513/product/477_z4737225210234_d9b90d52e2046c3875dd947b1e7f9a8a__1__54b47bd360ac472785a924b8b9a76788.jpg'),
+(16, 'https://product.hstatic.net/200000722513/product/477_ek312_png_465a76482fb046569b4a9ed2bff3e8e8.png'),
+(17, 'https://product.hstatic.net/200000722513/product/1_f8b0db520e574123b8e57d8086f5dfab.jpg'),
+(17, 'https://product.hstatic.net/200000722513/product/3_7fe19ba872224d02b4751270b5d6f0b4.jpg'),
+(17, 'https://product.hstatic.net/200000722513/product/4_1c2694631ed647f987b80ce0ab080ec9.jpg'),
+(17, 'https://product.hstatic.net/200000722513/product/thumbphim_dcdf1894d4b5456e85057aed956746d5.jpg'),
+(18, 'https://product.hstatic.net/200000722513/product/phim_3bce80fc41904417a26f49a3dceb15b0_6414ffcb5eab40e299c1c6e7fe4d456e_72c5b891f09248a2ac422449fd77b2df.png'),
+(18, 'https://product.hstatic.net/200000722513/product/0155_3542fbb6cd544537bea1311c6dbe7e01_7550772dea074c19a46713142d6c2de6_6fdce93127064a9a928483a49c9009a3.jpg'),
+(18, 'https://product.hstatic.net/200000722513/product/0684_f7c1e2acfae440e59a3eda4be39a6539_d6b8075be87b48459db18a23043ee5cc_3d47597ef9944ef297406b97c1fbe052.jpg'),
+(18, 'https://product.hstatic.net/200000722513/product/9660_a5b5baa9f1584c6f80fe261b91e7f8cf_82708a15599547dbb291a1fc9ec413ca_68b8d560e8f8441aaa25241d6cbe98fa.jpg'),
+(18, 'https://product.hstatic.net/200000722513/product/1147_e483976fd9ee41bf96d1d260c26d7af9_3c7f8850143f4a29b9ef1b82f0d081e3_145d57cf526548489ac80be13614920b.jpg'),
+(19, 'https://product.hstatic.net/200000722513/product/phim_2ceafcd3b71942409b4724616258c73b_d44aa7fb2a70454d99b01bc9c1117f4f_32c45c81f8ae45858df5c00ccacc8056.png'),
+(19, 'https://product.hstatic.net/200000722513/product/gb-4_5f8aa0cb982a4438afec52f8dfb87c12_dae24eebe34349c59588136c8d26d27c_be7cd2c9a064405fb3847cc540fc174f.png'),
+(19, 'https://product.hstatic.net/200000722513/product/gb-2_d6cd7853237a45fe8083b031702eed17_984e477caa1e46f68bb21b0bca425312_7e036da377d84766a48841a3b41713da.png'),
+(19, 'https://product.hstatic.net/200000722513/product/gb-3_c9b8829ce5434c4d9da6b2f0a7874abc_8557b05901e64a6d98d0ab393b3db13b_15e0103aa0164dea8d9d7141031820c1.png'),
+(19, 'https://product.hstatic.net/200000722513/product/gb-1_3acef0197e654548a2114db3ae6e69cb_006cb8f68cf3449fb6ff3db593c6cd8b_4aeabc846ba84b85b7c0551e6014ba65.png'),
+(19, 'https://product.hstatic.net/200000722513/product/gb-6_f086eb11aece48d597ca227aaa6d6b3c_0e1f2dd10da143449bc4d1e68e8ec897_39e91693995c4caeba20be9752849551.png'),
+(19, 'https://product.hstatic.net/200000722513/product/-rgb_3fec26f9aeb748e3872c03dfe5439d04_0d1af098b33448b58dc0e7a7048e1f43_3d33faca18c549adb0b2c848e0e81ecf.png'),
+(20, 'https://product.hstatic.net/200000722513/product/2_0d44b2aba78a4de4b8a0dc4cd7c8eb66.jpg'),
+(20, 'https://product.hstatic.net/200000722513/product/thumbphim_f81dad72933546f2a2d78782149b8897.jpg'),
+(20, 'https://product.hstatic.net/200000722513/product/z4571450737160_2334de0074ebbfea277f8780519c46ac_99f38086415f45f583e4e6f7d0fb4b49.jpg'),
+(20, 'https://product.hstatic.net/200000722513/product/z4571453724049_38fee4cd392684bac3f5f2c9f131aaf8_ce17e6e3ed5944b1b5aac748c28d808a.jpg'),
+(21, 'https://product.hstatic.net/200000722513/product/3_7c1bf2ff4e504450a42de78e6cc48087.jpg'),
+(21, 'https://product.hstatic.net/200000722513/product/1_4f53124df4294b659bf0777a4439ace3.jpg'),
+(21, 'https://product.hstatic.net/200000722513/product/2_a349d6ed143d48ce885ceb61ea783fbc.jpg'),
+(21, 'https://product.hstatic.net/200000722513/product/4_16452b61a14f4b56ad054275af359862.jpg'),
+(21, 'https://product.hstatic.net/200000722513/product/5_ac663497c93048e8ac68cbc8dcaabeaf.jpg'),
+(22, 'https://product.hstatic.net/200000722513/product/lift-gallery-rose-1_a9d640124acd453f9f6028f96958566f_5defc115e6b2445ea5538917c6be393b.png'),
+(22, 'https://product.hstatic.net/200000722513/product/lift-gallery-rose-5_56ed1a4c8aa446fd985ee789a6cd7436_b0f40a5aa267480bb2ed7d076c2ef3f6.png'),
+(22, 'https://product.hstatic.net/200000722513/product/lift-gallery-rose-4_c9a1ff20dd51485c9742906206492ff2_37abfb5afc2e43d280c56b9195061a78.png'),
+(22, 'https://product.hstatic.net/200000722513/product/lift-gallery-rose-3_72ab498dc844428387d7e496d0381f6a_0066f6322f934a8ebb5f7274daef1417.png'),
+(22, 'https://product.hstatic.net/200000722513/product/lift-gallery-rose-2_41237e7db46849a7b43e187c29e06a4a_9d8cb1f4d161467e8325283051190c21.png'),
+(23, 'https://product.hstatic.net/200000722513/product/mx-anywhere-3s-mouse-top-view-graphite_c766ef28d410408c9a24442cf7ab7940.png'),
+(23, 'https://product.hstatic.net/200000722513/product/mx-anywhere-3s-mouse-3qtr-back-graphite_a1e3668aa5844e3f9c23623efe28cc19.png'),
+(23, 'https://product.hstatic.net/200000722513/product/mx-anywhere-3s-mouse-side-right-graphite_85416b2d820d4821a0448e91a38df737.png'),
+(23, 'https://product.hstatic.net/200000722513/product/mx-anywhere-3s-mouse-side-left-graphite_dd1dde4e26e5424fa2dc9950d5abf422.png'),
+(23, 'https://product.hstatic.net/200000722513/product/mx-anywhere-3s-mouse-3qtr-front-graphite_34fdd45fd8d24427b4d3ccc106559dd8.png'),
+(23, 'https://product.hstatic.net/200000722513/product/mx-anywhere-3s-mouse-front-view-graphite_cd4405ca86fa4eea82b97fb48f6a34ad.png'),
+(23, 'https://product.hstatic.net/200000722513/product/mx-anywhere-3s-mouse-fob-graphite_fbebb14b8e7441e29e2a9b9a0af2018c.png'),
+(23, 'https://product.hstatic.net/200000722513/product/mx-anywhere-3s-mouse-bottom-view-graphite_63980e20665c448ebdf3a0e1fea9505f.png'),
+(24, 'https://product.hstatic.net/200000722513/product/482_623w___web___1_80f2db2cb87542d9a3bdfeb270bd0f02.jpg'),
+(24, 'https://product.hstatic.net/200000722513/product/482_623w___web___2_3c2b9c2b25074f4b97059f201a4d35c5.jpg'),
+(25, 'https://product.hstatic.net/200000722513/product/khong-day-gaming-dareu-em901x-pink-01_542ff31224024dd3813ed701f4926555_02f0e97ca40347fabb5ca635370597a5.jpg'),
+(25, 'https://product.hstatic.net/200000722513/product/khong-day-gaming-dareu-em901x-pink-02_7633cc3b5fb0412e9f1712c8da247bd1_385a644c39be485188446be48726ab0e.jpg'),
+(26, 'https://product.hstatic.net/200000722513/product/thumbtainghe_2dabdc1c9373434ab81022d11552600c_a27bc61bd0564a69b22b79b5c08aa857.png'),
+(26, 'https://product.hstatic.net/200000722513/product/tai-nghe-razer-barracuda-x-2022-5_4e32c8395f2e4a908182de7be63375b6_5eb98aba178c40c9bc2041a0b9350489.jpg'),
+(26, 'https://product.hstatic.net/200000722513/product/tai-nghe-razer-barracuda-x-2022-6_d49cac9fd075497987b72fc23b30e020_d51f1719e81a40ad83ee2c2469c02a85.jpg'),
+(26, 'https://product.hstatic.net/200000722513/product/tai-nghe-razer-barracuda-x-2022-4_aec8d51f27a44546a6a31fc6b30e2b55_589dc33f899b4239a53d230475482c91.jpg'),
+(26, 'https://product.hstatic.net/200000722513/product/tai-nghe-razer-barracuda-x-2022-8_78bc27df494d471ab4287e3d453d56cd_8508e93ea208476f969652122d2f30b0.jpg'),
+(26, 'https://product.hstatic.net/200000722513/product/tai-nghe-razer-barracuda-x-2022-9_d9805b390c9740b3ba120b7aeca73b8b_9b8d9ec5e10b43b4af40c5bab0b7665b.jpg'),
+(26, 'https://product.hstatic.net/200000722513/product/tai-nghe-razer-barracuda-x-2022-10_beb6e4a0ae25495da3c8d53a28c80287_583a290843e441a98f60b9782a43bc02.jpg'),
+(26, 'https://product.hstatic.net/200000722513/product/tai-nghe-razer-barracuda-x-2022-1_1bf080b2dd2e44ff9bc69d9611b91ec8_c7c80cbc2434433cba44accb8282bb56.jpg'),
+(26, 'https://product.hstatic.net/200000722513/product/tai-nghe-razer-barracuda-x-2022-2_e38c7c8978694032b83918864d803bf3_42140f433de140cfb3de7834f0cdc444.jpg'),
+(26, 'https://product.hstatic.net/200000722513/product/tai-nghe-razer-barracuda-x-2022-3_bd252b57ba254cb6ade72d1161a17c90_9618b54eae074cafb95e2fdd4810323e.jpg'),
+(27, 'https://product.hstatic.net/200000722513/product/gearvn-tai-nghe-gaming-rapoo-vh160-1_03c10c9a8cdd46039cc536c3292f663f_9288f6c2b45f4996892b94306f135188.png'),
+(27, 'https://product.hstatic.net/200000722513/product/gearvn-tai-nghe-gaming-rapoo-vh160-3_106a064cafeb48b0a87cd95e0ea49efa_c183fa4ca7b94392ac72400a6fe771f9.png'),
+(27, 'https://product.hstatic.net/200000722513/product/gearvn-tai-nghe-gaming-rapoo-vh160-4_3a66563695144db0b9a93946f4bca8c2_eacb0ec703344cb883cdee785d3973a7.png'),
+(27, 'https://product.hstatic.net/200000722513/product/gearvn-tai-nghe-gaming-rapoo-vh160-5_d41ed90f7cf64ddd9c5df06e288e083a_416333e7b20d4c96a0d8734deb3881ff.png'),
+(27, 'https://product.hstatic.net/200000722513/product/gearvn-tai-nghe-gaming-rapoo-vh160-6_63af39d3fc464536a5e5d88547aede76_fb785f2c46c645a69d3b69c599c66f95.png'),
+(28, 'https://product.hstatic.net/200000722513/product/7q3arvrl_34a2259ac9714da0adad025b0d38ea51.png'),
+(28, 'https://product.hstatic.net/200000722513/product/erp3oqhr_80cbadeab93b41e6aa78456f2b7773eb.png'),
+(28, 'https://product.hstatic.net/200000722513/product/vyketuqd_5b40700b42e14b3b9388f7444b8eb53e.png'),
+(28, 'https://product.hstatic.net/200000722513/product/53po5epr_ae9a64bda0e44118ae58264b73bb912a.png'),
+(28, 'https://product.hstatic.net/200000722513/product/e9a8v9j4_0fe7d72995a34d60a4f3f014d6a690ad.png'),
+(28, 'https://product.hstatic.net/200000722513/product/zmwv7iat_da1238b7592e44d1985ea3d0037d4b25.png'),
+(29, 'https://product.hstatic.net/200000722513/product/oducts-tai-nghe-asus-rog-delta-core-3_dc4b599ee33b4de5bf4b92541b23245d_0782d52f0fcd4b17a9f2bf0835bdc5f8.jpg'),
+(29, 'https://product.hstatic.net/200000722513/product/oducts-tai-nghe-asus-rog-delta-core-1_18e22a063a824fa2827a633d40c13ac5_cbd669d4aca74b128a5e35e6e9f31ea5.jpg'),
+(29, 'https://product.hstatic.net/200000722513/product/oducts-tai-nghe-asus-rog-delta-core-2_24f469a28b5a4d0985132c3a7161853f_7f651d14bb854cf7ac495968fc7bf6f8.jpg'),
+(29, 'https://product.hstatic.net/200000722513/product/oducts-tai-nghe-asus-rog-delta-core-4_f7abeccde9e34b88b9cb7786cf6e1f18_0341e10059374a99b1c47706f5d22bca.jpg'),
+(29, 'https://product.hstatic.net/200000722513/product/oducts-tai-nghe-asus-rog-delta-core-6_b095758a1f8c4522992566f160e73906_dfcc70e1967c40b397ef32a411ca1935.jpg'),
+(29, 'https://product.hstatic.net/200000722513/product/oducts-tai-nghe-asus-rog-delta-core-7_d3bed4fce4884d09a6b61192674089b8_5e91e73bbf4641769966ef0c4b60f1bd.jpg'),
+(29, 'https://product.hstatic.net/200000722513/product/oducts-tai-nghe-asus-rog-delta-core-8_c01e2ad8c98549f5b6107af25ef6d50a_905f9807beae4102be7de94320c1f10c.jpg'),
+(30, 'https://product.hstatic.net/200000722513/product/8fb4d7148326dbafe6c7949eeea20d43_10f0e89552c74fcfbaf376e82ab53397.png'),
+(30, 'https://product.hstatic.net/200000722513/product/1b1860fde9515420018d19fd952e1649_ef5ea9af636b4568911591f11594b49b.png'),
+(30, 'https://product.hstatic.net/200000722513/product/e3d09fcb22a7670053dc86c0f1a03f04_32e33466cca64e18b5802f9b119d3a7d.png'),
+(30, 'https://product.hstatic.net/200000722513/product/35b93338bb7dbe1f6aad175512dc9409_38dea188c4e4472487c79f3332a7cfed.png'),
+(30, 'https://product.hstatic.net/200000722513/product/376ba97f2aa9ed06a85fcf7b659bc08c_b7a74eba8b0846b0a4a1ef0baeabb56d.png'),
+(31, 'https://product.hstatic.net/200000722513/product/luxs_44f7416f99e54134a7820f1168275f5f_1024x1024_756d5d077691485292e2d608fe2c7826.png'),
+(31, 'https://product.hstatic.net/200000722513/product/8_3cf949a2efb742bda02ffe3ad2352306.png'),
+(31, 'https://product.hstatic.net/200000722513/product/pba-banner-2023-1200x1200px_15d9daf2c33443d08172543b14e75811.jpg'),
+(31, 'https://product.hstatic.net/200000722513/product/post-01_7c50dd137c63451e8991699aa7478117.jpg'),
+(31, 'https://product.hstatic.net/200000722513/product/post-02_04ab15995a4f4763bfcec7dde112b693.jpg'),
+(31, 'https://product.hstatic.net/200000722513/product/post-03_cee04d686ea242e8b37ccbc81f78dfca.jpg'),
+(31, 'https://product.hstatic.net/200000722513/product/post-05_2871751a822745ada71de9daf5ed1137.jpg'),
+(31, 'https://product.hstatic.net/200000722513/product/post-06_332a0837c72b450494a49fca1dd5bef4.jpg'),
+(31, 'https://product.hstatic.net/200000722513/product/post-07_c0aaeb7098da4992827e598fb8104810.jpg'),
+(31, 'https://product.hstatic.net/200000722513/product/post-08_bb9b581f9f244cc8850eec4133d70fbc.jpg'),
+(31, 'https://product.hstatic.net/200000722513/product/post-12_45f9fe8b566f4444a8231c6482407b64.jpg'),
+(31, 'https://product.hstatic.net/200000722513/product/post-14_40a514bd8f98497899272d7f752d4402.jpg'),
+(32, 'https://product.hstatic.net/200000722513/product/4000d_artic_cddd2a53b453427e90f8dbd4295e5265.png'),
+(32, 'https://product.hstatic.net/200000722513/product/post-01_c54336ecb0e74fd0bf79b39cce2f9835.jpg'),
+(32, 'https://product.hstatic.net/200000722513/product/post-05_851d5cc7fc9d44bd8ce4999a7f822d19.jpg'),
+(32, 'https://product.hstatic.net/200000722513/product/post-03_8a9e99c8edb64135b5f454a6aee3b870.jpg'),
+(32, 'https://product.hstatic.net/200000722513/product/post-06_8ba74f92950a43908e712ba125e5c20a.jpg'),
+(32, 'https://product.hstatic.net/200000722513/product/post-07_118bb18c08924ff9be31a453929d7f5b.jpg'),
+(32, 'https://product.hstatic.net/200000722513/product/post-08_4321b06713794782b96612e14c8551ca.jpg'),
+(32, 'https://product.hstatic.net/200000722513/product/post-09_464a262e0b714968b636519db635e01a.jpg'),
+(32, 'https://product.hstatic.net/200000722513/product/post-11_c9deeb670740422b85161b7eefbe3742.jpg'),
+(32, 'https://product.hstatic.net/200000722513/product/post-12_931d5536e4c44ca69579bd9f9c07b348.jpg'),
+(32, 'https://product.hstatic.net/200000722513/product/post-13_7bf687950857459196dd4534108f9665.jpg'),
+(33, 'https://product.hstatic.net/200000722513/product/ck560_sup_86bfab34891948f3b39038bdbc81f665.png'),
+(33, 'https://product.hstatic.net/200000722513/product/post-01_eccba1b69b694c3b885aaee2265a2de7.jpg'),
+(33, 'https://product.hstatic.net/200000722513/product/post-05_8da8279fafec461d869f46f72bf8a6fb.jpg'),
+(33, 'https://product.hstatic.net/200000722513/product/post-06_ecc156c481ec463497b9ac4e620b0bf9.jpg'),
+(33, 'https://product.hstatic.net/200000722513/product/post-15_f0cca2d23c9f4d4e89dd8b471132a9cd.jpg'),
+(33, 'https://product.hstatic.net/200000722513/product/post-03_8fc252cc75a241d1b69a0ac755080719.jpg'),
+(33, 'https://product.hstatic.net/200000722513/product/post-02_e6357c82128c454f8a80488ade4963ba.jpg'),
+(33, 'https://product.hstatic.net/200000722513/product/post-04_dc57c0b29b064dedbba140913778af62.jpg'),
+(33, 'https://product.hstatic.net/200000722513/product/post-09_7143408ab64346b089acce719da67545.jpg'),
+(33, 'https://product.hstatic.net/200000722513/product/post-11_d845bc6bf100442499c0e2420eee85f4.jpg'),
+(33, 'https://product.hstatic.net/200000722513/product/post-10_7845c5a3d1ca45519b697f4d1ebdc6c9.jpg'),
+(34, 'https://product.hstatic.net/200000722513/product/post-05_4c79434b431a4431be98511461235f98.jpg'),
+(34, 'https://product.hstatic.net/200000722513/product/helios_2180a1acaa8e4be7a652795f28ae5e92.png'),
+(34, 'https://product.hstatic.net/200000722513/product/post-14_dd9d3ce1a9f34847a934282b1ee39dce.jpg'),
+(34, 'https://product.hstatic.net/200000722513/product/post-19_b0f4360f429941fd999fd65a2f4415d8.jpg'),
+(34, 'https://product.hstatic.net/200000722513/product/post-01_fdebea8ab3dd4b63aee794e5acc689be.jpg'),
+(34, 'https://product.hstatic.net/200000722513/product/post-07_72744b3b05f84eec9fe9a884c1d77718.jpg'),
+(34, 'https://product.hstatic.net/200000722513/product/post-08_f3c90f848bdf4df999ba79fd18eaa56e.jpg'),
+(34, 'https://product.hstatic.net/200000722513/product/post-02_9f31b4d486fa4393a6025fdc9837a2dd.jpg'),
+(34, 'https://product.hstatic.net/200000722513/product/post-03_63ad245153cc412b9ec799f5a610ef57.jpg'),
+(34, 'https://product.hstatic.net/200000722513/product/post-04_15198189e8fa4dd1bc79d622ccb95a23.jpg'),
+(35, 'https://product.hstatic.net/200000722513/product/helios_5b9b0d2e13404338856f864ecbfc8a61.png'),
+(35, 'https://product.hstatic.net/200000722513/product/post-01_be37dfc6d8bf42198b537318da2d875c.jpg'),
+(35, 'https://product.hstatic.net/200000722513/product/post-19_c5afad9b17f94ebf9509411a8c095d95.jpg'),
+(35, 'https://product.hstatic.net/200000722513/product/post-14_2787ecf213604a91b2fff8056f48a42a.jpg'),
+(35, 'https://product.hstatic.net/200000722513/product/post-17_95845e9519ba4669a086ab05987a6629.jpg'),
+(35, 'https://product.hstatic.net/200000722513/product/post-18_78c922f36f7e4d80aa906aaf9649ebc7.jpg'),
+(35, 'https://product.hstatic.net/200000722513/product/post-03_46c859534a2a4ea2acd5c1852bdca2f0.jpg'),
+(35, 'https://product.hstatic.net/200000722513/product/post-04_a1d8e8fa393845c3b3d59a0b60132d2e.jpg'),
+(35, 'https://product.hstatic.net/200000722513/product/post-05_d324c6f14f15491589ee4e13e8b84c2a.jpg'),
+(35, 'https://product.hstatic.net/200000722513/product/post-06_ae984d29f1cf4eddbbbf5e587e90f5a9.jpg');
 
 --
 -- Indexes for dumped tables
@@ -333,7 +489,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `ID_Member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_Member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -345,7 +501,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `ID_Product` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Product''s ID', AUTO_INCREMENT=16;
+  MODIFY `ID_Product` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Product''s ID', AUTO_INCREMENT=36;
 
 --
 -- Constraints for dumped tables
