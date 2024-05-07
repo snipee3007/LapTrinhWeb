@@ -24,8 +24,7 @@
 
   <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script> -->
   <script defer src="https://unpkg.com/alpinejs@3.13.10/dist/cdn.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
 
   <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
@@ -39,8 +38,8 @@
 <body>
     <?php include_once 'components/header.php'; ?>
     <div class="max-w-screen-2xl mx-auto" style='font-family: Victor Mono'>
-        <div class="relative bg-gray-100 shadow-lg rounded-lg w-[1050px] mx-auto p-10 mt-[75px] mb-[125px]">
-            <div class="grid grid-cols-2 gap-x-2">
+        <div class="relative bg-gray-100 shadow-lg rounded-lg md:w-[1050px] mx-auto p-10 mt-[75px] mb-[125px]">
+            <div class="grid md:grid-cols-2 gap-x-2">
                 <div>
                     <div class="font-bold text-2xl mb-5">Giới thiệu về CochaGear</div>
                     <div class="mb-5">
@@ -56,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute top-0 right-20 flex flex-col items-center justify-center">
+            <div class="absolute top-0 right-20 flex-col items-center justify-center hidden md:flex">
                 <img src="images/founder.png" alt="Founder" class="w-full h-auto scale-125 mb-10">
 
                 <div class="font-bold text-xl">
@@ -70,15 +69,15 @@
 
         <div id="store" style="position: relative; top: -40px;"></div>
 
-        <div class="w-[1050px] mx-auto mb-10">
-            <div class="font-bold text-2xl mb-10 text-center">
+        <div class="md:w-[1050px] mx-auto mb-10">
+            <div class="font-bold text-2xl mb-10 text-center hidden md:block">
                 Trải nghiệm mua sắm toàn diện
             </div>
-            <div class="grid grid-cols-2 gap-16 items-center">
+            <div class="grid grid-cols-2 gap-16 items-center hidden md:grid">
                 <img src="images/promotion.png" alt="Left banner" class="mb-10">
                 <img src="images/promotion2.png" alt="Right banner" class="mb-10">
             </div>
-            <div class="grid grid-cols-2 gap-16">
+            <div class="grid md:grid-cols-2 gap-16">
                 <div>
                     <div class="font-bold text-xl mb-5 text-center">Hệ thống Showroom trải nghiệm</div>
                     <div class="bg-gray-100 shadow-lg rounded-lg p-8">

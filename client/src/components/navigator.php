@@ -234,16 +234,16 @@
                 <div class="font-bold mb-2">Laptop ASUS</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">ASUS OLED series</a>
+                    <a href="search.php?search=laptop+asus+oled" class="hover:text-blue-700">ASUS OLED series</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Vivobook series</a>
+                    <a href="search.php?search=laptop+asus+vivobook" class="hover:text-blue-700">Vivobook series</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Zenbook series</a>
+                    <a href="search.php?search=laptop+asus+zenbook" class="hover:text-blue-700">Zenbook series</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Tuf Gaming series</a>
+                    <a href="search.php?search=laptop+asus+tuf+gaming" class="hover:text-blue-700">Tuf Gaming series</a>
                     </li>
                 </ul>
                 </div>
@@ -252,13 +252,13 @@
                 <div class="font-bold mb-2">Laptop ACER</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Aspire series</a>
+                    <a href="search.php?search=laptop+acer+aspire" class="hover:text-blue-700">Aspire series</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Predator series</a>
+                    <a href="search.php?search=laptop+acer+predator" class="hover:text-blue-700">Predator series</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Nitro V series</a>
+                    <a href="search.php?search=laptop+acer+nitro" class="hover:text-blue-700">Nitro series</a>
                     </li>
                 </ul>
                 </div>
@@ -267,16 +267,16 @@
                 <div class="font-bold mb-2">Laptop LENOVO</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Legion series</a>
+                    <a href="search.php?search=laptop+lenovo+legion" class="hover:text-blue-700">Legion series</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">LOQ series</a>
+                    <a href="search.php?search=laptop+lenovo+loq" class="hover:text-blue-700">LOQ series</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Thinkpad series</a>
+                    <a href="search.php?search=laptop+lenovo+thinkpad" class="hover:text-blue-700">Thinkpad series</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Ideapad series</a>
+                    <a href="search.php?search=laptop+lenovo+ideapad" class="hover:text-blue-700">Ideapad series</a>
                     </li>
                 </ul>
                 </div>
@@ -285,16 +285,16 @@
                 <div class="font-bold mb-2">Laptop DELL</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Inspiron series</a>
+                    <a href="search.php?search=laptop+dell+inspiron" class="hover:text-blue-700">Inspiron series</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Vostro series</a>
+                    <a href="search.php?search=laptop+dell+vostro" class="hover:text-blue-700">Vostro series</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Latitude series</a>
+                    <a href="search.php?search=laptop+dell+latitude" class="hover:text-blue-700">Latitude series</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">XPS series</a>
+                    <a href="search.php?search=laptop+dell+xps" class="hover:text-blue-700">XPS series</a>
                     </li>
                 </ul>
                 </div>
@@ -309,22 +309,22 @@
                 <div class="font-bold mb-2">Hãng sản xuất</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">LG</a>
+                    <a href="search.php?search=screen+lg" class="hover:text-blue-700">LG</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">ASUS</a>
+                    <a href="search.php?search=screen+asus" class="hover:text-blue-700">ASUS</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">ACER</a>
+                    <a href="search.php?search=screen+acer" class="hover:text-blue-700">ACER</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">SAMSUNG</a>
+                    <a href="search.php?search=screen+samsung" class="hover:text-blue-700">SAMSUNG</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">GIGABYTE</a>
+                    <a href="search.php?search=screen+gigabyte" class="hover:text-blue-700">GIGABYTE</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">COOLER MASTER</a>
+                    <a href="search.php?search=screen+cooler+master" class="hover:text-blue-700">COOLER MASTER</a>
                     </li>
                 </ul>
                 </div>
@@ -333,13 +333,13 @@
                 <div class="font-bold mb-2">Hãng sản xuất</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Philips</a>
+                    <a href="search.php?search=screen+philips" class="hover:text-blue-700">Philips</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">E-Dra</a>
+                    <a href="search.php?search=screen+e-dra" class="hover:text-blue-700">E-Dra</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">AOC</a>
+                    <a href="search.php?search=screen+aoc" class="hover:text-blue-700">AOC</a>
                     </li>
                     <li>
                     <a href="screen.php" class="hover:text-blue-700">Xem tất cả</a>
@@ -351,25 +351,25 @@
                 <div class="font-bold mb-2">Tần số quét</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">60Hz</a>
+                    <a href="search.php?search=screen+60hz" class="hover:text-blue-700">60Hz</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">75Hz</a>
+                    <a href="search.php?search=screen+75hz" class="hover:text-blue-700">75Hz</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">100Hz</a>
+                    <a href="search.php?search=screen+100hz" class="hover:text-blue-700">100Hz</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">144Hz</a>
+                    <a href="search.php?search=screen+144hz" class="hover:text-blue-700">144Hz</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">165Hz</a>
+                    <a href="search.php?search=screen+165hz" class="hover:text-blue-700">165Hz</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">180Hz</a>
+                    <a href="search.php?search=screen+180hz" class="hover:text-blue-700">180Hz</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">240Hz</a>
+                    <a href="search.php?search=screen+240" class="hover:text-blue-700">240Hz</a>
                     </li>
                 </ul>
                 </div>
@@ -378,10 +378,10 @@
                 <div class="font-bold mb-2">Tấm nền</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">IPS</a>
+                    <a href="search.php?search=screen+ips" class="hover:text-blue-700">IPS</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">VA</a>
+                    <a href="search.php?search=screen+va" class="hover:text-blue-700">VA</a>
                     </li>
                 </ul>
                 </div>
@@ -390,16 +390,16 @@
                 <div class="font-bold mb-2">Độ phân giải</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Màn hình Full HD</a>
+                    <a href="search.php?search=screen+full+hd" class="hover:text-blue-700">Màn hình Full HD</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Màn hình 2K</a>
+                    <a href="search.php?search=screen+2k" class="hover:text-blue-700">Màn hình 2K</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Màn hình 4K</a>
+                    <a href="search.php?search=screen+4k" class="hover:text-blue-700">Màn hình 4K</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Màn hình 6K</a>
+                    <a href="search.php?search=screen+6k" class="hover:text-blue-700">Màn hình 6K</a>
                     </li>
                 </ul>
                 </div>
@@ -414,16 +414,16 @@
                 <div class="font-bold mb-2">Hãng sản xuất</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">ASUS</a>
+                    <a href="search.php?search=headphone+asus" class="hover:text-blue-700">ASUS</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">HyperX</a>
+                    <a href="search.php?search=headphone+hyperx" class="hover:text-blue-700">HyperX</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Corsair</a>
+                    <a href="search.php?search=headphone+corsair" class="hover:text-blue-700">Corsair</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Razer</a>
+                    <a href="search.php?search=headphone+razor" class="hover:text-blue-700">Razer</a>
                     </li>
                 </ul>
                 </div>
@@ -432,13 +432,13 @@
                 <div class="font-bold mb-2">Hãng sản xuất</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Steelseries</a>
+                    <a href="search.php?search=headphone+steelseries" class="hover:text-blue-700">Steelseries</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Rapoo</a>
+                    <a href="search.php?search=headphone+rapoo" class="hover:text-blue-700">Rapoo</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Logitech</a>
+                    <a href="search.php?search=headphone+logitech" class="hover:text-blue-700">Logitech</a>
                     </li>
                     <li>
                     <a href="headphone.php" class="hover:text-blue-700">Xem tất cả</a>
@@ -450,10 +450,10 @@
                 <div class="font-bold mb-2">Kiểu tai nghe</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Có dây</a>
+                    <a href="search.php?search=headphone+co day" class="hover:text-blue-700">Có dây</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Wireless</a>
+                    <a href="search.php?search=headphone+wireless" class="hover:text-blue-700">Wireless</a>
                     </li>
                 </ul>
                 </div>
@@ -462,13 +462,13 @@
                 <div class="font-bold mb-2">Kiểu dây</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">USB A</a>
+                    <a href="search.php?search=headphone+usb-a" class="hover:text-blue-700">USB A</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">USB C</a>
+                    <a href="search.php?search=headphone+usb-c" class="hover:text-blue-700">USB C</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Jack 3.5mm</a>
+                    <a href="search.php?search=headphone+jack+3.5mm" class="hover:text-blue-700">Jack 3.5mm</a>
                     </li>
                 </ul>
                 </div>
@@ -482,22 +482,22 @@
                 <div class="font-bold mb-2">Hãng sản xuất</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">AKKO</a>
+                    <a href="search.php?search=keyboard+akko" class="hover:text-blue-700">AKKO</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Logitech</a>
+                    <a href="search.php?search=keyboard+logitech" class="hover:text-blue-700">Logitech</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Corsair</a>
+                    <a href="search.php?search=keyboard+corsair" class="hover:text-blue-700">Corsair</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Steelseries</a>
+                    <a href="search.php?search=keyboard+steelseries" class="hover:text-blue-700">Steelseries</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Razer</a>
+                    <a href="search.php?search=keyboard+razer" class="hover:text-blue-700">Razer</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">MONKA</a>
+                    <a href="search.php?search=keyboard+monka" class="hover:text-blue-700">MONKA</a>
                     </li>
                     <li>
                     <a href="keyboard.php" class="hover:text-blue-700">Xem tất cả</a>
@@ -509,10 +509,10 @@
                 <div class="font-bold mb-2">Kiểu bàn phím</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Có dây</a>
+                    <a href="search.php?search=keyboard+co+day" class="hover:text-blue-700">Có dây</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Wireless</a>
+                    <a href="search.php?search=keyboard+wireless" class="hover:text-blue-700">Wireless</a>
                     </li>
                 </ul>
                 </div>
@@ -521,10 +521,10 @@
                 <div class="font-bold mb-2">Loại keycap</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">PBT</a>
+                    <a href="search.php?search=keyboard+pbt" class="hover:text-blue-700">PBT</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">ABS</a>
+                    <a href="search.php?search=keyboard+abs" class="hover:text-blue-700">ABS</a>
                     </li>
                 </ul>
                 </div>
@@ -538,19 +538,19 @@
                 <div class="font-bold mb-2">Hãng sản xuất</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Logitech</a>
+                    <a href="search.php?search=mouse+logitech" class="hover:text-blue-700">Logitech</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Corsair</a>
+                    <a href="search.php?search=mouse+corsair" class="hover:text-blue-700">Corsair</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Rapoo</a>
+                    <a href="search.php?search=mouse+rapoo" class="hover:text-blue-700">Rapoo</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">ASUS</a>
+                    <a href="search.php?search=mouse+asus" class="hover:text-blue-700">ASUS</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Razer</a>
+                    <a href="search.php?search=mouse+razer" class="hover:text-blue-700">Razer</a>
                     </li>
                     <li>
                     <a href="mouse.php" class="hover:text-blue-700">Xem tất cả</a>
@@ -562,10 +562,10 @@
                 <div class="font-bold mb-2">Kiểu chuột</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Có dây</a>
+                    <a href="search.php?search=mouse+co+day" class="hover:text-blue-700">Có dây</a>
                     </li>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Wireless</a>
+                    <a href="search.php?search=mouse+wireless" class="hover:text-blue-700">Wireless</a>
                     </li>
                 </ul>
                 </div>
@@ -574,7 +574,7 @@
                 <div class="font-bold mb-2">Loại pin</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">Pin rời</a>
+                    <a href="search.php?search=mouse+pin+roi" class="hover:text-blue-700">Pin rời</a>
                     </li>
                 </ul>
                 </div>
@@ -583,7 +583,7 @@
                 <div class="font-bold mb-2">Độ nhạy chuột</div>
                 <ul>
                     <li>
-                    <a href="#" class="hover:text-blue-700">DPI - 4000</a>
+                    <a href="search.php?search=mouse+dpi+4000" class="hover:text-blue-700">DPI - 4000</a>
                     </li>
                 </ul>
                 </div>

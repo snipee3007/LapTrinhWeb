@@ -1,0 +1,27 @@
+<?php
+    session_start();
+    include_once './connect_db.php';
+    $_POST = json_decode(file_get_contents('php://input'), true);
+    try{
+        if (isset($_SESSION['hash_id'])){
+            $query = 'SELECT * FROM products WHERE slug = "'. $_POST['slug'] . '"';
+            $foundProduct = mysqli_fetch_assoc(mysqli_query($con,$query));
+            $query = 'SELECT * FROM members WHERE Hash_ID = "'. $_SESSION['hash_id'] . '"';
+            // $query = 'SELECT * FROM members WHERE ID_Member = "'. 1 . '"';
+            $foundUser = mysqli_fetch_assoc(mysqli_query($con,$query));
+            $query = "INSERT INTO `comments`(ID_Comment,Context,ID_Product,ID_Member,Rating,Image,Date) VALUES (NULL,'" . $_POST['comment'] . "','".$foundProduct['ID_Product']."','" . $foundUser['ID_Member'] . "','".$_POST['rating']."',NULL,DEFAULT)";
+            if(mysqli_query($con, $query)){
+                echo "New record created successfully";
+            }
+            else{
+                echo "Error: " . $query . "<br>" . mysqli_error($con);
+            }
+        }
+        else{
+            echo "You must login";
+        }
+    } catch (PDOException $exception) {
+    echo "<script>alert('Không thể upload comment');</script>";
+    }
+    
+?>

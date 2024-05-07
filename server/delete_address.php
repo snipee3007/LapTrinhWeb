@@ -10,12 +10,14 @@
         
               
     if(mysqli_query($con, $query)){
-        echo $id;
-        echo '<script>alert("Đã xóa địa chỉ thành công")</script>';
-        header("Location: ./../client/src/profile.php?user_id={$user_id}");
+        echo '<script>alert("Đã xóa địa chỉ thành công");
+                        window.location.href ="./../client/src/profile.php?user_id='.$user_id.'"
+                        </script>';
     }
     else{
-        echo '<script>alert("Không thể xóa địa chỉ")</script>';
+        echo '<script>alert("Không thể xóa địa chỉ");
+        window.location.href ="./../client/src/profile.php?user_id='.$user_id.'"
+        </script>';
     }
     }
 ?>

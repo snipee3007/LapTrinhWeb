@@ -1,6 +1,6 @@
 <div class="relative z-50">
     <div class="flex items-center justify-center">
-        <div class="bg-white rounded-lg border p-5" style="font-family: Victor Mono; width: 500px">
+        <div class="bg-white rounded-lg border p-5 xl:w-full lg:w-3/4 md:w-1/2 sm:w-1/3" style="font-family: Victor Mono">
             <div class="flex justify-between">
                 <div class="font-bold mb-5">
                     THÊM ĐỊA CHỈ

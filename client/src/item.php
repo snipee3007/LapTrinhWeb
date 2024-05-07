@@ -42,7 +42,7 @@ $halfStar = '<div style="position: relative" class="w-4 h-4">
               </svg>
             </div>';
 
-$noneStar = '<svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+$noneStar = '<svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-width="2" d="M11.083 5.104c.35-.8 1.485-.8 1.834 0l1.752 4.022a1 1 0 0 0 .84.597l4.463.342c.9.069 1.255 1.2.556 1.771l-3.33 2.723a1 1 0 0 0-.337 1.016l1.03 4.119c.214.858-.71 1.552-1.474 1.106l-3.913-2.281a1 1 0 0 0-1.008 0L7.583 20.8c-.764.446-1.688-.248-1.474-1.106l1.03-4.119A1 1 0 0 0 6.8 14.56l-3.33-2.723c-.698-.571-.342-1.702.557-1.771l4.462-.342a1 1 0 0 0 .84-.597l1.753-4.022Z"/>
             </svg>';
 
@@ -93,6 +93,7 @@ $star .= '</span>';
         <script defer src="./'. $CUSTOM_PATH .'controller/textareaController.js"></script>
         <script defer src="./'. $CUSTOM_PATH .'controller/ratingController.js"></script>
         <script defer src="./'. $CUSTOM_PATH .'controller/signupController.js"></script>
+        <script defer src="./'. $CUSTOM_PATH .'controller/commentController.js"></script>
       ';
   ?>
   <title>CochaGear | 
@@ -148,14 +149,14 @@ $star .= '</span>';
                   <img src="' . $linkImage['Image'] . '" alt="' . $foundProduct['Name'] . '">
                 </div>';
 
-          echo '<div class="col-span-4">
+              echo '<div class="col-span-4">
                   <div class="font-bold mb-5 text-xl">' . $foundProduct['Name'] . '</div>
                   <div class="text-sm mb-5">Thương hiệu: <span class="font-bold text-blue-700">' . $foundProduct['Brand'] . '</span> | Loại: <span class="font-bold text-blue-700">' . $foundProduct['Category'] . '</span></div>
-                  <div class="flex items-center text-sm mb-5">Đánh giá: ' . $star . ' (' . sizeof($commentsList) . ' lượt đánh giá)</div>
+                  <div class="flex items-center text-sm mb-5">Đánh giá: ' . $star . ' (' .sizeof($commentsList) . ')</div>
 
                   <div class="font-bold mb-5 text-blue-700">' . $Price . '</div>
-                  <div class="flex mb-5">
-                    <div class="cursor-pointer p-1 mr-2 bg-blue-700 text-white text-xs rounded-lg flex flex-wrap">Bảo hành 12 tháng chính hãng</div>
+                  <div class="md:flex mb-5">
+                    <div class="mb-2 md:mb-0 cursor-pointer p-1 mr-2 bg-blue-700 text-white text-xs rounded-lg flex flex-wrap">Bảo hành 12 tháng chính hãng</div>
                     <div class="cursor-pointer p-1 bg-blue-700 text-white text-xs rounded-lg flex flex-wrap">Đã bao gồm VAT</div>
                   </div> 
                   <div x-data="{quantity: 1}" class="w-28 border-2 px-1 text-center mb-5">
@@ -166,14 +167,24 @@ $star .= '</span>';
                     <button x-on:click="quantity++" class="plus-btn" type="button" name="button">
                       +
                     </button>
-                  </div>
-                  <button type="button" name="button" class="text-sm bg-blue-700 text-white p-2 rounded-lg w-full mb-5">
-                      THÊM VÀO GIỎ HÀNG 
-                      <br>
-                      <span class="text-xs">Giao tận nơi hoặc nhận tại cửa hàng</span>
-                  </button>
-
-                  <div class="font-bold mb-5">
+                  </div>';
+                  if($_SESSION['role'] == 'user'){
+                echo '
+                    <a href="./../cart.php';
+                    if (isset($_SERVER["PATH_INFO"])){
+                      echo $_SERVER["PATH_INFO"];
+                    }
+                    ;
+                    echo '"
+                      <button type="button" name="button" class="text-sm bg-blue-700 text-white p-2 rounded-lg w-full mb-5">
+                        THÊM VÀO GIỎ HÀNG 
+                        <br>
+                        <span class="text-xs">Giao tận nơi hoặc nhận tại cửa hàng</span>
+                    </button>
+                    </a>';
+                  };
+                  echo
+                  '<div class="font-bold mb-5">
                     | THÔNG TIN SẢN PHẨM
                   </div>
                 ';
@@ -490,7 +501,7 @@ $star .= '</span>';
                   viewBox="0 0 10 10" xml:space="preserve">
                     <path fill="#000000" d="M3 3.5H3.875C3.98333 3.5 4.073 3.4645 4.144 3.3935C4.21467 3.32283 4.25 3.23333 4.25 3.125C4.25 3.01667 4.21467 2.92717 4.144 2.8565C4.073 2.7855 3.98333 2.75 3.875 2.75H2.75C2.60833 2.75 2.4895 2.79783 2.3935 2.8935C2.29783 2.9895 2.25 3.10833 2.25 3.25V4.375C2.25 4.48333 2.2855 4.57283 2.3565 4.6435C2.42717 4.7145 2.51667 4.75 2.625 4.75C2.73333 4.75 2.82283 4.7145 2.8935 4.6435C2.9645 4.57283 3 4.48333 3 4.375V3.5ZM6.75 5.25H5.875C5.76667 5.25 5.67717 5.28533 5.6065 5.356C5.5355 5.427 5.5 5.51667 5.5 5.625C5.5 5.73333 5.5355 5.82283 5.6065 5.8935C5.67717 5.9645 5.76667 6 5.875 6H7C7.14167 6 7.26033 5.952 7.356 5.856C7.452 5.76033 7.5 5.64167 7.5 5.5V4.375C7.5 4.26667 7.46467 4.177 7.394 4.106C7.323 4.03533 7.23333 4 7.125 4C7.01667 4 6.927 4.03533 6.856 4.106C6.78533 4.177 6.75 4.26667 6.75 4.375V5.25ZM3.5 9.5C3.35833 9.5 3.23967 9.452 3.144 9.356C3.048 9.26033 3 9.14167 3 9V8.5H1C0.725 8.5 0.489667 8.40217 0.294 8.2065C0.098 8.0105 0 7.775 0 7.5V1.5C0 1.225 0.098 0.9895 0.294 0.7935C0.489667 0.597833 0.725 0.5 1 0.5H9C9.275 0.5 9.5105 0.597833 9.7065 0.7935C9.90217 0.9895 10 1.225 10 1.5V7.5C10 7.775 9.90217 8.0105 9.7065 8.2065C9.5105 8.40217 9.275 8.5 9 8.5H7V9C7 9.14167 6.95217 9.26033 6.8565 9.356C6.7605 9.452 6.64167 9.5 6.5 9.5H3.5ZM1.5 7H8.5V2H1.5V7Z"/>
                   </svg>
-                </span>' . $size . '
+                </span>' . $res . '
               </div>
 
               <div class="text-xs flex mb-1"> 
@@ -498,7 +509,7 @@ $star .= '</span>';
                   <svg class="w-4 h-4 mb-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                     <path d="m 7.40625 1 c -0.613281 0.007812 -1.234375 0.089844 -1.847656 0.253906 c -3.273438 0.878906 -5.558594 3.855469 -5.558594 7.246094 s 2.285156 6.367188 5.558594 7.242188 c 3.273437 0.878906 6.742187 -0.558594 8.4375 -3.492188 c 0.277344 -0.480469 0.109375 -1.089844 -0.367188 -1.367188 c -0.476562 -0.273437 -1.089844 -0.109374 -1.367187 0.367188 c -1.246094 2.160156 -3.777344 3.207031 -6.1875 2.5625 c -2.40625 -0.644531 -4.074219 -2.820312 -4.074219 -5.3125 c 0 -2.496094 1.667969 -4.667969 4.074219 -5.3125 c 2.410156 -0.644531 4.941406 0.402344 6.1875 2.5625 c 0.058593 0.085938 0.125 0.164062 0.203125 0.226562 l -0.019532 0.015626 l -0.007812 0.007812 h -1.4375 c -0.550781 0 -1 0.449219 -1 1 c 0 0 0 1 1 1 h 5 v -5 s 0.003906 -1 -1 -1 c -0.550781 0 -1 0.449219 -1 1 v 1.6875 l -0.015625 0.011719 l -0.011719 0.011719 c -1.277344 -2.179688 -3.53125 -3.519532 -5.953125 -3.691407 c -0.203125 -0.015625 -0.40625 -0.019531 -0.613281 -0.019531 z m 0 0" fill="#000000"/>
                   </svg>
-                </span>' . $rate . '
+                </span>' . $hz . '
               </div>
 
               <div class="text-xs flex mb-1"> 
@@ -507,7 +518,7 @@ $star .= '</span>';
                   viewBox="0 0 10 10" xml:space="preserve">
                     <path fill="#000000" d="M6.99159 3.00835C7.05075 3.06669 7.08325 3.14627 7.08325 3.22919V4.27085C7.08325 4.35373 7.05033 4.43322 6.99172 4.49182C6.93312 4.55043 6.85363 4.58335 6.77075 4.58335C6.68787 4.58335 6.60839 4.55043 6.54978 4.49182C6.49118 4.43322 6.45825 4.35373 6.45825 4.27085V3.98335L5.74159 4.70002C5.71274 4.72985 5.67825 4.75364 5.64012 4.77C5.60198 4.78636 5.56097 4.79496 5.51948 4.7953C5.47799 4.79565 5.43684 4.78772 5.39844 4.77199C5.36004 4.75626 5.32516 4.73304 5.29584 4.70368C5.26651 4.67433 5.24332 4.63942 5.22763 4.60101C5.21193 4.5626 5.20404 4.52145 5.20442 4.47995C5.2048 4.43846 5.21344 4.39746 5.22984 4.35934C5.24624 4.32122 5.27006 4.28675 5.29992 4.25794L6.01658 3.54169H5.72909C5.64621 3.54169 5.56672 3.50876 5.50811 3.45016C5.44951 3.39155 5.41659 3.31207 5.41659 3.22919C5.41659 3.14631 5.44951 3.06682 5.50811 3.00822C5.56672 2.94961 5.64621 2.91669 5.72909 2.91669H6.77075C6.8536 2.91676 6.93304 2.94973 6.99159 3.00835ZM2.91659 6.77085C2.91659 6.85373 2.94951 6.93322 3.00811 6.99182C3.06672 7.05043 3.14621 7.08335 3.22909 7.08335H4.27117C4.35405 7.08335 4.43353 7.05043 4.49214 6.99182C4.55074 6.93322 4.58367 6.85373 4.58367 6.77085C4.58367 6.68797 4.55074 6.60849 4.49214 6.54988C4.43353 6.49128 4.35405 6.45835 4.27117 6.45835H3.98367L4.70034 5.74169C4.75723 5.68272 4.78869 5.60377 4.78794 5.52183C4.78719 5.4399 4.75429 5.36153 4.69632 5.30362C4.63836 5.24571 4.55996 5.21288 4.47802 5.2122C4.39609 5.21153 4.31716 5.24307 4.25825 5.30002L3.54159 6.01585V5.72835C3.54159 5.64547 3.50866 5.56599 3.45006 5.50738C3.39145 5.44878 3.31197 5.41585 3.22909 5.41585C3.14621 5.41585 3.06672 5.44878 3.00811 5.50738C2.94951 5.56599 2.91659 5.64547 2.91659 5.72835V6.77002V6.77085ZM0.833252 2.81252C0.833252 2.50863 0.953973 2.21718 1.16886 2.00229C1.38374 1.78741 1.67519 1.66669 1.97909 1.66669H8.02075C8.32465 1.66669 8.61609 1.78741 8.83098 2.00229C9.04586 2.21718 9.16659 2.50863 9.16659 2.81252V7.18752C9.16659 7.33799 9.13695 7.48699 9.07936 7.62601C9.02178 7.76503 8.93738 7.89135 8.83098 7.99775C8.72458 8.10415 8.59826 8.18855 8.45924 8.24613C8.32022 8.30372 8.17122 8.33335 8.02075 8.33335H1.97909C1.82861 8.33335 1.67961 8.30372 1.54059 8.24613C1.40157 8.18855 1.27526 8.10415 1.16886 7.99775C1.06246 7.89135 0.978057 7.76503 0.920473 7.62601C0.86289 7.48699 0.833252 7.33799 0.833252 7.18752V2.81252ZM1.97909 2.29169C1.69159 2.29169 1.45825 2.52502 1.45825 2.81252V7.18752C1.45825 7.47502 1.69159 7.70835 1.97909 7.70835H8.02075C8.30825 7.70835 8.54159 7.47502 8.54159 7.18752V2.81252C8.54159 2.52502 8.30825 2.29169 8.02075 2.29169H1.97909Z"/>
                   </svg>
-                </span>' . $res . '
+                </span>' . $lcd . '
               </div>
 
               <div class="text-xs flex mb-1"> 
@@ -535,7 +546,7 @@ $star .= '</span>';
           </div>
           <?php
             if (isset($_SESSION['hash_id'])){
-              echo '<div class="font-bold mb-5 text-sm"><?php echo sizeof($commentsList); ?> lượt đánh giá</div>
+              echo '<div class="font-bold mb-5 text-sm">' .sizeof($commentsList) .' lượt đánh giá</div>
               <div class="grid grid-cols-18 gap-2 mb-8">
               <div class="col-span-1">
                   <div class="rounded-full w-12 h-12 overflow-hidden border-2 border-gray">
@@ -545,15 +556,15 @@ $star .= '</span>';
 
               <div class="col-span-17">
                 <div class="text-sm font-bold mb-2">' . $currentUser['Name']. '</div>
-                <form class="mr-5 mb-2">
-                  <textarea rows="3" class="p-0 w-full text-sm" name="comment" style="border: none; border-bottom: 1px solid;" placeholder="Viết đánh giá..."></textarea>
-                </form>
+                <div class="mr-5 mb-2">
+                  <textarea rows="3" class="commentPost p-0 w-full text-sm" style="border: none; border-bottom: 1px solid;" placeholder="Viết đánh giá..."></textarea>
+                </div>
 
                 <div x-data="{ submitComment: false }" class="flex justify-between">
                   <div class="flex items-center">';
                     
               for($j = 0; $j < 5; $j++) {
-                echo '<svg data-star='. ($j + 1) .' id="star'.($j + 1).'"class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                echo '<svg data-star='. ($j + 1) .' id="star'.($j + 1).'"class="userRating w-5 h-5 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-width="2" d="M11.083 5.104c.35-.8 1.485-.8 1.834 0l1.752 4.022a1 1 0 0 0 .84.597l4.463.342c.9.069 1.255 1.2.556 1.771l-3.33 2.723a1 1 0 0 0-.337 1.016l1.03 4.119c.214.858-.71 1.552-1.474 1.106l-3.913-2.281a1 1 0 0 0-1.008 0L7.583 20.8c-.764.446-1.688-.248-1.474-1.106l1.03-4.119A1 1 0 0 0 6.8 14.56l-3.33-2.723c-.698-.571-.342-1.702.557-1.771l4.462-.342a1 1 0 0 0 .84-.597l1.753-4.022Z"/>
                       </svg>';
               };
@@ -573,7 +584,7 @@ $star .= '</span>';
               ';
             }
             else{
-              echo '<div class="text-sm">Bạn cần <a x-on:click="openLogin = true; openReg = false" class="hover:underline text-blue-700">đăng nhập</a> để sử dụng tính năng này.</div>';
+              echo '<div class="text-sm">Bạn cần <a x-on:click="openLogin = true; openReg = false" class="hover:underline cursor-pointer text-blue-700">đăng nhập</a> để sử dụng tính năng này.</div>';
 
               echo '<div x-cloak x-on:click="openLogin = false; openReg = false" x-show="openLogin || openReg" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black bg-opacity-50 z-50"></div>
               <div x-cloak x-show="openLogin" x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">';
@@ -593,17 +604,32 @@ $star .= '</span>';
               $query = "SELECT * FROM members WHERE ID_Member =" . $commentsList[$i]["ID_Member"];
               $member = mysqli_fetch_assoc(mysqli_query($con, $query));
 
-              echo '<div class="grid grid-cols-18 gap-2 mb-8">
-                    <div class="col-span-1">
-                        <div class="rounded-full w-12 h-12 overflow-hidden border-2 border-gray">
-                            <img src="./'. $CUSTOM_PATH . $member['Image'] . '" alt="' . $member['Name'] . '" class="object-cover w-full h-full">
-                        </div>
-                    </div>
+              echo '<div x-data="{ deleteComment: false }" class="grid grid-cols-18 gap-2 mb-8">
+              <div class="col-span-1">
+                  <div class="rounded-full w-12 h-12 overflow-hidden border-2 border-gray">
+                      <img src="./'. $CUSTOM_PATH . $member['Image'] . '" alt="' . $member['Name'] . '" class="object-cover w-full h-full">
+                  </div>
+              </div>
 
-                    <div class="col-span-17">
-                      <div class="text-sm font-bold mb-1">'. $member['Name'] .' | Đã đăng ngày '. $commentsList[$i]['Date'] .'</div>
-                      <div class="mb-3 flex">
-                        <div class="text-sm mr-2">Đã đánh giá</div>';
+              <div class="col-span-17 commentContainer">
+                <div class="flex items-center justify-between">
+                  <div class="text-sm font-bold mb-1">'. $member['Name'] .' | Đã đăng ngày '. $commentsList[$i]['Date'] .'</div>';
+
+              // Nếu admin thì echo đống này
+              if($currentUser['Role'] == 'admin'){
+                echo '<button type="button" class="text-sm hover:underline text-blue-700 mr-5" x-on:click="deleteComment = true">Xóa đánh giá</button>';
+
+                echo '<div x-cloak x-on:click="deleteComment = false" x-show="deleteComment" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black bg-opacity-50 z-50"></div>
+                <div x-cloak x-show="deleteComment" x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">';
+                    include "components/deleteCommentPopup.php";
+                echo '</div>';
+              }
+              
+              // tới đây
+                
+              echo '</div>
+                    <div class="mb-3 flex">
+                      <div class="text-sm mr-2">Đã đánh giá</div>';
               
               for($j = 0; $j < $commentsList[$i]['Rating']; $j++) {
                 echo '<svg class="w-4 h-4 text-yellow-500 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -612,13 +638,13 @@ $star .= '</span>';
               }
 
               for($j = 0; $j < 5 - $commentsList[$i]['Rating']; $j++) {
-                echo '<svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                echo '<svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-width="2" d="M11.083 5.104c.35-.8 1.485-.8 1.834 0l1.752 4.022a1 1 0 0 0 .84.597l4.463.342c.9.069 1.255 1.2.556 1.771l-3.33 2.723a1 1 0 0 0-.337 1.016l1.03 4.119c.214.858-.71 1.552-1.474 1.106l-3.913-2.281a1 1 0 0 0-1.008 0L7.583 20.8c-.764.446-1.688-.248-1.474-1.106l1.03-4.119A1 1 0 0 0 6.8 14.56l-3.33-2.723c-.698-.571-.342-1.702.557-1.771l4.462-.342a1 1 0 0 0 .84-.597l1.753-4.022Z"/>
                       </svg>';
               }
                          
               echo '   </div>
-                      <div class="text-sm mb-2 mr-5">' .$commentsList[$i]['Context']. '</div>
+                      <div class="text-sm mb-2 mr-5 commentContext">' .$commentsList[$i]['Context']. '</div>
                       <div class="flex">
                         <div id="like-container'.$i.'">
                           <svg id="like'.$i.'" class="w-6 h-6 mr-5 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

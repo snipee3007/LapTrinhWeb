@@ -1,6 +1,6 @@
-<div class="relative z-50">
+<div class="commentPopup relative z-50">
     <div class="flex items-center justify-center">
-        <div class="bg-white rounded-lg border p-5" style="font-family: Victor Mono; width: 500px">
+        <div class="bg-white rounded-lg border p-5 xl:w-full lg:w-3/4 md:w-1/2 sm:w-1/3" style="font-family: Victor Mono">
             <div class="flex justify-between">
                 <div class="font-bold mb-5">
                     XÁC NHẬN
@@ -17,10 +17,10 @@
 
             <p class="mb-5 text-sm">Bạn có chắc chắn muốn gửi đánh giá này?</p>
 
-            <div class="flex justify-between">
-                <button type="button" class="text-sm mr-5 rounded-lg bg-green-700 text-white p-2 w-1/2">Xác nhận</button>
+            <form class="commentPopup flex justify-between">
+                <button type="submit" class="submitComment text-sm mr-5 rounded-lg bg-green-700 text-white p-2 w-1/2">Xác nhận</button>
                 <button type="button" class="text-sm rounded-lg bg-red-700 text-white p-2 w-1/2" x-on:click="submitComment = false">Hủy</button>
-            </div>
+            </form>
 
         </div>
     </div>

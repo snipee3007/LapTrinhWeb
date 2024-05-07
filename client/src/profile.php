@@ -35,6 +35,7 @@ if(isset($_GET['id']))
     $query = "SELECT * FROM members WHERE Hash_ID = '{$user_id}'";
     $result = mysqli_query($con, $query);
     $profile = $result->fetch_assoc();
+    $role = $profile['Role'];
     if(!isset($profile['Image'])){
         $profile['Image'] = "./images/logoBK.png";
     }
@@ -70,7 +71,6 @@ $recent = [
 
   <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script> -->
   <script defer src="https://unpkg.com/alpinejs@3.13.10/dist/cdn.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <script defer src="controller/changePhoneEmailController.js"></script>
@@ -78,7 +78,7 @@ $recent = [
   <script defer src="controller/addressController.js"></script>
 
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
   <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
@@ -96,8 +96,8 @@ $recent = [
     <div class="max-w-screen-2xl mx-auto" style='font-family: Victor Mono'>
         <div class="flex flex-row justify-between mt-10 mb-10">
             <div class="w-5xl 2xl:w-6xl mx-auto">
-                <div class="grid grid-cols-6 gap-4">
-                    <div class="col-span-2">
+                <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+                    <div class="col-span-4 md:col-span-2">
                         <div class="rounded-lg shadow-md p-4 bg-white">
                             <div class="flex items-center mb-4">
                                 <div class="rounded-full w-12 h-12 overflow-hidden border-2 border-gray mr-2">
@@ -140,13 +140,38 @@ $recent = [
                                 </svg>
                                 Quản lý đơn hàng
                             </button>
-
+                            <?php
+                            
+                            if($role == 'admin'){
+                                echo'<script>
+                                    document.querySelector("#addressButton").remove();
+                                    document.querySelector("#orderButton").remove();
+                                </script>
+                                ';
+                                
+                                echo '
+                                
+                                <a href="./'. $CUSTOM_PATH .'admin.php?user_id='.$user_id.'" class="w-40">
+                                <button type="button" id="orderButton" class="text-sm flex items-center mb-5 hover:text-blue-700">
+                                <svg class="w-6 h-6 text-gray-800 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M14 7h-4v3a1 1 0 0 1-2 0V7H6a1 1 0 0 0-.997.923l-.917 11.924A2 2 0 0 0 6.08 22h11.84a2 2 0 0 0 1.994-2.153l-.917-11.924A1 1 0 0 0 18 7h-2v3a1 1 0 1 1-2 0V7Zm-2-3a2 2 0 0 0-2 2v1H8V6a4 4 0 0 1 8 0v1h-2V6a2 2 0 0 0-2-2Z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>
+                                Quản lý
+                                </span>
+                                </button> 
+                                </a>  
+                                
+                                ';
+                            }
+                            ?>
+                            
                             <button type="button" id="recentButton" class="text-sm flex items-center mb-5 hover:text-blue-700">
                                 <svg class="w-6 h-6 text-gray-800 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
                                     <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
                                 </svg>
-                                Sản phẩm đã xem
+                                Đổi mật khẩu
                             </button>
 
                             <div x-data="{openSignOut: false}">
@@ -163,6 +188,7 @@ $recent = [
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                     <div class="col-span-4">
                         <div id="profile" class="rounded-lg shadow-md p-4 bg-white">
@@ -341,11 +367,32 @@ $recent = [
                         <div id="order" class="hidden rounded-lg shadow-md p-4 bg-white">
                             <div class="font-bold mb-4">| Quản lý đơn hàng</div>
                             <hr class="mb-4">
+                            <div class="text-sm">Bạn chưa có đơn hàng nào.</div>
                         </div>
 
                         <div id="recent" class="hidden rounded-lg shadow-md p-4 bg-white">
-                            <div class="font-bold mb-4">| Sản phẩm đã xem</div>
+                            <div class="font-bold mb-4">| Đổi mật khẩu</div>
                             <hr class="mb-4">
+
+                            <form action="./../../server/changePassword.php" method='post'>
+                                <div class="mb-5">
+                                    <label class="text-xs font-semibold" for="oldPassword">Nhập lại mật khẩu cũ:</label>
+                                    <input class="text-xs h-6 p-0" style="border: none; border-bottom: 1px solid; outline: none;" type="password" id="oldPassword" name="oldPassword" placeholder="Mật khẩu cũ">
+                                </div>
+                                
+                                <div class="mb-5">
+                                    <label class="text-xs font-semibold" for="newPassword">Nhập mật khẩu mới:</label>
+                                    <input class="text-xs h-6 p-0" style="border: none; border-bottom: 1px solid; outline: none;" type="password" id="newPassword" name="newPassword" placeholder="Mật khẩu mới">
+                                </div>
+                                
+                                <div class="mb-5">
+                                    <label class="text-xs font-semibold" for="checkPassword">Xác nhận mật khẩu mới:</label>
+                                    <input class="text-xs h-6 p-0" style="border: none; border-bottom: 1px solid; outline: none;" type="password" id="checkPassword" name="checkPassword" placeholder="Xác nhận mật khẩu mới">
+                                </div>
+
+                                <button id="submit_password" type="submit" class="w-full p-2 text-white rounded-lg text-xs bg-blue-700 border border-white hover:text-blue-700 hover:bg-white hover:border-blue-700 transition-colors duration-300 ease-in-out">Đổi mật khẩu</button>
+                            </form>
+                        </div>
                         </div>
                     </div>
                 </div>

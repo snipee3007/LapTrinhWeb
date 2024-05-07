@@ -34,6 +34,7 @@ if(isset($_GET['user_id']))
     $query = "SELECT * FROM members WHERE Hash_id = '{$user_id}'";
     $result = mysqli_query($con, $query);
     $profile = $result->fetch_assoc();
+    $_SESSION['role'] = $profile['Role'];
     if(isset($profile['Image'])){
         $profile['Image'] = "./images/logoBK.png";
     }
@@ -79,12 +80,11 @@ $postList = [
 
   <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script> -->
   <script defer src="https://unpkg.com/alpinejs@3.13.10/dist/cdn.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <script defer src="controller/adminPanelController.js"></script>
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
   <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
@@ -102,8 +102,8 @@ $postList = [
     <div class="max-w-screen-2xl mx-auto min-h-max" style='font-family: Victor Mono'>
         <div class="flex flex-row justify-between mt-10 mb-10">
             <div class="w-5xl 2xl:w-6xl mx-auto">
-                <div class="grid grid-cols-6 gap-4">
-                    <div class="col-span-2">
+                <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+                    <div class="col-span-4 md:col-span-2">
                         <div class="rounded-lg shadow-md p-4 bg-white">
                             <button type="button" id="usersButton" class="text-sm flex items-center mb-5 hover:text-blue-700">
                                 <svg class="w-6 h-6 text-gray-800 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">

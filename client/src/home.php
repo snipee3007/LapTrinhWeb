@@ -21,9 +21,8 @@
 
   <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script> -->
   <script defer src="https://unpkg.com/alpinejs@3.13.10/dist/cdn.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
   
   <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
@@ -100,7 +99,7 @@
             | PC
           </div>
 
-          <div class="grid grid-cols-5 gap-4 mb-5">
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-5">
             <?php
               include_once ('./../../server/connect_db.php');
               $query = 'SELECT * FROM products WHERE Category="PC" ORDER BY Price DESC';
@@ -239,12 +238,12 @@
         </div>
 
         <div class="rounded-lg p-4 mb-10 shadow-md bg-white">
-          <div class="flex justify-between mb-8 mt-5">
+          <div class="md:flex md:justify-between mb-8 mt-5">
             <div class="font-bold text-xl mb-8 md:mb-0">
               | LAPTOP
             </div>
 
-            <div>
+            <div class="flex flex-wrap">
               <?php 
                 $buttonList = [
                   ['name' => 'ACER', 'link' => '#'],
@@ -256,13 +255,13 @@
                   ['name' => 'Xem tất cả', 'link' => 'laptop.php'],
                 ];
                 for ($i = 0; $i < count($buttonList); $i++) {
-                  echo '<a href="' . $buttonList[$i]['link'] . '" class="ml-3 p-2 rounded-lg text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
+                  echo '<a href="' . $buttonList[$i]['link'] . '" class="mr-2 mb-1 md:mb-0 md:ml-2 p-2 rounded-lg text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
                 }
               ?>
             </div>
           </div>
 
-          <div class="grid grid-cols-5 gap-4 mb-5">
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-5">
             <?php
               include_once('./../../server/connect_db.php');
               $query = 'SELECT * FROM products WHERE Category = "Laptop" ORDER BY Price DESC' ;
@@ -398,7 +397,7 @@
               | MÀN HÌNH
             </div>
 
-            <div>
+            <div class="flex flex-wrap">
               <?php 
                 $buttonList = [
                   ['name' => 'LG', 'link' => '#'],
@@ -413,13 +412,13 @@
                   ['name' => 'Xem tất cả', 'link' => 'screen.php'],
                 ];
                 for ($i = 0; $i < count($buttonList); $i++) {
-                  echo '<a href="' . $buttonList[$i]['link'] . '" class="ml-3 p-2 rounded-lg text-xs md:text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
+                  echo '<a href="' . $buttonList[$i]['link'] . '" class="mr-2 mb-1 md:mb-0 md:ml-2 p-2 rounded-lg text-xs md:text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
                 }
               ?>
             </div>
           </div>
 
-          <div class="grid grid-cols-5 gap-4 mb-5">
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-5">
             <?php
               include_once('./../../server/connect_db.php');
               $query = 'SELECT * FROM products WHERE Category = "Screen" ORDER BY Price DESC';
@@ -537,7 +536,7 @@
               | TAI NGHE
             </div>
 
-            <div>
+            <div class="flex flex-wrap">
               <?php 
                 $buttonList = [
                     ['name' => 'ASUS', 'link' => '#'],
@@ -550,13 +549,13 @@
                     ['name' => 'Xem tất cả', 'link' => 'headphone.php'],
                 ];
                 for ($i = 0; $i < count($buttonList); $i++) {
-                  echo '<a href="' . $buttonList[$i]['link'] . '" class="ml-3 p-2 rounded-lg text-xs md:text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
+                  echo '<a href="' . $buttonList[$i]['link'] . '" class="mr-2 mb-1 md:mb-0 md:ml-2 p-2 rounded-lg text-xs md:text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
                 }
               ?>
             </div>
           </div>
 
-          <div class="grid grid-cols-5 gap-4 mb-5">
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-5">
             <?php
               include_once ('./../../server/connect_db.php');
               $query = 'SELECT * FROM products WHERE Category="Headphone" ORDER BY Price DESC';
@@ -659,7 +658,7 @@
               | BÀN PHÍM
             </div>
 
-            <div>
+            <div class="flex flex-wrap">
               <?php 
                 $buttonList = [
                   ['name' => 'AKKO', 'link' => '#'],
@@ -671,13 +670,13 @@
                   ['name' => 'Xem tất cả', 'link' => 'keyboard.php'],
                 ];
                 for ($i = 0; $i < count($buttonList); $i++) {
-                  echo '<a href="' . $buttonList[$i]['link'] . '" class="ml-3 p-2 rounded-lg text-xs md:text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
+                  echo '<a href="' . $buttonList[$i]['link'] . '" class="mr-2 mb-1 md:mb-0 md:ml-2 p-2 rounded-lg text-xs md:text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
                 }
               ?>
             </div>
           </div>
 
-          <div class="grid grid-cols-5 gap-4 mb-5">
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-5">
             <?php
               include_once ('./../../server/connect_db.php');
               $query = 'SELECT * FROM products WHERE Category="Keyboard" ORDER BY Price DESC';
@@ -784,7 +783,7 @@
               | CHUỘT
             </div>
 
-            <div>
+            <div class="flex flex-wrap">
               <?php 
                 $buttonList = [
                   ['name' => 'Logitech', 'link' => '#'],
@@ -795,13 +794,13 @@
                   ['name' => 'Xem tất cả', 'link' => 'mouse.php'],
                 ];
                 for ($i = 0; $i < count($buttonList); $i++) {
-                  echo '<a href="' . $buttonList[$i]['link'] . '" class="ml-3 p-2 rounded-lg text-xs md:text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
+                  echo '<a href="' . $buttonList[$i]['link'] . '" class="mr-2 mb-1 md:mb-0 md:ml-2 p-2 rounded-lg text-xs md:text-sm bg-gray-200 hover:text-white hover:bg-gray-900 transition-colors duration-300 ease-in-out">' . $buttonList[$i]['name'] . '</a>';
                 }
               ?>
             </div>
           </div>
 
-          <div class="grid grid-cols-5 gap-4 mb-5">
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-5">
             <?php
               include_once ('./../../server/connect_db.php');
               $query = 'SELECT * FROM products WHERE Category="Mouse" ORDER BY Price DESC';

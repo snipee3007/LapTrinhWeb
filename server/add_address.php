@@ -14,13 +14,15 @@
                     ";  
               
     if(mysqli_query($con, $query)){
-        echo '<script text>alert("Đã thêm địa chỉ thành công")
-        </script>';
+        echo '<script>alert("Thêm địa chỉ thành công");
+                        window.location.href ="./../client/src/profile.php?user_id='.$user_id.'"
+                        </script>';
 
     }
     else{
-        echo '<script >alert("Không thể thêm địa chỉ")</script>';
+        echo '<script>alert("Không thể thêm địa chỉ");
+                        window.location.href ="./../client/src/profile.php?user_id='.$user_id.'"
+                        </script>';
     }
-    header("Location: ./../client/src/profile.php?user_id={$user_id}");
     }
 ?>

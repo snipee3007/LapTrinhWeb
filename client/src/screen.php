@@ -20,9 +20,8 @@
 
   <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script> -->
   <script defer src="https://unpkg.com/alpinejs@3.13.10/dist/cdn.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
 
   <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
@@ -52,8 +51,8 @@
             ?>
         </div>
 
-        <div class="grid grid-cols-4 gap-4 mb-10">
-          <div class="col-span-1">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
+          <div class="col-span-3 md:col-span-1">
               <div class="rounded-lg shadow-md bg-white p-4 mb-5">
                   <div class="font-bold mb-5">| Tùy chọn</div>
 
@@ -133,7 +132,7 @@
           <div class="col-span-3">
               <div class="rounded-lg shadow-md bg-white p-4">
                 <div class="font-bold text-xl mb-5">| MÀN HÌNH</div>
-                <div class="grid grid-cols-4 gap-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <?php
                     include_once ('./../../server/connect_db.php');
                     $query = 'SELECT * FROM products WHERE Category="Screen"  ORDER BY Price DESC';
